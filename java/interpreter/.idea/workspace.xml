@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda8031c-8e01-4936-b804-8f3bd3a065eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Lox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs-securing-web" beforeDir="false" afterPath="$PROJECT_DIR$/../gs-securing-web" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686748219303</updated>
-      <workItem from="1686748220323" duration="1684000" />
+      <workItem from="1686748220323" duration="2500000" />
     </task>
     <servers />
   </component>
