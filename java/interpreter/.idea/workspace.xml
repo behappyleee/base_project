@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda8031c-8e01-4936-b804-8f3bd3a065eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../gs-securing-web" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interpreter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HelloMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_server/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_server/src/SimpleHTTPServer_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java_server/src/SimpleHTTPServer_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java_server/src/SimpleHTTPServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +38,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/dhfhf/Desktop/myfolder/workspace/base-project/java/gs-securing-web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686748219303</updated>
-      <workItem from="1686748220323" duration="422000" />
+      <workItem from="1686748220323" duration="1684000" />
     </task>
     <servers />
   </component>
