@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- SQL Mapping -->
+<mapper namespace="TestMapper">
+
+    <select id="selectTestDataCheck" resultType="int">
+        SELECT *
+          FROM excel_test.sample_data
+        LIMIT 1
+    </select>
+
+</mapper>
+
+

@@ -1,7 +1,6 @@
 package com.test.springreactor.ExcelRepository;
 
 import org.apache.ibatis.session.SqlSession;
-import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,13 +10,10 @@ public class ExcelDao {
     @Autowired
     SqlSession sqlSession;
 
-    private final String excelMapperName = "ExcelDownMapper";
+    private final String testMapper = "TestMapper";
 
-    public int dataCount() {
-        return sqlSession.selectOne(excelMapperName + ".selectTest");
+    public int excelTestData() {
+        return sqlSession.selectOne(testMapper + ".selectTest");
     }
-
-
-
 
 }
