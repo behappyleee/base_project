@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EXCEL DOWN LOAD TEST !</title>
+</head>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function getTestData() {
+        axios({
+            url: '/getTestData',
+            method: 'GET',
+            body: '{}'
+        }).then((res) => {
+            console.log('AXIOS GET TEST DATA THEN DATA TEST CHECK : ' + JSON.stringify((res)));
+        })
+    }
+
+    function makeExcelData() {
+        console.log('THIS IS EXCEL CLICK TEST !!');
+    }
+
+</script>
+
+
+<body>
+     <button onclick="getTestData()">GET EXCEL TEST DATA!</button>
+     <button onclick="makeExcelData()">MAKE EXCEL DATA!</button>
+
+
+</body>
+</html>
