@@ -18,13 +18,6 @@ import javax.sql.DataSource;
 @MapperScan(basePackages="com.test.springreactor.**", sqlSessionFactoryRef="sqlSessionFactory")
 public class DataSourceConfiguration {
 
-    // TODO
-    // Project Run 할 시 
-    // Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: org/springframework/core/NestedIOException
-    // 해당 ERROR 해결하여야 함
-
-    // TODO -> 해당 mybatis Version 수정 하니 작동 하는 것 같음 더 TEST 필요 !!!
-
     @Autowired
     ApplicationContext applicationContext;
 

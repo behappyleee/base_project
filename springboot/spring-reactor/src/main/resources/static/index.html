@@ -17,6 +17,21 @@
         })
     }
 
+    // ALL Data 가져오기 Test
+    function selectAllData() {
+        axios({
+            url : '/selectAllData',
+            method : 'GET',
+            data : '{}',
+        }).then((res) => {
+
+            console.log('SELECT ALL DATA CHECK : ' + JSON.stringify(res));
+
+        }).catch((err) => {
+            console.log('SELECT ALL DATA ERR : ' + err);
+        })
+    }
+
     function makeExcelData() {
         console.log('THIS IS EXCEL CLICK TEST !!');
     }
@@ -27,7 +42,7 @@
 <body>
      <button onclick="getTestData()">GET EXCEL TEST DATA!</button>
      <button onclick="makeExcelData()">MAKE EXCEL DATA!</button>
-
+     <button onclick="selectAllData()">SELECT ALL DB DATA</button>
 
 </body>
 </html>

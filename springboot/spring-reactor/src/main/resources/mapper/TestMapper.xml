@@ -3,7 +3,13 @@
 
 <mapper namespace="TestMapper">
 
-    <select id="selectTestDataCheck" resultType="int">
+    <select id="selectAllData" resultType="hashmap">
+        SELECT *
+          FROM excel_test.sample_data
+    </select>
+
+
+    <select id="selectTestDataCheck" resultType="hashmap">
         SELECT *
           FROM excel_test.sample_data
         LIMIT 1
