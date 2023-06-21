@@ -1,6 +1,7 @@
 package com.test.springreactor.jwt.controller;
 
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,6 +51,19 @@ public class JwtController {
     @PreAuthorize("hasRole('USER')")
     public String userAccess() {
         return "User Content . ";
+    }
+
+    // 인증 이후 페이지
+    @GetMapping("/home")
+    public String home(HttpSession session) {
+        // 세션에서 시용자 정보를 가져옴
+        String userName = (String)session.getAttribute("userName");
+        // 사용자 정보가 없으면 로그인 화면으로 이동
+        if(userName == null) {
+            return "redirect:/login";
+        }
+        // 사용자 정보가 있으면 홈 페이지로 이동
+        return "home";
     }
 
 }
