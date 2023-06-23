@@ -23,8 +23,8 @@ public class SecurityContextController {
     final SecurityContextService securityContextService;
 
     @GetMapping("/securityTest")
-    public String securityTest(HttpServletRequest request) {
-        final String test = securityContextService.securityTest(request);
+    public String securityTest(HttpServletRequest req) {
+        final String test = securityContextService.securityTest(req);
         return "SECURITY_TEST";
     }
 
