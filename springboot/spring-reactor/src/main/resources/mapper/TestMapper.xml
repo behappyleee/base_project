@@ -15,5 +15,34 @@
         LIMIT 1
     </select>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <select id="selectAllTestDataCount" resultType="int">
+        SELECT count(*)
+          FROM excel_test.sample_data
+    </select>
+
+    <select id="selectAllListData" resultType="java.util.HashMap">
+        SELECT
+            region
+          , country
+          , `Item Type`
+          , `Sales Channel`
+          , `Order Priority`
+        FROM excel_test.sample_data
+    </select>
+
+    <select id="selectOnlyOneData" resultType="java.util.HashMap">
+        SELECT *
+          FROM excel_test.sample_data
+         LIMIT 1
+    </select>
+
+
+
+=======
+>>>>>>> parent of f53596a (Excel Studying commit)
+=======
+>>>>>>> parent of f53596a (Excel Studying commit)
 </mapper>
 
