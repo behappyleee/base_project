@@ -11,7 +11,7 @@
         <div class="container">
             <h1 class="heading">Simple Weather App</h1>
             <form>
-                <input type="text" placeholder="Search for City" autofocus>
+                <input type="text" placeholder="Search for City" autofocus oninput="applyInputValidation(this)">
                 <button type="submit">SUBMIT</button>
                 <span class="msg"></span>
             </form>
@@ -25,6 +25,9 @@
     </section>
 </body>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/keySet/apiKeyInfo.js"></script>
+
 <script>
     // a 와 submit 와 같은 몇몇 태그들은 특수한 기능을 가짐
     // a 태그는 href 에 연결 된 링크를 통하여 해당 페이지로 이동하는 기능을 가짐
@@ -32,25 +35,80 @@
     // 이러한 기능들은 매우 유용 하지만 그 의도로 사용 되지 않게 될 경우 불편함을 야기하기에 이떄 사용하는 것이 e.preventDefault() 이다.
 
     // TODO
-    // https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893#scaffolding
     // 해당 API 구현 하기 !!!
-
+    
     const form = document.querySelector('.top-banner form');
     form.addEventListener('submit', e => {
         e.preventDefault();
-        console.log('SUBMIT 클릭 E : ' + JSON.stringify(e));
+        let inputCityValue = e.target[0].value;
+        searchCityWeather(inputCityValue);
     });
 
-    const sectionTags = document.querySelector('section');
+    async function searchCityWeather(cityName) {
+        let searchCityGeoInfo = getCityGeographicInfoApiUrl(cityName);
+        let getGeoResponseData = await getAxiosWithNoParam(searchCityGeoInfo);
+        
+        if(getGeoResponseData.length == 0) {
+            alert('존재하지 않는 도시 입니다.');
+            return false;
+        }
+        let cityGeoInfo = {
+            latitude : getGeoResponseData[0].lat,
+            longitude: getGeoResponseData[0].lon,
+        }    
+        let cityWeatherApiUrl = getCityGeoWeatherApiUrl(cityGeoInfo);
+        let cityWeatherResponseData = getAxiosWithNoParam(cityWeatherApiUrl);
+    }
 
+    // 도시 날씨 조회 (Latitude / Longitude) 이용하여 조회
+    function getCityGeoWeatherApiUrl(cityGeo) {
+        return `https://api.openweathermap.org/data/2.5/weather?lat=${cityGeo.latitude}&lon=${cityGeo.longitude}&appid=${apiKeyInfo}`;
+    }
+
+    // 도시 위도 경도 조회 (City 첫글자 대문자)
+    function getCityGeographicInfoApiUrl(city) {
+        return `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKeyInfo}`;
+    }
+
+    const sectionTags = document.querySelector('section');
     sectionTags.forEach(section => {
         section.addEventListener('click', logPrint);
     })
 
+    // GET 방식 AXIOS
+    async function getAxiosWithNoParam(apiUrl) {
+        return await axios.get(apiUrl)
+            .then((res) => {    
+                let responseData = res.data;
+
+                console.log('getAxiosNoParam RES Response : ' + JSON.stringify(res));
+
+                return responseData;
+            })
+            .catch((err) => {
+                console.log('getAxiosNoParam ERR Response : ', err);
+                return err;
+            })
+    }
+
+
+    // TODO
+    // Validation 추가하여주기
+    // 1. 첫글자는 영어 대문자
+    // 2. 오직 영문만 입력 가능 하도록 설정
+    function applyInputValidation(inputData) {
+        const onlyEngReg = /[^A-Za-z]/ig;
+        let inputValue = inputData.value;
+        inputValue = inputValue.replace(onlyEngReg, '');    
+        console.log('APPLY INPUT VALIDATION VALUE ', inputValue);
+    }
+
+
     function logPrint(event) {
         console.log('CLASS : ' + event.currentTarget.className);
-    
     }
+
+
 
 
 </script>
