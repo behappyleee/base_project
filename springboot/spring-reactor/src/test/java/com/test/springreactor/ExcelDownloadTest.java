@@ -1,13 +1,16 @@
 package com.test.springreactor;
 
 import com.test.springreactor.excel.dao.ExcelDao;
+import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashMap;
+import java.util.List;
 
 @SpringBootTest
 public class ExcelDownloadTest {
@@ -17,8 +20,6 @@ public class ExcelDownloadTest {
 //    @Autowired
 //    ExcelDao excelDao;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     @Autowired
     SqlSession sqlSession;
 
@@ -50,11 +51,7 @@ public class ExcelDownloadTest {
 //        workBook.close();
 
     }
-    
-=======
->>>>>>> parent of f53596a (Excel Studying commit)
-=======
->>>>>>> parent of f53596a (Excel Studying commit)
+
     @Test
     public void excelDownloadTest() {
         System.out.println("EXCEL DOWNLOAD TEST CHECK !!");
@@ -72,8 +69,6 @@ public class ExcelDownloadTest {
         return dao.excelTestData();
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public int selectAllTestDataCount() {
         return sqlSession.selectOne(MAPPER_NAME + ".selectAllTestDataCount");
     }
@@ -86,10 +81,4 @@ public class ExcelDownloadTest {
         return sqlSession.selectOne(MAPPER_NAME + ".selectOnlyOneData");
     }
 
-
-
-=======
->>>>>>> parent of f53596a (Excel Studying commit)
-=======
->>>>>>> parent of f53596a (Excel Studying commit)
 }
