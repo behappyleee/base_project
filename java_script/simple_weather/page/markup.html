@@ -20,7 +20,8 @@
     <!-- CSS Grid 를 사용  -->
     <section class="ajax-section">
         <div class="container">
-            <ul class="cities"></ul>
+            <ul class="cities">
+            </ul>
         </div>
     </section>
 </body>
@@ -36,28 +37,80 @@
 
     // TODO
     // 해당 API 구현 하기 !!!
-    
     const form = document.querySelector('.top-banner form');
+    const list = document.querySelector('.ajax-section .container .cities');
+
     form.addEventListener('submit', e => {
         e.preventDefault();
+        const isExistChildren = list.children.length;
+        if(isExistChildren > 0) {
+           // TODO Grid Reset 
+           
+        }
         let inputCityValue = e.target[0].value;
+
+        console.log('INPUT CITY VALUE DATA : ' + inputCityValue);
+
         searchCityWeather(inputCityValue);
     });
 
     async function searchCityWeather(cityName) {
         let searchCityGeoInfo = getCityGeographicInfoApiUrl(cityName);
         let getGeoResponseData = await getAxiosWithNoParam(searchCityGeoInfo);
+        let cityResponseData = getGeoResponseData.data;
         
-        if(getGeoResponseData.length == 0) {
+        console.log('CITY RESPONSE DATA : ' + JSON.stringify(cityResponseData));
+
+        if(!cityResponseData || cityResponseData.length == 0) {
             alert('존재하지 않는 도시 입니다.');
             return false;
         }
         let cityGeoInfo = {
-            latitude : getGeoResponseData[0].lat,
-            longitude: getGeoResponseData[0].lon,
-        }    
-        let cityWeatherApiUrl = getCityGeoWeatherApiUrl(cityGeoInfo);
-        let cityWeatherResponseData = getAxiosWithNoParam(cityWeatherApiUrl);
+            latitude : cityResponseData[0].lat,
+            longitude: cityResponseData[0].lon,
+        }  
+        let cityWeatherApiUrl =  getCityGeoWeatherApiUrl(cityGeoInfo);
+        let cityWeatherResponseData =  await getAxiosWithNoParam(cityWeatherApiUrl);
+        if(cityWeatherResponseData.status == 200) {
+            showCityWeatherHtml(cityWeatherResponseData);
+            return;
+        }
+        alert('도시를 다시 조회해 주세요 !');
+        return;
+    }
+
+    function showCityWeatherHtml(cityWeatherData) {
+        const {main, name, sys, weather} = cityWeatherData.data;    // 구조 분해 할당 적용
+        if(weather.length > 0) {
+            showCityWetherTicketHtml(cityWeatherData);
+        }
+        return;        
+    }
+
+    // 도시 날씨를 Ticket 형식으로 보여줌
+    function showCityWetherTicketHtml(weatherData) {
+        const {main, name, sys, weather} = weatherData.data;    // 구조 분해 할당 적용
+        let html = '';
+        weather.forEach((data) => {
+            const icon = `https://openweathermap.org/img/wn/${data["icon"]}@2x.png`;
+            const liElements = document.createElement('li');
+            liElements.classList.add('city');
+            const htmlMarkup = `
+                <h2 class="city-name" data-name="${name}, ${sys.country}">
+                    <span>${name}</span>
+                    <sup>${sys.country}</sup>
+                </h2>
+                <div class="city-temp">${Math.round(main.temp)}<sup> C </sup>
+                </div>   
+                <figure>
+                    <img class="city-icon" src=${icon} alt=${data["main"]}>    
+                    <figcaption>${data["description"]}</figcaption>    
+                </figure>
+            `;
+            liElements.innerHTML = htmlMarkup;
+            list.appendChild(liElements);
+        })
+        return true;
     }
 
     // 도시 날씨 조회 (Latitude / Longitude) 이용하여 조회
@@ -70,19 +123,11 @@
         return `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKeyInfo}`;
     }
 
-    const sectionTags = document.querySelector('section');
-    sectionTags.forEach(section => {
-        section.addEventListener('click', logPrint);
-    })
-
     // GET 방식 AXIOS
     async function getAxiosWithNoParam(apiUrl) {
         return await axios.get(apiUrl)
             .then((res) => {    
-                let responseData = res.data;
-
-                console.log('getAxiosNoParam RES Response : ' + JSON.stringify(res));
-
+                let responseData = res;
                 return responseData;
             })
             .catch((err) => {
@@ -91,6 +136,9 @@
             })
     }
 
+    function resetForm() {
+        form.reset();
+    }
 
     // TODO
     // Validation 추가하여주기
@@ -100,16 +148,7 @@
         const onlyEngReg = /[^A-Za-z]/ig;
         let inputValue = inputData.value;
         inputValue = inputValue.replace(onlyEngReg, '');    
-        console.log('APPLY INPUT VALIDATION VALUE ', inputValue);
     }
-
-
-    function logPrint(event) {
-        console.log('CLASS : ' + event.currentTarget.className);
-    }
-
-
-
-
+    
 </script>
 
