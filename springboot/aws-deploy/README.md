@@ -81,5 +81,28 @@
 
 ### 1. Docker Container 구성
 
+- AWS 에 접속하여 EC2 Container 생성
+- Inboubd port 는 8080 으로 한다. (port 8080 으로 배포 예정)
+
+### 2. 생성 한 AWS 인스턴스에서 Docker 설치
+
+- `sudo yum install docker -y`  해당 명령어로 docker 설치
+
+### 3. Docker 설치 후 Docker 실행
+
+- `sudo service docker start` 헤당 명령어로 docker 실행
+- `systemctl status docker.service` 해다 명령어로 docker 실행 중인지 확인
+
+### 4. Docker 상태 확인
+
+- `docker ps` 해당 명령어로 docker 실행 중인 지 확인
+- 만약 permission denied 발생 시
+- `sudo chmod 666 /var/run/docker.sock` 해당 파일의 권한을 바꾸어 줌
+- 권한 변경 후 다시 `docker ps` 실행 하면 docker 컨테이너 목록 List 잘 보임
+
+### 5. 
+
+
+
 
 
