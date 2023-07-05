@@ -8,7 +8,7 @@ public class BeanApplication {
 
 	// TODO
 	// https://reflectoring.io/spring-bean-lifecycle/
-	// Why Would I Need to Hook Into the Bean Lifecycle? 부터 페이지 학습 Bean LifeCycle
+
 
 	/**
 	 *	- Bean Creation Phases

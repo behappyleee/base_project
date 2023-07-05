@@ -14,7 +14,17 @@ public class BlockingStudyClass {
         // 일반적인 NIO 의 I/O 채널에서 시작
         // Java NIO 채널은 몇 가지 차이점을 제외하고 스트림과 유사
 
+        String 테스트 = "이것은 테스트";
+        System.out.println(테스트.equals("테스트"));
 
+        int ac = 65;
+        String a = "a";
+
+        byte[] charB = a.getBytes();
+        System.out.println("B : " + charB.toString());
+        for(int i=0; i<charB.length; i++) {
+            System.out.println(charB[i]);
+        }
 
     }
 
