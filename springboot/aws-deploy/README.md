@@ -100,7 +100,25 @@
 - `sudo chmod 666 /var/run/docker.sock` 해당 파일의 권한을 바꾸어 줌
 - 권한 변경 후 다시 `docker ps` 실행 하면 docker 컨테이너 목록 List 잘 보임
 
-### 5. 
+
+### 5. Docker Hub Login 후 Image Pull
+
+- `docker login` Docker 에 로그인 함
+- `docker info | grep username` 명령어를 사용하여 현재 docker 에 Login 한 UserName 출력
+- `docker pull {이미지명:태그명}` 사용하여 Docker Hub 에 있는 Image 를 Pull 받아 온다.
+
+### 6. Docker Image Docker Run
+
+- Docker Hub 에서 Pull 받은 Image 를 Run 시켜 준다.
+- `docker run -it -p 8081:8080 {Image 이름:태그명}`
+
+### 5. AWS Instance 보안규칙 인바운드 / 아웃바운드 편집
+
+- Docker Run 한 후 제대로 실행 중인지 확인 `curl 퍼블릭ip주소:포트/맵핑URL` 로 Response 오는 지 확인하기
+- 사용자 지정 포트 열어주기 docker run 할 시 특정 port mapping 시켜주기
+- AWS EC2의 보안그룹 인바운드 규칙을 외부에서 80 포트로 접근할 수 있도록 추가하여 준다.
+
+
 
 
 
