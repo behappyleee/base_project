@@ -125,8 +125,8 @@
 - 컨테이너는 가상머신과 마찬가지로 가상 ip 주소를 할당 받음
 - Docker Container 의 가상 ip 는 순차 적으로 172.17.0.x 으로 순서 대로 가상 ip 를 할당 받는다.
 - 외부에서 들어오는 요청을 호스트 내부(도커 엔진이 설치된 OS)에 ip port 에 바인딩을 시켜주어야 함
-
-
+- Docker Container 는 Process 만 격리시킨 VM 같은 개념이다 (완전히 분리 된 개념 HOST OS)
+- VM 은 Hardware 까지 모두 생산하여 리소스 사용이 크지만 Container 는 Process 만 따로 격리 시킨 것 같은 개념 ... ?
 
 
 
