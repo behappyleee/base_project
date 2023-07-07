@@ -118,6 +118,14 @@
 - 사용자 지정 포트 열어주기 docker run 할 시 특정 port mapping 시켜주기
 - AWS EC2의 보안그룹 인바운드 규칙을 외부에서 80 포트로 접근할 수 있도록 추가하여 준다.
 
+#### Docker Port Mapping
+
+- `Docker Container 생성 시에 docker run -p {외부포트:내부포트} {Image 이름:태그명}` 
+- 외부에서는 외부포트를 이용하여 접근한다.
+- 컨테이너는 가상머신과 마찬가지로 가상 ip 주소를 할당 받음
+- Docker Container 의 가상 ip 는 순차 적으로 172.17.0.x 으로 순서 대로 가상 ip 를 할당 받는다.
+- 외부에서 들어오는 요청을 호스트 내부(도커 엔진이 설치된 OS)에 ip port 에 바인딩을 시켜주어야 함
+
 
 
 
