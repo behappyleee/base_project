@@ -128,7 +128,11 @@
 - Docker Container 는 Process 만 격리시킨 VM 같은 개념이다 (완전히 분리 된 개념 HOST OS)
 - VM 은 Hardware 까지 모두 생산하여 리소스 사용이 크지만 Container 는 Process 만 따로 격리 시킨 것 같은 개념 ... ?
 
+### AWS Cloud Formation
 
+- Cloud Formation is AWS's service for automating the development of AWS resources. 
+
+### RDS (Amazon Relational Database Service)
 
 
 
