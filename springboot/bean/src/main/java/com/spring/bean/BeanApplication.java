@@ -5,10 +5,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class BeanApplication {
-
-	// TODO
+	// Bean 관련 Study 자료 저장소
 	// https://reflectoring.io/spring-bean-lifecycle/
 
+	/**
+	 * 	Bean LifeCycle 이해를 하면 장점이
+	 * 	Application 이 확장되고 기능이 추가 될 수 Bean LifeCycle 을 이해하면
+	 * 	효율적으로 기능 추가 및 확장이 가능하다.
+	 *
+	 *	When we need to extend our software with new requirements,
+	 *	it is critical to find the best practices to keep our codebase maintainable in the long run.
+	 *
+	 *	Hooking into the bean life cycle is a good way to extend our application in most cases.
+	 */
 
 	/**
 	 *	- Bean Creation Phases

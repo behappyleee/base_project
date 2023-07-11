@@ -19,7 +19,6 @@ public class BeanProcessTest {
         public void postConstructMethod() {
             System.out.println("THIS IS POST CONSTRUCT ANNOTATION METHOD !!");
         }
-
     }
 
     @Test
