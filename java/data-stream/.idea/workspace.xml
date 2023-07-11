@@ -5,24 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2741c5a-18e5-46e6-86e4-181f9575aa64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-stream.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StreamTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/BeanLifeCycleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/beans/BeanAwareTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/beans/BeanConfigTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/beans/BeanNames.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/beans/ResourceConfigTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/domain/BeanDomainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/domain/BeanInitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GetStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eunmtest/EnumMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eunmtest/EnumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StreamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StreamTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gs-securing-web" beforeDir="false" afterPath="$PROJECT_DIR$/../gs-securing-web" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springboot/bean/src/main/java/com/spring/bean/BeanApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/bean/src/main/java/com/spring/bean/BeanApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/BeanProcessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/bean/src/test/java/com/spring/bean/BeanProcessTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +47,50 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.GetStream">
+    <configuration name="DoubleStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DoubleStream" />
+      <module name="data-stream" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnumMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eunmtest.EnumMain" />
+      <module name="data-stream" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eunmtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GetStream" />
+      <module name="data-stream" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamTest" />
+      <module name="data-stream" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GetStream" />
+        <item itemvalue="Application.EnumMain" />
+        <item itemvalue="Application.DoubleStream" />
+        <item itemvalue="Application.StreamTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689046651311</updated>
-      <workItem from="1689046652331" duration="783000" />
+      <workItem from="1689046652331" duration="4123000" />
     </task>
     <servers />
   </component>
