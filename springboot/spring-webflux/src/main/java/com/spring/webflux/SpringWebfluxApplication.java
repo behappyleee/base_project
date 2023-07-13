@@ -71,11 +71,9 @@ public class SpringWebfluxApplication {
 	 * 
 	 * */
 
-
 	// TODO
 	// https://reflectoring.io/getting-started-with-spring-webflux/
 	// Next, we will define the router function. Router functions 부터 학습 필요 !!!!
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebfluxApplication.class, args);
