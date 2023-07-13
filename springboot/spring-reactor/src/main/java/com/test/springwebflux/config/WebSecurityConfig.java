@@ -8,14 +8,14 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 
-@Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-public class WebSecurityConfig extends WebSecurityConfiguration {
-
-    @Bean
-    public static AuthenticationManager authenticationManager() {
-        return new ProviderManager();
-    }
+//@Configuration
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
+// public class WebSecurityConfig extends WebSecurityConfiguration {
+public class WebSecurityConfig {
+    // @Bean
+    // public static AuthenticationManager authenticationManager() {
+    //   return new ProviderManager();
+    // }
 
 }

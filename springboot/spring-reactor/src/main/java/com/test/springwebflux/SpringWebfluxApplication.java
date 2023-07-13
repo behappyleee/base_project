@@ -28,9 +28,12 @@ public class SpringWebfluxApplication {
      *  Reactive System 은 반드시 Asynchronous 여야하며 Producer (Consumer 에게 메세지를 보내는 단 하나의 책임만 존재하는)
      *  들을 다루어야 한다.
      *
+     *  Reactive Programming 은 Non-blocking, Asynchronous 를 도와주는 패러다임이다.
      *
+     *  Spring Webflux 는 내부적으로 RxJava 와 RxNetty 를 포함하고 있다.
      *
      * */
+
 
 
     // Spring Webflux
