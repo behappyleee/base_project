@@ -6,10 +6,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringWebfluxApplication {
 
-
-	// TODO
-	// Intro to Java 9 Reactive Streams API 부터 학습 필요 !!!
 	// https://reflectoring.io/getting-started-with-spring-webflux/
+
+	/**
+	 *  Spring Webflux 는 Application 을 더 빠르게 만들어 주지는 못 하지만 가장 큰 이점은
+	 *  서버 스펙이 적은 서버에게도 안정성을 준다.
+	 *  Application 은 무수히 많은 요청들을 굉장히 적은 시간안에 처리하도록 해준다.
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 * */
+
 
 	/**
 	 *  대부분 전통적인 Application 들은 Blocking Call 을 사용 하였다 (동기 적인 Call).

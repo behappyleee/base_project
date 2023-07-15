@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @ToString
-@EqualsAndHashCode(of= {"id", "name", "departmentf"})
+@EqualsAndHashCode(of= {"id", "name", "department"})
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

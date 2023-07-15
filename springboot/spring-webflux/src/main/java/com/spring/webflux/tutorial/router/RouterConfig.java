@@ -15,6 +15,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
@@ -30,4 +34,13 @@ public class RouterConfig {
                 .andRoute(PUT("/handler/users/{userId}").and(contentType(MediaType.APPLICATION_JSON)), handler::updateUserById)
                 .andRoute(DELETE("/handler/users/{userId}").and(accept(MediaType.APPLICATION_JSON)), handler::deleteUserById);
     }
+
+    public static void main(String[] args) {
+        List<String> strList = new ArrayList<>();
+        Flux.just("X", "Y", "Z")
+                .log()  // Log 사용 시 모두 기록이 됨 Console log 에
+                .subscribe(strList::add);
+
+    }
+
 }
