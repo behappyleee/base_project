@@ -8,6 +8,10 @@ public class SpringWebfluxApplication {
 
 	// https://reflectoring.io/getting-started-with-spring-webflux/
 
+	// TODO
+	// How to Take Spring WebClient into Production 여기서 부터 공부 하기 !!!
+	// https://reflectoring.io/spring-webclient/
+
 	/**
 	 *  Spring Webflux 는 Application 을 더 빠르게 만들어 주지는 못 하지만 가장 큰 이점은
 	 *  서버 스펙이 적은 서버에게도 안정성을 준다.
