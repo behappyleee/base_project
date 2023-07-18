@@ -30,8 +30,10 @@ public class RequestPostController {
         bodyValues.add("another-key", "another-value");
 
         // WebClient 는 Header 와 Method Type 들을 사용할 수 있게 해 줌
-        //
 
+        // Reactive Stream 에 친숙하지 않은 대부분 개발자 들은 Flux 를 사용할 것이다, 하지만 조금 더 시간을 투자해 보면
+        // 내부적으로 Flux API 는 도움이 되지 않는다. Reactive Ecosystem 에 조금더 투자를 해보면
+        // Asynchronous Chain 들이 조금더 자연스럽게 느껴질 것이다.
         String response = webClient.post()
                 .uri(new URI("https://httpbin.org/post"))
                 .header("Authorization", "Bearer MY_SECRET_TOKNE")

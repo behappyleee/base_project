@@ -1,8 +1,16 @@
 package com.spring.webflux.request.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.reactive.function.client.WebClient;
 
+@RequestMapping("/api")
 public class RequestGetController {
+
+    @GetMapping("/helloFlux")
+    public String helloWebFlux() {
+        return "Hello Spring Web Flux !!";
+    }
 
     // TODO
     // WebFlux 학습 하기 Web Request !!!
