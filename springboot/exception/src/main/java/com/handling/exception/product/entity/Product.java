@@ -1,9 +1,11 @@
 package com.handling.exception.product.entity;
 
-import jakarta.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity

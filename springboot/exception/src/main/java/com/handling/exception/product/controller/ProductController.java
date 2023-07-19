@@ -3,10 +3,11 @@ package com.handling.exception.product.controller;
 import com.handling.exception.product.entity.Product;
 import com.handling.exception.product.model.ProductInput;
 import com.handling.exception.product.service.ProductService;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Slf4j(topic = "PRODUCT_CONTROLLER")
 @RestController

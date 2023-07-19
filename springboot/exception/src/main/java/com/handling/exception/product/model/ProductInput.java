@@ -1,10 +1,13 @@
 package com.handling.exception.product.model;
 
 import com.handling.exception.product.entity.Category;
-import jakarta.validation.constraints.NotBlank;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 
 @Getter
 @Setter
