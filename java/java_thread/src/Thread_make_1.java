@@ -29,7 +29,6 @@ public class Thread_make_1 {
         //  sleep 정적 메서드 현재 스레드를 머뭄, sleep 메서드는 OS 에게 지시하기만 함
         // 이 시간 동안은 cpu 를 사용하지 않음
         Thread.sleep(1000);
-
     }
 
 }

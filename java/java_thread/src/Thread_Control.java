@@ -8,6 +8,7 @@ public class Thread_Control {
         // Thread 오류시 Thread 중지 필요,
         // 또한 전체 프로그램을 종료를 해야할 떄, Thread 가 단 한개라도 실행 중 이면 애플리케이션은 종료 되지 가 않음
 
+        // 해당 Thread 에서 계속 실행 중 이므로 계속 Resource 가 낭비 가됨
         Thread thread = new Thread(new BlockingTask());
 
         thread.start();

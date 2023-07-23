@@ -29,7 +29,6 @@ public class Thread_example {
         for(Thread thread : threads) {
             thread.start();
         }
-
     }
 
     private static class Vault {
@@ -119,7 +118,5 @@ public class Thread_example {
             System.exit(0);
         }
     }
-
-
 
 }
