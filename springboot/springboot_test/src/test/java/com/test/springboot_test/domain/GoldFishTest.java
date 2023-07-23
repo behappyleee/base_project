@@ -6,10 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.springframework.core.convert.Property;
-
-import java.util.Enumeration;
 import java.util.Properties;
+import java.util.function.BiConsumer;
 import java.util.stream.Stream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -25,9 +23,11 @@ public class GoldFishTest {
     @Test
     public void printSystem() {
         Properties properties = System.getProperties();
+
         properties.forEach((key, value) -> {
             System.out.println("PROPERY KEY : " + key.toString() + " VALUE : " + value);
         });
+
     }
 
     @Test
@@ -58,14 +58,14 @@ public class GoldFishTest {
     }
 
     @ParameterizedTest
-    @MethodSource("provideFishes")
+    @MethodSource("provideFishes")  // MethodSource 어노테이션 사용 시 테스트 데이터 제공
     public void parameterizedTest(GoldFish goldFish) {
         assertTrue(goldFish.getAge() >= 1);
     }
 
     private static Stream<Arguments> provideFishes() {
         return Stream.of(
-                Arguments.of(new GoldFish("Browny", 1)),
+            Arguments.of(new GoldFish("Browny", 1)),
                 Arguments.of(new GoldFish("Greeny", 2))
         );
     }
