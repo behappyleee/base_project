@@ -7,9 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AnnotationApplication {
 
 	// TODO
+	// 학습 링크
 	// https://reflectoring.io/java-annotation-processing/
-	// The above code-block is an example of legacy Java code (before Java 5),
-	// where we could have collections in which we could	 ==> 여기서 부터 공부 시작 하기 !!!
+	//
+
+	// @Retention 어노테이션 부터 학습 필요 !!!
+	// 해당 부분 부토 학습 하기 !!!!!!!!! 해당 부분 부터 공부 필요 !!!!!!!!!
+	// @Retention
+	//@Retention specifies when the annotation is discarded.
 
 	public static void main(String[] args) {
 		SpringApplication.run(AnnotationApplication.class, args);
