@@ -1,0 +1,45 @@
+# A type can be a scalar like int, string, decimal etc or an object type formed with a combination
+# of multiple scalar and complex types.
+
+# Special Types - Query, Mutation and Subscription
+# need to add root types to the GraphQL schema for adding functionally to the API.
+# The GraphQL schema has three root-level tpyes : Query, Mutation and Subscription.
+
+# The entry point of a GraphQL service. Of these three, only the Query type is mandatory for every GraphQL service.
+
+type Product {
+    id: ID!
+    title: String!
+    description: String!
+    category: String
+    madeBy: Manufacturer!
+}
+
+type Manufacturer {
+    id: ID!
+    name: String!
+    address: String
+}
+
+# The Root Query for the application
+type Query {
+    myRecentPurchases(count: Int, customerID: String): [Product]!   # This query fetches the specified number of recent purchases for a customer.
+    lastVisitedProducts(count: Int, customerID: String): [Product]!
+    productsByCategory(category: String): [Product]!
+}
+
+# The Root Mutation for the application
+type Mutation {
+    # A mutation represents changes that we can make on our objects. Our schema with a Mutation will look like this
+    # This mutation is used to add purchases of a customer
+    addRecentProduct(title: String!, description: String!, category: String) : Product!
+}
+
+# Subscription is another special type for real-time push-style updates. Subscriptions depend on the use of a publishing
+# mechanism to generate the event that notifies a subscription that is subscribed to that event.
+# Our schema with a Subscription will look like this.
+
+# This is a subscription for adding a new Product
+type Subscription {
+    newProduct: Product!
+}

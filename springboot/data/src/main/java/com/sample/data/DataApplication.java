@@ -14,9 +14,6 @@ public class DataApplication {
 	// A Customer may have one or more Address. (Each Address may or may not have one Customer)
 	// This is relationship can be modelled in different variants with JPA's @ManyToOne @OneToMan annotations.
 
-
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(DataApplication.class, args);
 	}
