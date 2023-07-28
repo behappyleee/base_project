@@ -23,6 +23,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// GraphQL 사용을 위하여 추가
+	implementation group: 'com.graphql-java-kickstart', name: 'graphql-java-tools'
+	implementation group: 'com.graphql-java-kickstart', name: 'graphql-spring-boot-starter'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

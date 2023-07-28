@@ -22,6 +22,20 @@ public class GraphqlApplication {
 	// A type is the most basic component of a GraphQL schema and represents a kind of object we can fetch
 	// from our service.
 
+	// Using GraphQL on Springboot
+	// 1. Module 추가 (graphql-java, spring-boot-starter-graphql)
+
+	// 2. Schema 정의
+
+	// 3. we can either take a top-down approach by defining the schema and then creating the POJOs for each type
+	// or a bottom-up approach by creating the POJOs first and then create a schema from those POJOs.
+
+	// GraphQL Schema needs to be defined in a file with the extension graphqls and needs to live in the resources folder.
+
+	// Multiple resolver components convert the GraphQL request received from the API consumers and invoke
+	// operations to fetch data from applicable data sources. For each type, we define a resolver.
+
+
 	// TODO
 	// GraphQL Schema 부터 학습 하기 !!!
 	// URL : https://reflectoring.io/getting-started-with-graphql/
