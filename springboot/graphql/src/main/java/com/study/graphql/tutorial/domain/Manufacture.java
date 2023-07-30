@@ -1,5 +1,12 @@
 package com.study.graphql.tutorial.domain;
 
+import lombok.*;
+
+@Data
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
 public class Manufacture {
 
     // This POJO maps to the product type and Manufacture maps to the manufacture object defined

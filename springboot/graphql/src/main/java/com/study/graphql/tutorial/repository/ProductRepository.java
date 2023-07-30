@@ -94,15 +94,36 @@ public class ProductRepository {
         return result;
     }
 
-
     public List<Product> getRecentPurchases(final Integer count) {
         List<Product> products =  getAllProducts();
 
         return products.subList(0, count);
     }
 
+    public List<Product> getLastVisitedPurchases(final Integer count) {
+        List<Product> products = getAllProducts();
 
+        return products.subList(0, count);
+    }
 
+    public List<Product> getProductsByCategory(final String category) {
+        String sql = "SELECT id,title,category,description,manufacturer_id FROM Product WHERE category=?";
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, category);
 
+        List<Product> result = new ArrayList<Product>();
+        for (Map<String, Object> row : rows) {
+
+            Manufacture manufacturer = manufactureRepository.getManufacturerById((String) row.get("manufacturer_id"));
+            result.add(Product.builder()
+                    .id((String) row.get("id"))
+                    .category((String) row.get("category"))
+                    .description((String) row.get("description"))
+                    .title((String) row.get("title"))
+                    .madeBy(manufacturer)
+                    .build());
+        }
+
+        return result;
+    }
 
 }
