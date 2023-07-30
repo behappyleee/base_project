@@ -49,6 +49,7 @@ public class GraphqlApplication {
 // In this sample we send a request for fetching a product with attributes
 
 // Sample Query Request
+
 //{
 //	Product
 //	{
@@ -59,6 +60,7 @@ public class GraphqlApplication {
 //}
 
 // Sample Query Response
+
 //{
 //	 "data": {
 //		"Product": {
