@@ -3,10 +3,10 @@ package com.study.graphql.tutorial.domain;
 import lombok.*;
 
 @Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
-@Setter
-@Getter
 public class Product {
     private String id;
     private String title;

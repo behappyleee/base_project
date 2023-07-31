@@ -38,6 +38,8 @@ public class GraphqlApplication {
 
 	// TODO
 	// GraphQL Schema 부터 학습 하기 !!!
+	// TODO
+	// Running the Application 부터 학습 팔요 !!!
 	// URL : https://reflectoring.io/getting-started-with-graphql/
 
 	public static void main(String[] args) {
