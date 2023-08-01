@@ -26,7 +26,14 @@ public class ManufactureRepository {
     public ManufactureRepository(final DataSource dataSource) {
         super();
         this.dataSource = dataSource;
+
+        System.out.println("CONNECT DATA SOURCE : " + dataSource.toString());
+
+
         this.jdbcTemplate =  new JdbcTemplate(dataSource);
+
+        System.out.println("JDBC TEMPLATE CHECK : " + jdbcTemplate.toString());
+
     }
 
     @PostConstruct

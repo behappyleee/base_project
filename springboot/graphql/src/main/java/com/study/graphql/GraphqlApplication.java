@@ -1,9 +1,12 @@
 package com.study.graphql;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication
+// @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class}) // datasource 설정이 없는 경우 해당 어노테이션 사용하면 정상 기동됨
 public class GraphqlApplication {
 
 	// GraphQL 은 2012 년에 Facebook 에서 Mobile App 을 위하여 개발 되었다.

@@ -30,6 +30,9 @@ dependencies {
 	// JDBC 추가 (JDBC 추가를 해주어여 H2 Database 에 접속이 가능)
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc'
+	implementation 'com.h2database:h2' // h2 : implementation
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -37,7 +40,7 @@ dependencies {
 
 	// H2 Database 설정 (오직 Runtime 시 에만 작동하도록 함)
 	// H2 Database 1.4.197 버전과 1.4.198 버전 사이에 대규모 업데이트가 진행이 되면서 데이터베이스를 미리 생성하는 것을 DB 차원에서 방지하도록 함
-	runtimeOnly 'com.h2database:h2'
+	// runtimeOnly 'com.h2database:h2'
 	// runtimeOnly 'com.h2database:h2'
 }
 
