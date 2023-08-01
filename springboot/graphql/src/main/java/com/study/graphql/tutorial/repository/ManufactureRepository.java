@@ -35,7 +35,7 @@ public class ManufactureRepository {
     }
 
     public void insertManufacturers(final List<Manufacture> manufacturers) {
-        String sql = "INSERT INTO MANUFACTURER " + "(id, name, address) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO MANUFACTURE " + "(id, name, address) VALUES (?, ?, ?)";
         jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
             public void setValues(PreparedStatement ps, int i) throws SQLException {
                 Manufacture manufacture = manufacturers.get(i);
