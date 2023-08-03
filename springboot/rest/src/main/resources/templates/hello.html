@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Html</title>
+</head>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    window.onload = function(){
+
+        console.log('WINDOW ON LOAD DATA CHECK 12 3457788!');
+
+        loadData();
+    }
+
+    function loadData() {
+        axios.get('/getData')
+            .then((res) => {
+
+                console.log('PERSON RES : ' + JSON.stringify(res));
+
+            })
+            .catch((err) => {
+
+                console.log('PERSON ERR : ' + JSON.stringify(err));
+
+            })
+    }
+
+    console.log('THIS IS HELLO CONTROLLER DATA TEST CHECK ~~ !!');
+
+</script>
+
+<body>
+
+    THIS IS HELLO CONTROLLER ~~~~~ !!!!!!!!!
+
+
+</body>
+</html>
