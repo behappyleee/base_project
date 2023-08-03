@@ -14,6 +14,7 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
         logger.info("THIS IS HELLO LOGGER CLASS !!!");
+
         System.out.println("THIS IS HELLO Hello Controller ~~ !!!");
 
         return "hello";

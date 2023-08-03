@@ -8,11 +8,12 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <script>
-    window.onload = function(){
+    window.onload = function() {
 
-        console.log('WINDOW ON LOAD DATA CHECK 12 3457788!');
+        console.log('WINDOW ON LOAD DATA CHECK 7733!');
 
         loadData();
+        exceptionData();
     }
 
     function loadData() {
@@ -29,7 +30,19 @@
             })
     }
 
-    console.log('THIS IS HELLO CONTROLLER DATA TEST CHECK ~~ !!');
+    function exceptionData() {
+        axios.get('/exceptionTest')
+            .then((res) => {
+
+                console.log('EXCEPTION DATA TEST GET : ' + JSON.stringify(res));
+
+            })
+            .catch((err) => {
+
+                console.log('EXCEPTION DATA TEST ERR : ' + JSON.stringify(err));
+
+            })
+    }
 
 </script>
 

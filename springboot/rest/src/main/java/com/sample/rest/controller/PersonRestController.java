@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-public class PersonController {
+public class PersonRestController {
 
     private final PersonService personService;
 
