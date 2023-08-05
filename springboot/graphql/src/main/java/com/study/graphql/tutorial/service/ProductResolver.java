@@ -19,7 +19,6 @@ public class ProductResolver implements GraphQLResolver <Product> {
     // The GraphQL library will automatically call this resolver for each Product to resolve its madeby
     // field with a Manufacturer object. This happens only if the consumer has requested the madeby field, of course
 
-
     private ManufactureRepository manufactureRepository;
 
     @Autowired
@@ -29,8 +28,8 @@ public class ProductResolver implements GraphQLResolver <Product> {
     }
 
     public Manufacture getMadeBy(final Product product) {
-        return manufactureRepository
-                .getManufacturerById(product.getManufacturerID());
+      return manufactureRepository
+              .getManufactureById(product.getManufactureID());
     }
 
 }

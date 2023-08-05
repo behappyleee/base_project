@@ -26,14 +26,7 @@ public class ManufactureRepository {
     public ManufactureRepository(final DataSource dataSource) {
         super();
         this.dataSource = dataSource;
-
-        System.out.println("CONNECT DATA SOURCE : " + dataSource.toString());
-
-
         this.jdbcTemplate =  new JdbcTemplate(dataSource);
-
-        System.out.println("JDBC TEMPLATE CHECK : " + jdbcTemplate.toString());
-
     }
 
     @PostConstruct
@@ -41,38 +34,35 @@ public class ManufactureRepository {
         insertManufacturers(getManufacturers());
     }
 
-    public void insertManufacturers(final List<Manufacture> manufacturers) {
+    public void insertManufacturers(final List<Manufacture> manufactures) {
         String sql = "INSERT INTO MANUFACTURE " + "(id, name, address) VALUES (?, ?, ?)";
         jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
             public void setValues(PreparedStatement ps, int i) throws SQLException {
-                Manufacture manufacture = manufacturers.get(i);
+                Manufacture manufacture = manufactures.get(i);
                 ps.setString(1, manufacture.getId());
                 ps.setString(2, manufacture.getName());
                 ps.setString(3, manufacture.getAddress());
             }
             @Override
             public int getBatchSize() {
-                return manufacturers.size();
+                return manufactures.size();
             }
         });
     }
 
     public List<Manufacture> getManufacturers(){
-        Manufacture[] manufs = new Manufacture[] {
-                Manufacture.builder().id("SAMSUNG").name("Samsung").address("Seocho-daero, Seoul, Korea").build(),
-                Manufacture.builder().id("APPLE").name("Apple Inc").address("Cupertino, California, USA").build(),
-                Manufacture.builder().id("NOKIA").name("Nokia").address("Espoo, Finland").build()
-
+        Manufacture [] manufactures = new Manufacture[] {
+            Manufacture.builder().id("SAMSUNG").name("Samsung").address("Seocho-daero, Seoul, Korea").build(),
+            Manufacture.builder().id("APPLE").name("Apple Inc").address("Cupertino, California, USA").build(),
+            Manufacture.builder().id("NOKIA").name("Nokia").address("Espoo, Finland").build(),
         };
-
-        return Arrays.asList(manufs);
+        return Arrays.asList(manufactures);
     }
 
-    public Manufacture getManufacturerById(String manufacturerID) {
+    public Manufacture getManufactureById(String manufactureID) {
+
         String sql = "SELECT * FROM Manufacturer WHERE id = ?";
-
         return jdbcTemplate.queryForObject(sql, new RowMapper<Manufacture>() {
-
             @Override
             public Manufacture mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return Manufacture.builder()
@@ -81,8 +71,7 @@ public class ManufactureRepository {
                         .address(rs.getString("address"))
                         .build();
             }
-
-        }, new Object[] { manufacturerID });
+        }, new Object[] {manufactureID});
     }
 
 }
