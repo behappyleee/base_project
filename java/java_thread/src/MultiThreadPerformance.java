@@ -6,12 +6,12 @@ import java.io.IOException;
 public class MultiThreadPerformance {
 
     // 사진을 읽어 옴
-    public static final String SOURCE_FILE = "C:\\Users\\dhfhf\\Desktop\\myfolder\\workspace\\base-project\\java\\java_thread\\src\\resource\\many-flowers.jpg";
+    private static final String SOURCE_FILE = "C:\\Users\\dhfhf\\Desktop\\myfolder\\workspace\\base-project\\java\\java_thread\\src\\resource\\many-flowers.jpg";
 
     // public static final String DESTINATION_FILE = "./out/many-flowers.jpg"; // 색이 칠해진 파일미 만들어 짐 !! (하얀색을 보라색으로 변경 한 !)
 
     // 다시 Re Colorigin 한 사진 저장 장소
-    public static final String DESTINATION_FILE = "C:\\Users\\dhfhf\\Desktop\\myfolder\\workspace\\base-project\\java\\java_thread\\src\\out\\many-flowers.jpg";
+    private static final String DESTINATION_FILE = "C:\\Users\\dhfhf\\Desktop\\myfolder\\workspace\\base-project\\java\\java_thread\\src\\out\\many-flowers.jpg";
 
     // Performance - 성능은 시나리오와 용례에 따라 완전 다르게 측정이 가능
 
@@ -49,8 +49,12 @@ public class MultiThreadPerformance {
         // 꽃 사진 Image 파일
         // Image 읽어옴
         BufferedImage originImage = ImageIO.read(new File(SOURCE_FILE));
+
+        // Image 를 Buffered 시킴 !
         BufferedImage resultImage = new BufferedImage(originImage.getWidth(), originImage.getHeight(), BufferedImage.TYPE_INT_BGR);
-        
+
+        System.out.println("RGB NUYMBER VALUE : " + originImage.getRGB((originImage.getWidth() -1), (originImage.getHeight()-1)));
+
         // Original Image 와 Result Image 입력
         recolorSingleThreaded(originImage, resultImage);
 
@@ -77,14 +81,20 @@ public class MultiThreadPerformance {
     // 개별 색상을 다시 칠 함
     public static void reColorPixel(BufferedImage originImage, BufferedImage resultImage, int x, int y) {
         int rgb = originImage.getRGB(x, y);
+
+        // RGB 색상을 구해서 Red / Green / Blue 를 걸러냄 !!
+
         int red = getRed(rgb);
         int green = getGreen(rgb);
         int blue = getBlue(rgb);
-
+        
+        // 새로 칠한 색상에 RGB 컬러 값임
         int newRed;
         int newGreen;
         int newBlue;
+
         // 원본 이미지의 횐색 계열을 색을 채워줌 (횐색 쪽 꽃 색을 보라색 계열로 칠 해줌)
+        // 원본 이미지가 횐색을 많이 포함하고 있으면 새로운 색을 칠해줌 (보라색 계열)
         if(isShadeOfGray(red, green, blue)) {
             newRed = Math.min(255, red + 10);  // 최솟 값을 255로 설정
             newGreen = Math.max(0, green - 80);
@@ -96,6 +106,8 @@ public class MultiThreadPerformance {
         }
         // 새로운 RGB 색을 만듦
         int newRGB = createRGBFromColor(newRed, newGreen, newBlue);
+
+        resultImage.setRGB(x, y ,newRGB);
     }
 
     public static void setRGB(BufferedImage image, int x, int y, int rgb) {
@@ -125,6 +137,9 @@ public class MultiThreadPerformance {
         if(rgb == 0) {
             return 0;
         }
+        // Java 비트 연산자
+        // | (or 연산자) => 하나라도 1이면 1
+        // & (and 연산자) => 두개다 1 이여야 1
         return (rgb & 0x00FF0000) >> 16;
     }
 
@@ -142,7 +157,7 @@ public class MultiThreadPerformance {
             return 0;
         }
         // 비트 마스크 설정
-        return rgb & 0x000000FF;
+        return (rgb & 0x000000FF);
     }
 
 }
