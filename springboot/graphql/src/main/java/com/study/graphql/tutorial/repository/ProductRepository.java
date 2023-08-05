@@ -3,6 +3,7 @@ package com.study.graphql.tutorial.repository;
 import com.study.graphql.tutorial.domain.Manufacture;
 import com.study.graphql.tutorial.domain.Product;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -49,7 +50,7 @@ public class ProductRepository {
                 ps.setString(2, product.getTitle());
                 ps.setString(3, product.getDescription());
                 ps.setString(4, product.getRating());
-                ps.setString(5, product.getMadeBy().getName());
+                ps.setString(5, product.getManufactureID());
             }
             @Override
             public int getBatchSize() {

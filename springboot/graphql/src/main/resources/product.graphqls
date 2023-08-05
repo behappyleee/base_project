@@ -12,10 +12,10 @@ type Product {
     title: String!
     description: String!
     category: String
-    madeBy: Manufacturer!
+    madeBy: Manufacture!
 }
 
-type Manufacturer {
+type Manufacture {
     id: ID!
     name: String!
     address: String
@@ -40,6 +40,6 @@ type Mutation {
 # Our schema with a Subscription will look like this.
 
 # This is a subscription for adding a new Product
-type Subscription {
-    newProduct: Product!
-}
+#type Subscription {
+#    newProduct: Product!
+#}
