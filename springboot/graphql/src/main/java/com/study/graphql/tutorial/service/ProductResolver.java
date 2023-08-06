@@ -6,6 +6,8 @@ import com.study.graphql.tutorial.domain.Product;
 import com.study.graphql.tutorial.repository.ManufactureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 @Service
 public class ProductResolver implements GraphQLResolver <Product> {
@@ -28,6 +30,8 @@ public class ProductResolver implements GraphQLResolver <Product> {
     }
 
     public Manufacture getMadeBy(final Product product) {
+        //        StringUtils.hasText();
+//        CollectionUtils.
       return manufactureRepository
               .getManufactureById(product.getManufactureID());
     }

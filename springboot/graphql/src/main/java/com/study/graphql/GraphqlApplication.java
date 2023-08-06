@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication
 // @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class}) // datasource 설정이 없는 경우 해당 어노테이션 사용하면 정상 기동됨
 public class GraphqlApplication {
+	// 좋은 REST API 설계를 하기 위하여서는
+	// HttpStatus Code 를 보내주어야 한다, 일반적인 API 통신의 경우 주로 JSON 의 형태로 응답을 하게 되는데 @ResponseBody 어노테이션을 사용 후 객체를 반환하게 되면
+	// HttpMessageConvert 에 의하여 객체자 JSON 으로 변환이 된다.
 
 	// GraphQL 은 2012 년에 Facebook 에서 Mobile App 을 위하여 개발 되었다.
 

@@ -28,12 +28,12 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-graphql', version: '3.1.0'
 
 	// JDBC 추가 (JDBC 추가를 해주어여 H2 Database 에 접속이 가능)
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc'
 	implementation 'com.h2database:h2' // h2 : implementation
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-
+	// Thymeleaf 추가
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+	
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
