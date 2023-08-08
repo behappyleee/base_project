@@ -8,6 +8,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication
 // @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class}) // datasource 설정이 없는 경우 해당 어노테이션 사용하면 정상 기동됨
 public class GraphqlApplication {
+
+	// TODO
+	// GraphqQL TEST 하기 !!!!
+	// 실제 Table 에 있는 Data 가져오기 !!!!
+	// TODO TEST !!! Person 에 있는 Data 가져오기 !!!!
+
 	// 좋은 REST API 설계를 하기 위하여서는
 	// HttpStatus Code 를 보내주어야 한다, 일반적인 API 통신의 경우 주로 JSON 의 형태로 응답을 하게 되는데 @ResponseBody 어노테이션을 사용 후 객체를 반환하게 되면
 	// HttpMessageConvert 에 의하여 객체자 JSON 으로 변환이 된다.
@@ -40,7 +46,6 @@ public class GraphqlApplication {
 
 	// Multiple resolver components convert the GraphQL request received from the API consumers and invoke
 	// operations to fetch data from applicable data sources. For each type, we define a resolver.
-
 
 	// TODO
 	// GraphQL Schema 부터 학습 하기 !!!
