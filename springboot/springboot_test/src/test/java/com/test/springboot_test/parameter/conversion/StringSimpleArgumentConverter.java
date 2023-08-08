@@ -1,4 +1,4 @@
-package com.test.springboot_test.domain;
+package com.test.springboot_test.parameter.conversion;
 
 import org.junit.jupiter.params.aggregator.ArgumentAccessException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
