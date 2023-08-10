@@ -13,13 +13,13 @@ public class KafkaTopicConfig {
     @Value("${io.spring.kafka.topic-1}")
     private String topic1;
 
-    @Value("${io.spring.kafka.topic-1}")
+    @Value("${io.spring.kafka.topic-2}")
     private String topic2;
 
-    @Value("${io.spring.kafka.topic-1}")
+    @Value("${io.spring.kafka.topic-3}")
     private String topic3;
 
-    @Value("${io.spring.kafka.topic-1}")
+    @Value("${io.spring.kafka.topic-4}")
     private String topic4;
 
     @Bean

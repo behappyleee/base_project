@@ -29,6 +29,9 @@ public class KafkaApplication {
 
 	// Cluster - Kafka is a distribution system. A Kafka cluster contains multiple brokers sharing the workload.
 
+	/
+
+
 
 
 	public static void main(String[] args) {
