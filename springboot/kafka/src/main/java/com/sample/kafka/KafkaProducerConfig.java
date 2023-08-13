@@ -28,7 +28,17 @@ import java.util.regex.Pattern;
 @Configuration
 public class KafkaProducerConfig {
 
+    // Kafka Producer is send to messages. Producer Factory is responsible for creating Kafka Producer Instances.
+
+    // Kafka Template helps us to send messages to their respective topic.
+
+    // ProducerConfis() method is configuring a couple of properties.
+
     private final Logger logger = LoggerFactory.getLogger(KafkaProducerConfig.class);
+
+    // BOOTSTRAP_SERVERS_CONFIG -> Host and port on which Kafka is Running.
+
+    // BOOTSTRAP_SERVERS_CONFIG -> 
 
     @Value("${io.kafka.bootstrap-servers}")
     private String bootstrapServers;
