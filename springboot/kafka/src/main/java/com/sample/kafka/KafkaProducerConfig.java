@@ -28,13 +28,15 @@ import java.util.regex.Pattern;
 @Configuration
 public class KafkaProducerConfig {
 
+    // Spring Boot does most of the configuration automatically. so we can focus on building
+    // also provide option to override the default configuration through application.properties The kafka Configuration
+    // is controlled by the configuration properties with the prefix spring.kafka.* ~
+
     // Kafka Producer is send to messages. Producer Factory is responsible for creating Kafka Producer Instances.
 
     // Kafka Template helps us to send messages to their respective topic.
 
     // ProducerConfis() method is configuring a couple of properties.
-
-    private final Logger logger = LoggerFactory.getLogger(KafkaProducerConfig.class);
 
     // BOOTSTRAP_SERVERS_CONFIG -> Host and port on which Kafka is Running.
 
@@ -42,6 +44,10 @@ public class KafkaProducerConfig {
 
     // KEY_SERIALIZER_CLASS_CONFIG -> Serializer class to be used for the value. We are using
     // StringSerializer for both keys and values.
+
+    // VALUE_SERIALIZER_CLASS_CONFIG -> Serializer class to be used for the value. We are using StringSerializer for both keys and values.
+
+    private final Logger logger = LoggerFactory.getLogger(KafkaProducerConfig.class);
 
     @Value("${io.kafka.bootstrap-servers}")
     private String bootstrapServers;

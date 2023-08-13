@@ -21,6 +21,9 @@ import java.util.Map;
 @Configuration
 public class KafkaConsumerConfig {
 
+    // ConcurrentKafkaListenerContainerFactory -> to create containers for method annotated with @KafkaListener
+    // KafkaListenerContainer receives all the messages from all topics or partitions on single thread.
+
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 

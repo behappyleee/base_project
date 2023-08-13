@@ -10,6 +10,9 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
 
+    // A topic must exist to start sending message to it.
+    // can create the kafka topics like this.
+
     @Value("${io.spring.kafka.topic-1}")
     private String topic1;
 
@@ -22,6 +25,7 @@ public class KafkaTopicConfig {
     @Value("${io.spring.kafka.topic-4}")
     private String topic4;
 
+    // Kafka Topic 들을 생성
     @Bean
     NewTopic topic1() {
         return TopicBuilder.name(topic1).build();
