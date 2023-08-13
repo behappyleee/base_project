@@ -38,7 +38,10 @@ public class KafkaProducerConfig {
 
     // BOOTSTRAP_SERVERS_CONFIG -> Host and port on which Kafka is Running.
 
-    // BOOTSTRAP_SERVERS_CONFIG -> 
+    // KEY_SERIALIZER_CLASS_CONFIG -> Serializer class to be used for the key.
+
+    // KEY_SERIALIZER_CLASS_CONFIG -> Serializer class to be used for the value. We are using
+    // StringSerializer for both keys and values.
 
     @Value("${io.kafka.bootstrap-servers}")
     private String bootstrapServers;
