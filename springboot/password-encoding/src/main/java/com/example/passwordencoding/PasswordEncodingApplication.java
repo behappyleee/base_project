@@ -2,8 +2,9 @@ package com.example.passwordencoding;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class PasswordEncodingApplication {
 
 	// Password Encoding -> Systems with users management require authentication. If we use password-based authentication.
