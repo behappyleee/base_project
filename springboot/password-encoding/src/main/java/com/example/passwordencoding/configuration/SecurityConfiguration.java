@@ -13,6 +13,10 @@ import static org.springframework.security.config.Customizer.withDefaults;
  @RequiredArgsConstructor    // private final 들 bean 들 생성 해 줌
 public class SecurityConfiguration {
 
+     // Applications with REST APIs and password-based authentication supported by Spring Security
+     // To keep it simple in this example we send the user credentials with every HTTP Request.
+     // It means the application must start authentication whenever the client wants to access the API.
+
     // Spring 3 version starter-security 부터는 Lambda DSL 강화로 많이 바뀜
     // 기존에는 WebSecurityConfigurerAdapter 를 extends 하였지만 해당 Class 가 deprecated 됨
 

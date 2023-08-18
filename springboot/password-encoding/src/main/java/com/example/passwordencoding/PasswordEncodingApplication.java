@@ -48,7 +48,9 @@ public class PasswordEncodingApplication {
 
 	// TODO
 	// https://reflectoring.io/spring-security-password-handling/
-	// Password Hashing Functions 부터 공부 하기 !!!!
+
+	// TODO
+	// Configuring a Password Encoder 부터 공부 하기 !!!
 
 	public static void main(String[] args) {
 		SpringApplication.run(PasswordEncodingApplication.class, args);
