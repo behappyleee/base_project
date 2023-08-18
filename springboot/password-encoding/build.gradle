@@ -32,8 +32,9 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
 
 	implementation 'com.google.guava:guava:28.2-jre'
+    testImplementation 'junit:junit:4.13.1'
 
-	// Library ... ??
+    // Library ... ??
 //	implementation 'org.flywaydb:flyway-core'
 //	implementation 'org.bouncycastle:bcprov-jdk15on'
 

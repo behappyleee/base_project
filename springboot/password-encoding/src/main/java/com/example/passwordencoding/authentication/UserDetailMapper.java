@@ -16,5 +16,4 @@ public class UserDetailMapper {
                 .roles(userCredentials.getRoles().toArray(String[]::new))
                 .build();
     }
-
 }
