@@ -32,7 +32,7 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
 
 	implementation 'com.google.guava:guava:28.2-jre'
-    testImplementation 'junit:junit:4.13.1'
+//    testImplementation 'junit:junit:4.13.1'
 
     // Library ... ??
 //	implementation 'org.flywaydb:flyway-core'
@@ -40,6 +40,10 @@ dependencies {
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
