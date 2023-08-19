@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
-@Configuration  // TEST 를 위하여 Security 임시 OFF !!!
+// @Configuration  // TEST 를 위하여 Security 임시 OFF !!!
 @EnableWebSecurity
 @RequiredArgsConstructor    // private final 들 bean 들 생성 해 줌
 public class SecurityConfiguration {
@@ -46,14 +46,29 @@ public class SecurityConfiguration {
 //  	}
 //  }
 
+    // H2 Database Console 을 이용하기 위하여서는 CSRF 에 대해서만 면제 처리를 해주어야 한다.
+    // 기본으로 CSRF 처리를 포함하고 있어 접근이 불가하여 H2 Console 에 만 CSRF 면제 처리를 해준다. 전체 다 적용을 해주면 보안에 약해진다.
+
     // HttpSecurity#authorizeHttpRequests -> to define our authorization rules.
     // withDefaults() -> enables a security feature using the defaults provided by Spring Security
     // This is a shortcut for the lambda expression it -> {}
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((auth) -> auth
-                                .anyRequest().authenticated())
-                        .httpBasic(withDefaults());
+        // TODO
+        // H2 Console CSRF 설정 확인이 필요 url /H2 에만 CSRF dsiable 설정 하기 !!!
+        http
+//                .authorizeHttpRequests((auth) ->
+//                        auth
+//                                .
+//                        )
+                .csrf(url -> url.disable())
+                .httpBasic(withDefaults());
+
+//        http.authorizeHttpRequests((auth) -> auth
+//                        .requestMatchers("/h2/**").permitAll()
+//                        .anyRequest().authenticated())
+//                .httpBasic(withDefaults());
+
         return http.build();
     }
 
