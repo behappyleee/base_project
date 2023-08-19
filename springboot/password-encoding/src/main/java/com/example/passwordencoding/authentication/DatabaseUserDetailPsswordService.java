@@ -26,6 +26,4 @@ public class DatabaseUserDetailPsswordService implements UserDetailsPasswordServ
         return userDetailMapper.toUserDetails(userCredentials);
     }
 
-
-
 }

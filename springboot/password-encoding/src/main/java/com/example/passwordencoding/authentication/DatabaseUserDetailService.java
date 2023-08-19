@@ -26,7 +26,4 @@ public class DatabaseUserDetailService implements UserDetailsService {
         return userDetailMapper.toUserDetails(userCredentials);
     }
 
-
-
-
 }

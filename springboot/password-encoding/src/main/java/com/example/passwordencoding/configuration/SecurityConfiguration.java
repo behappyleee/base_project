@@ -8,9 +8,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
- // @Configuration  // TEST 를 위하여 Security 임시 OFF !!!
- @EnableWebSecurity
- @RequiredArgsConstructor    // private final 들 bean 들 생성 해 줌
+@Configuration  // TEST 를 위하여 Security 임시 OFF !!!
+@EnableWebSecurity
+@RequiredArgsConstructor    // private final 들 bean 들 생성 해 줌
 public class SecurityConfiguration {
 
      // Applications with REST APIs and password-based authentication supported by Spring Security
@@ -49,12 +49,11 @@ public class SecurityConfiguration {
     // HttpSecurity#authorizeHttpRequests -> to define our authorization rules.
     // withDefaults() -> enables a security feature using the defaults provided by Spring Security
     // This is a shortcut for the lambda expression it -> {}
-    // @Bean
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((auth) -> auth
                                 .anyRequest().authenticated())
                         .httpBasic(withDefaults());
-
         return http.build();
     }
 

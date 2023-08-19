@@ -16,7 +16,7 @@ public class CarResources {
     public Set<Car> cars() {
         Set<Car> cars = Set.of(new Car("vm", "black"), new Car("bmw", "white"));
 
-        logger.debug("CARS DATA CHECK : {} ", cars);
+        logger.info("CARS DATA CHECK : {} ", cars);
         return cars;
     }
 
