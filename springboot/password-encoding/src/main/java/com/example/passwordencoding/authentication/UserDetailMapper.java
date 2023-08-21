@@ -12,6 +12,9 @@ public class UserDetailMapper {
     Logger logger = LoggerFactory.getLogger(UserDetailMapper.class);
 
     UserDetails toUserDetails(UserCredentials userCredentials) {
+
+        logger.info("USER DATA CHECK USER INFO : {} " , userCredentials);
+
         return User.withUsername(userCredentials.getPassword())
                 .roles(userCredentials.getRoles().toArray(String[]::new))
                 .build();

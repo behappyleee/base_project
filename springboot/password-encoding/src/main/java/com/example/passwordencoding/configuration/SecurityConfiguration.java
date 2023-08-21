@@ -2,28 +2,39 @@ package com.example.passwordencoding.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
-// @Configuration  // TEST 를 위하여 Security 임시 OFF !!!
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 @RequiredArgsConstructor    // private final 들 bean 들 생성 해 줌
 public class SecurityConfiguration {
+
+    // Web Security 가 항상 Http Security 보다 우선이 된다.
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return web -> {
+            web.ignoring()
+                    .requestMatchers(
+                            "/h2",
+                            "/h2/**"
+                    );
+        };
+    }
 
      // Applications with REST APIs and password-based authentication supported by Spring Security
      // To keep it simple in this example we send the user credentials with every HTTP Request.
      // It means the application must start authentication whenever the client wants to access the API.
 
-    // Spring 3 version starter-security 부터는 Lambda DSL 강화로 많이 바뀜
-    // 기존에는 WebSecurityConfigurerAdapter 를 extends 하였지만 해당 Class 가 deprecated 됨
-
-    // ERROR 발생
-//    @Bean
-//    public WebSecurityCustomizer configure() {
-//        return (web) -> web.ignoring().requestMatchers(
+//    // Spring 3 version starter-security 부터는 Lambda DSL 강화로 많이 바뀜
+//    // 기존에는 WebSecurityConfigurerAdapter 를 extends 하였지만 해당 Class 가 deprecated 됨
+//
+//    // ERROR 발생
+////    @Bean
+////    public WebSecurityCustomizer configure() {
+////        return (web) -> web.ignoring().requestMatchers(
 //                "",
 //                "",
 //                "");
@@ -58,9 +69,8 @@ public class SecurityConfiguration {
         // H2 Console CSRF 설정 확인이 필요 url /H2 에만 CSRF dsiable 설정 하기 !!!
         http
 //                .authorizeHttpRequests((auth) ->
-//                        auth
-//                                .
-//                        )
+//                        auth.requestMatchers("/h2/**").permitAll()
+//                )
                 .csrf(url -> url.disable())
                 .httpBasic(withDefaults());
 
