@@ -16,6 +16,10 @@ public class ActuatorApplication {
 	// SpringBoot Actuator 는 어플리케이션을 모니터링하고 관리하는데 도움이 되는 여러가지 추가 기능이 포함되어 있음
 	// HTTP 및 JMX 엔드 포인트를 사용하여 SpringBoot 어플리케이션을 관리하고 모니터링이 가능함
 
+	// Spring Boot Actuator helps us monitor and manage our applications in production.
+	// It exposes endpoints that provide health, metrics, and other information about the running application.
+
+
 	// SpringBoot Actuator 3가지 중요한 개념
 
 	// 1. Endpoints

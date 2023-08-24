@@ -16,6 +16,29 @@ public class SpringWebfluxApplication {
 	// https://reflectoring.io/spring-webclient/
 
 	/**
+	 * 	 If we want to process Big Data, However, we need to do this with immense speed and agilit. Thats' when
+	 * 	 the software developers realized that they would need some kind of multi-thread environment that handles
+	 *	 asynchronous and non-blocking calls to make the best use of processing resources.
+	 *
+	 * */
+	/**
+	 * 	A stream is a sequence of data that is transferred from one system to another. It traditionally operates in a blocking
+	 *  sequential and FIFO (First In First Out) Pattern.
+	 *
+	 *	This blocking methodology of data streaming often prohibits a system to process real-time data while streaming.
+	 *	A bunch of prominent developers realized that they would need an approach to build a reactive systems architecture that would
+	 *	ease the processing of data while streaming. Hence, they signed a manifesto, populary known as the Reactive Manifesto.
+	 *
+	 * **/
+
+	/**
+	 * 	Reactive System must be an asynchronous software that deals with producers who have the single responsibility to send message
+	 *	to consumers. They introduced the following features to keep in mind.
+	 *
+	 * **/
+
+
+	/**
 	 *  Spring Webflux 는 Application 을 더 빠르게 만들어 주지는 못 하지만 가장 큰 이점은
 	 *  서버 스펙이 적은 서버에게도 안정성을 준다.
 	 *  Application 은 무수히 많은 요청들을 굉장히 적은 시간안에 처리하도록 해준다.
