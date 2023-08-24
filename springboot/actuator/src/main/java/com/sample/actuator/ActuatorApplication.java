@@ -3,8 +3,12 @@ package com.sample.actuator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
+@EnableCaching
 public class ActuatorApplication {
 
 	// Actuator 설정 시 노출 엔드 포인트를 통하여 모니터링 가능한 데이터를 제공
@@ -22,9 +26,10 @@ public class ActuatorApplication {
 	// Application 에 핵심이 되는 정보들 이 어플리케이션이 사용 되는 메모리, CPU 가 어느 정도 되는 지 그런 정보들을 여러 모니터링 어플리케이션
 	// 사용할 수 있는 공통의 포맷을 만들어서 제공
 
-
 	// 3. Audit
-
+	// SpringBoot Security 가 실행이 되면 SpringBoot Acutator 에는 이벤트를 게시하는 감사 프레임워크가 있음 (기본적으로 인증 성공, 실패, 및 액세스 거부 등)
+	// 이 기능은 인증 실패를 기반으로 잠금 정책을 보고하고 구현하는 데 매우 유용
+	// AuditEventRepository 애플리케이션 구성 에 유형의 Bean을 제공하여 감사를 사용
 
 
 	public static void main(String[] args) {
