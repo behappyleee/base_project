@@ -10,6 +10,31 @@ public class SpringWebfluxApplication {
     // Intro to Java 9 Reactive Streams API 부터 학습 필요 !!!
     // https://reflectoring.io/getting-started-with-spring-webflux/
 
+    /***
+     *  Responsive : Reactive Systems must be fast and responsive so that they can provide consistent high quantity
+     *               of service.
+     *
+     *  Resilient : Reactive Systems should be designed to anticopate system failure. Thus, they should be responsive
+     *              through replication and isolation.
+     *
+     *  Elastic : Reactive Systems must be adaptive to shard or replicate components based upon their requirement. They should
+     *            use predictive scaling to anticipate sudden ups and down in their infrastructure.
+     *
+     *  Message-driven : Since all the components in a reactive system are supposed to be loosely coupled, they must communicate
+     *                   across their boundaries by asynchronously exchanging messages.
+     * */
+
+    /**
+     *  Blocking Request : In a conventional MVC application, whenever a request reaches the server, a servlet thread is
+     *                     being created and delegated to worker threads to perform various operations like I/O
+     *                     database processing, etc. While the worker threads are busy completing their processes, the servlet threads
+     *                     enter a waiting state due to which the calls remain blocked. This is blocking or synchronous request processing.
+     *  
+     */
+
+
+
+
     /**
      *  대부분 전통적인 Application 들은 Blocking Call 을 사용 하였다 (동기 적인 Call).
      *  이 말은 특정 Resource 에 접근하고 싶을 시에 대부분 Thread 들은 사용 중 이였다.
