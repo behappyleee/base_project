@@ -27,6 +27,15 @@ public class UserController {
     // 다루는 방법과 Non-blocking publishers 인 Mono 와 Flux 를 사용한다.
     // Subscribe Method Controller 에서 부를 필요는 없다.
     // 내부적인 Class 들이 가능할 떄에 부를 것이다.
+
+    // Spring Reactive Pattern 을 구성할 때 가장 중요한 점은 Do Not Block 이다 !!!
+    // We must make sure that we don't use any blocking methods throughout the lifecycle of an API.
+    // Otherwise, we lose the main advantage of reactive programming.
+
+    // Spring WebFlux 를 사용 시 2가지 방법 중 1가지를 선택할 수 있다
+    // 1. Controller 에서 직접 Mono or Flux 로 Return
+    // 2. Handler 를 사용하여 Return
+
     private final UserService userService;
 
     @PostMapping

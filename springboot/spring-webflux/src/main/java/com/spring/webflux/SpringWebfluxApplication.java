@@ -2,8 +2,10 @@ package com.spring.webflux;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
 @SpringBootApplication
+@EnableReactiveMongoRepositories	// JPA 중 MongoDB Exclude Bean 사용할 수 있도록 설정
 public class SpringWebfluxApplication {
 
 	// TODO
@@ -14,6 +16,46 @@ public class SpringWebfluxApplication {
 	// TODO
 	// How to Take Spring WebClient into Production 여기서 부터 공부 하기 !!!
 	// https://reflectoring.io/spring-webclient/
+
+	/**
+	 *	Web Layer - We have covered the middleware layers to store and retrieve data.
+	 *				just forcus on the web layer. Spring WebFlux supports two programming models
+	 *
+	 *	- Annotation-based Reactive Components
+	 *	- Functional Routing and Handling
+	 *
+	 * **/
+
+
+
+	/**
+	 * 	The whole purpose of Reactive Streams was to intoduce a standard for asynchronous stream processing of data with non-blocking
+	 * 	back pressure. Hence, Java 9 introduced the Reactive Streams API. It is implemented based upon the Publisher-Subscriber Model or Producer-Consumer
+	 *	Model and primarily defined four interfaces.
+	 *
+	 *	Publisher : It is responsible for preparing and trasnferring data to subscribers as individual messages. A Publisher can serve multiple
+	 *				subscribers but it has only one mothod, subscribe().
+	 *
+	 *  Subscriber : A Subscriber is responsible for receving messages from a Publisher and processing those messages. It acts as a termninal
+	 *				 opertaion in the Streams API. It has four methods to deal with the events received.
+	 *
+	 *	Subscription : It represents a relationship between the subscriber and publisher. It can be used only once by a single Subscriber. It has
+	 *				   methods that allow requesting for data and cancel the demand.
+	 *
+	 *	Processor : It represents a processing stage that consists of both Publisher and Subscriber.
+	 *
+	 * */
+
+	/**
+	 * 	Spring introduced a Multi-event Loop model to enable a reactive stack known as WebFlux. It is a fully non-blocking
+	 *	and annotation-based web framework built on Project Reactor which allows building reactive web application on the HTTP Layer.
+	 *
+	 *	Mono : A Publisher that emits 0 or 1 element.
+	 *
+	 *  Flux : A Publisher that emits 0 to N elements which can keepy emitting elements forever.
+	 *  	   It returns a sequence of elements and sends a notification when it has completed returning all its elements.
+	 *
+	 * */
 
 	/**
 	 * 	 If we want to process Big Data, However, we need to do this with immense speed and agilit. Thats' when
@@ -30,13 +72,11 @@ public class SpringWebfluxApplication {
 	 *	ease the processing of data while streaming. Hence, they signed a manifesto, populary known as the Reactive Manifesto.
 	 *
 	 * **/
-
 	/**
 	 * 	Reactive System must be an asynchronous software that deals with producers who have the single responsibility to send message
 	 *	to consumers. They introduced the following features to keep in mind.
 	 *
 	 * **/
-
 
 	/**
 	 *  Spring Webflux 는 Application 을 더 빠르게 만들어 주지는 못 하지만 가장 큰 이점은
@@ -92,11 +132,11 @@ public class SpringWebfluxApplication {
 	 * 	 잃어버리는 것이다.
 	 *
 	 */
+
 	/**
 	 *  Webflux 구현 순서
 	 *  1. Handler 구현
 	 *  2. Router 구현
-	 * 
 	 * */
 
 	// TODO

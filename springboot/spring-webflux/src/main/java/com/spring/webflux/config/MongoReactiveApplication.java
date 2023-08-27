@@ -8,17 +8,19 @@ import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
-@Configuration
-@EnableReactiveMongoRepositories
-public class MongoReactiveApplication extends AbstractReactiveMongoConfiguration {
+//@Configuration
+//@EnableReactiveMongoRepositories
+// public class MongoReactiveApplication extends AbstractReactiveMongoConfiguration {
 
-    @Bean
-    @Override
+public class MongoReactiveApplication {
+
+    // @Bean
+    // @Override
     public MongoClient reactiveMongoClient() {
         return MongoClients.create();
     }
 
-    @Override
+    // @Override
     protected String getDatabaseName() {
         return "reactive";
     }

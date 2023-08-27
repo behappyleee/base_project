@@ -19,6 +19,10 @@ public class UserHandler {
     // We use functions for routing and handling request.
     // Handler 는 Server Request 를 수용 하고 ServerResponse 로 Mono 를 Return 을 할 것 이다.
 
+    // Use functions for routing and handling requests.
+    // First, will define a Handler function that can accept a ServerRequest as an incoming argument and returns a Mono of ServerResponse
+    // as the response of that functional method.
+
     private final UserService userService;
 
     public Mono<ServerResponse> getAllUsers(ServerRequest request) {
@@ -53,7 +57,6 @@ public class UserHandler {
     public Mono<ServerResponse> updateUserById(ServerRequest request) {
         String id = request.pathVariable("userId");
         Mono<User> updatedUser = request.bodyToMono(User.class);
-
         return updatedUser
                 .flatMap(u -> ServerResponse
                         .ok()
@@ -67,7 +70,5 @@ public class UserHandler {
                 .flatMap(u -> ServerResponse.ok().body(u, User.class))
                 .switchIfEmpty(ServerResponse.notFound().build());
     }
-
-
 
 }

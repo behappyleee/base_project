@@ -25,6 +25,7 @@ public class UserService {
     // Define the Service that would make calls to MongoDB using Repository and pass the data on the web layer.
     // We have primarily used UserRepository to store and retrieve data from Mongo DB, but we have also used a
     // ReactiveTemplate and Query to search for a user given by a regex string.
+
     private final ReactiveMongoTemplate reactiveMongoTemplate;
     private final UserRepository userRepository;
 
@@ -54,6 +55,9 @@ public class UserService {
                 .flatMap(existingUser -> userRepository.delete(existingUser)
                         .then(Mono.just(existingUser)));
     }
+
+    // We have primarily used UserRepository to store and retrieve data from MongoDB, but we have also used a ReactiveTemplate
+    // and Query to search for a user given by a regex string.
 
     public Flux<User> fetchUsers(String name) {
         Query query = new Query()

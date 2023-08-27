@@ -26,6 +26,10 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterConfig {
 
+    // will define the router function Router Functions usually evaluate the request and choose the appropriate handler function.
+    // They server as an alternate to the @RequestMapping annotation. So we will define this RotherFunction and annotate it with @Bean
+    // within a @Configuration class to inject it into the Spring Application Context
+
     @Bean
     RouterFunction <ServerResponse> routes(UserHandler handler) {
         return route(GET("/handler/users").and(accept(MediaType.APPLICATION_JSON)), handler::getAllUsers)
@@ -40,6 +44,7 @@ public class RouterConfig {
         Flux.just("X", "Y", "Z")
                 .log()  // Log 사용 시 모두 기록이 됨 Console log 에
                 .subscribe(strList::add);
+
 
     }
 
