@@ -30,6 +30,8 @@ public class RouterConfig {
     // They server as an alternate to the @RequestMapping annotation. So we will define this RotherFunction and annotate it with @Bean
     // within a @Configuration class to inject it into the Spring Application Context
 
+    // Spring WebFlux 를 사용하기 위하여서는 Controller 에서 직접 지정을 해주거나 UserHandler 를 사용 하여 수행하는 방식 중 선택
+
     @Bean
     RouterFunction <ServerResponse> routes(UserHandler handler) {
         return route(GET("/handler/users").and(accept(MediaType.APPLICATION_JSON)), handler::getAllUsers)
