@@ -12,7 +12,7 @@ public interface UserRepository extends JpaRepository<User, String> {
 
     User findByLoginId(String loginId);
 
-    List <User> findByIsInternalUser(boolean isInternalUser);
+    List<User> findByIsInternalUser(boolean isInternalUser);
 
     List<User> findAll();
 

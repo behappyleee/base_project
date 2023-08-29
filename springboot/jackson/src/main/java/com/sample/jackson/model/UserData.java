@@ -2,6 +2,8 @@ package com.sample.jackson.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.sample.jackson.persistence.Views;
 
 import java.time.LocalDate;
 
