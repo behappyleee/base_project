@@ -1,4 +1,4 @@
-package com.sample.data.manytoone;
+package com.sample.data.jpa.manytoone;
 
 import jakarta.persistence.*;
 

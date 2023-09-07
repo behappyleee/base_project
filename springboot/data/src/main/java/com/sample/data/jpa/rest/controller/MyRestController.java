@@ -1,4 +1,4 @@
-package com.sample.data.rest.controller;
+package com.sample.data.jpa.rest.controller;
 
 
 import org.springframework.web.bind.annotation.RestController;

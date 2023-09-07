@@ -1,4 +1,4 @@
-package com.sample.data.rest.repository;
+package com.sample.data.jpa.rest.repository;
 
 import org.springframework.stereotype.Repository;
 

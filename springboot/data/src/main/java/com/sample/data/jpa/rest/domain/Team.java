@@ -1,4 +1,4 @@
-package com.sample.data.rest.domain;
+package com.sample.data.jpa.rest.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

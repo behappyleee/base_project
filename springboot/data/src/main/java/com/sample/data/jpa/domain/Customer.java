@@ -1,4 +1,4 @@
-package com.sample.data.example.domain;
+package com.sample.data.jpa.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

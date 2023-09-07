@@ -1,5 +1,6 @@
-package com.sample.data.onetomany;
+package com.sample.data.jpa.onetomany.customer;
 
+import com.sample.data.jpa.onetomany.address.OneToManyAddress;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

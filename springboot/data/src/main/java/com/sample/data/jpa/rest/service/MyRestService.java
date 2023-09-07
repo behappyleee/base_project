@@ -1,4 +1,4 @@
-package com.sample.data.rest.service;
+package com.sample.data.jpa.rest.service;
 
 import org.springframework.stereotype.Service;
 

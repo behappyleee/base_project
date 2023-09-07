@@ -1,4 +1,4 @@
-package com.sample.data.onetomany;
+package com.sample.data.jpa.onetomany.address;
 
 import org.springframework.data.repository.CrudRepository;
 
