@@ -2,7 +2,7 @@ package com.sample.data.jpa.domain;
 
 import jakarta.persistence.*;
 
-@Entity
+// @Entity
 public class Address {
 
     @Id

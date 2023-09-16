@@ -22,8 +22,6 @@ public class MyRestController {
     // ex) 하나의 Team 은 여러 Member 를 구성원으로 갖고 있으므로 Team 입장에서는 Member 와 일대다 관계
     //     Member 입장 에서는 하나의 Team 에 속하므로 다대일 관계
     // 즉, 어떤 엔티티를 중심으로 상대 엔티티를 바라보느냐에 따라 다중성이 다르게 됨
-    
-
 
 
 

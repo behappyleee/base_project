@@ -17,5 +17,12 @@ public class BasicController {
         return "hello";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        logger.debug("THIS IS FROM HELLO TEST !");
+
+        return "This is test";
+    }
+
 
 }
