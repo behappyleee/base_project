@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DataApplication {
 
+	// TODO
+	// Jpa Test 시 TEST 용 DB 데이터 넣기  !!!
+
+
 	// Spring Data Rest allows to rapidly create a REST API to manipulate and query a database by exposing
 	// Spring Data Repositories via its @RepositoryRestResource annotation.
 

@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <title>Hello HTML</title>
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+
+    function getJpaData() {
+        console.log('const jpa data  !!!')
+        axios({
+            url: '/testJpa',
+            method: 'GET',
+        }).then((res) => {
+
+            console.log('AXIOS THEN CHECK : ' + JSON.stringify(res));
+
+
+        }).catch((err) => {
+
+
+            console.log('AXIOS ERR : ' + JSON.stringify(err));
+
+
+        })
+
+    }
+
+    function getHelloData() {
+
+
+
+    }
+
+
+</script>
+
 <body>
 
-    <button type="submit" formaction="/test">This is JPA</button>
+    <button onclick="getJpaData()">This is JPA</button>
     <button type="submit" formaction="/hello">This is JPA Hello</button>
+
+
+
 
 </body>
 </html>
