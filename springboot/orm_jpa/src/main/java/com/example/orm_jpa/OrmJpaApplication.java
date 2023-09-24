@@ -34,6 +34,9 @@ public class OrmJpaApplication {
     // JPA 사용 시 장점은 어플리케이션과 데이터 베이스 사이에 추상화 된 데이터 접근 계층을 제공하여 어플리케이션 특정 데이터 베이스가 기술에 종속되지 않도록 한다.
     // 만약 데이터 베이스를 변경을 하게 되면 JPA 에게 다른 데이터 베이스를 사용한다고 알려주기만 하면 된다. (JPA 는 자바 진영의 ORM 기술 표준 이다.)
 
+    // JPA 를 이해하는 데 가장 중요한 용어는 영속성 컨텍스트 (Persistence Context) -> 엔티티를 영구적으로 저장하는 환경 이다.
+
+
     public static void main(String[] args) {
         SpringApplication.run(OrmJpaApplication.class, args);
     }

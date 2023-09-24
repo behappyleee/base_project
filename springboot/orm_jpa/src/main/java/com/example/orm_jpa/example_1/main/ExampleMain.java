@@ -2,8 +2,6 @@ package com.example.orm_jpa.example_1.main;
 
 import com.example.orm_jpa.example_1.domain.Member;
 import jakarta.persistence.*;
-import org.slf4j.Logger;
-
 import java.util.List;
 
 public class ExampleMain {
@@ -74,25 +72,34 @@ public class ExampleMain {
     // EntityManager 를 사용하여 엔티티를 데이터 베이스에 등록/수정/삭제 조회 할 수 있다. 엔티티 매니저는 데이터 베이스 커넥션과 밀접한 관계가 있으므로 스레드 간에 공유를 하거나 재서용이 되면 안됨
     // EntityManager 는 내부에 데이터 베이스를 유지하면서 데이터 베이스와 통신을 함 따라서 어플리케이션 개발자는 엔티티 매니저를 가상의 데이터 베이스로 생각 할 수 있음
 
+    // EntityManagerFactory 는 여러 스레드가 동시에 접근 하여도 안전 하여 서로 다른 스레드간에 공유를 해도 되지만 EntityManager 는 여러 스레드가 동시에 접근하면
+    // 동시성 문제가 발생하므로 스레드 간에 절대 공유하면 안된다.
+
+    // EntityManager 는 데이터 베이스 연결이 꼭 필요한 시점까지 커넥션을 얻지 않음, 예를 들어 Transaction 이 시작 시 커넥션을 획득 함
+
     // 2. 트랜잭션 관리
     // JPA 를 사용하면 항상 트랜잭션 안에서 데이터를 변경하여야 함, 트랜잭션 없이 데이터를 변경하면 예외가 발생 함
 
     // 3. 비즈니스 로직
 
     public static void main(String[] args) {
-        // Entity Manager Factory 생성
+        // Entity Manager Factory 생성 (생성 비용이 아주 비싸다.)
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
-        // Entity Manager 생성
+        // Entity Manager 생성 (생성 비용이 거의 안든다.)
         EntityManager em = emf.createEntityManager();
 
         // 트랜잭션 - 획득
         EntityTransaction tx = em.getTransaction();
-
+        System.out.println("[ExampleMain MAIN Execute !]");
         try {
             tx.begin();     // 트랜잭션 시작
             logic(em);
-            tx.commit();    // 트랜잭션 커밋
 
+            // EntityManager 느 commit() 이 실행 전 까지 데이터 베이스에 엔티티를 저장하지 않고
+            // 내부 쿼리 저장소에 INSERT SQL 을 차곡차곡 모아둠 그리고 commit 시 모아둔 쿼리를 데이터 베이스에 보내는 데 이것을 트랜잭션을 지원 하는 Transactional Write-behind 라고 한다.
+            // Transaction 을 commit() 시 엔티티 매니저는 우선 영속성 컨텍스트를 flush 를 하게 됨 -> 플러시는 영속성 컨텍스트의 변경 내용을 데이터 베이스에 동기화하는 작업 (이때 등록,수정,삭제) 한 엔티티를 DB 에 저장
+            // 조금 더 구체적으로 쓰기 지연 SQL 저장소에 모인 쿼리를 데이터 베이스에 보냄
+            tx.commit();    // 트랜잭션 커밋 (해당 commit() 에서 실제로 INSERT 쿼리 가 작동을 함)
         } catch(Exception e) {
             tx.rollback();  // 예외가 발생하면 항상 트랜잭션은 롤백을 함
         } finally {
@@ -102,6 +109,8 @@ public class ExampleMain {
     }
 
     private static void logic(EntityManager em) {
+        System.out.println("[ExampleMain Logic Execute !!]");
+
         // ... 로직 실행 코드 ....
         String id= "id1";
         Member member = new Member();
@@ -112,16 +121,30 @@ public class ExampleMain {
         // Entity 를 저장하려면 EntityManager 에 persist() 메서드의 저장할 엔티티를 넘겨주면 됨
 
         // 등록
+        // TODO
+        // persist() 메서드를 사용 시 영속성 컨텍스트에만 값이 저장이 될까 ... ?? 실제 DB 에는 값이 저장이 되는 지 안되는 지 확인이 필요 .... !!
+
+        // persist() 까지는 INSERT 쿼리를 날리지 않음 commit() 시 에 INSERT 쿼리를 날림
+        // 조금 더 정확히 얘기를 하면 EntityManager 를 사용하여 회원 엔티티를 (Member Entity) 영속성 컨텍스트 (Persistence Context) 에 저장하는 것임
         em.persist(member);
             
         // 수정
         // 수정 부분을 보면 조금 이상하다 엔티티를 수정한 후에 내용을 반영 하려면 해당 값만 set 을 다시 해주면 된다.
         // JPA 는 어떤 엔티티가 변경 되었는 지 추적하느 기능이 있어 값만 set 을 다시 해주면 UPDATE 쿼리가 자동으로 실행이 된 다.
+        // 영속성 컨텍스트는 엔티티 매니저를 생성할 때 하나가 만들어진다.
+        
+        // 영속성 컨텍스트는 반드 시 식별자 값이 있어야 함 Entity 에 @Id 가 식별자 값임, 식별자 값이 없으면 예외가 발생 함
+        // 영속성 컨텍스트 내부에는 Map 이 하나 있는 데 키는 @Id 로 맵핑한 식별자고 값은 Entity 인스턴스 이다.
         member.setAge(22);
 
         // 한 건 조회
         // find() 메서드는 조회 할 엔티티 타입과 @id 로 데이터 베이스 테이블의 기본 키와 매핑 한 식별자 값으로 엔티티 하나를 조회 하는 가장 단순한 조회 메서드
         // SELECT * FROM Member WHERE id="id1"; 와 똑같음
+
+        // 영속성 컨텍스트는 내부에 캐시를 가지고 있는데 이것을 1차 캐시라 함 find 호출 시 먼저 1차 캐시에서 엔티티를 찾고 만약 찾는 엔티티가 없으면 데이터 베이스에서 조회함
+        // 쉽게 말하면 1차 캐시는 Map 이 하나 있는데 키는 @Id 로 맵핑 한 식별자 이고 값은 Entity 인스턴스 이다.
+        // 1차 캐시를 사용 하요 메모리에 있는 데이터를 바로 조회 시 성능 상 이점을 누릴 수 있음
+        // 영속성 컨텍스트는 성능상 이점과 엔티티의 동일성을 보장
         Member findMember = em.find(Member.class, id);
         System.out.println("[findMember username = " + member.getUsername() + ", age = " + member.getAge() + "]");
 
@@ -150,6 +173,5 @@ public class ExampleMain {
         em.remove(member);
 
     }
-
 
 }
