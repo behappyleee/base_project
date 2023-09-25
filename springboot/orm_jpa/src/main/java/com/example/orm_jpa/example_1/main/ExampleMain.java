@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.List;
 
 public class ExampleMain {
+    // TODO
+    // Error 해결 필요 !!
 
     // TODO
     // 해당 main 클래스 실행 시 에러 해결 하기 !!!
@@ -64,7 +66,6 @@ public class ExampleMain {
     //	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1451)
     //	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:55)
     //	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
-
 
     // 코드는 크게 3 가지 부분
     // 1. 엔티티 매니저 설정
