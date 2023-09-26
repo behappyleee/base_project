@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ExampleMain {
     // TODO
+    // Local 재생 시 에러 가 발생 !!
     // Error 해결 필요 !!
 
     // TODO
@@ -171,7 +172,12 @@ public class ExampleMain {
         System.out.println("[Member Size] : " + members.size());
 
         // 삭제
+        // Entity 를 삭제하기 위하여서는 먼저 대상 Entity 를 조회하여야 함
+        // em.remove) 에 삭제 대상 엔티티를 넘겨주면 엔티티를 삭제한다. 엔티티를 즉시 삭제,(일단 영속성 컨텍스트에서 제거) 하는 것은 아니다.
+        // 트랜잭션을 커밋 시 플러시를 호출하면 실제 테이터 베이스에서 삭제 쿼리를 전달
         em.remove(member);
+
+
 
     }
 
