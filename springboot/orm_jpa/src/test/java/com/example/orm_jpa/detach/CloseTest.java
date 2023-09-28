@@ -1,6 +1,6 @@
 package com.example.orm_jpa.detach;
 
-import com.example.orm_jpa.example_1.domain.Member;
+import com.example.orm_jpa.example_1.entity.Member;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;

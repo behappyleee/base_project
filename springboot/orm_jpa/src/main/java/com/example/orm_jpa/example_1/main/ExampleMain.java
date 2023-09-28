@@ -1,6 +1,6 @@
 package com.example.orm_jpa.example_1.main;
 
-import com.example.orm_jpa.example_1.domain.Member;
+import com.example.orm_jpa.example_1.entity.Member;
 import jakarta.persistence.*;
 import java.util.List;
 
