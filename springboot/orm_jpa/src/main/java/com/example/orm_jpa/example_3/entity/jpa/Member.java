@@ -5,12 +5,13 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "MEMBER")
 public class Member {
+    // JPA 로 객체 연관 관계를 표현
 
     // 객체 연관 관계 : 회원 객체의 Member.team 필드를 사용
     // 테이블 연관 관계 : 회원 테이블의 Member.TEAM_ID 외래 키 컬럼을 사용
 
     @Id
-    @Column(name = "member_id")
+    @Column(name = "MEMBER_ID")
     private String id;
 
     private String username;
@@ -22,7 +23,13 @@ public class Member {
     private Team team;
 
     public void setTeam(Team team) {
+        // 기존 Team 과 관계가 존재 시 Team 과의 관계를 제거
+        if(this.team != null) {
+            team.getMembers().remove(this);
+        }
         this.team = team;
+        // 이렇게 설정 시 해당 Member 클래스에만 Team 설정 시 양방향 연관 관계로 매핑이 됨
+        team.getMembers().add(this);
     }
 
     public String getId() {
