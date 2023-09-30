@@ -1,7 +1,7 @@
-package com.example.orm_jpa.example_3;
+package com.example.orm_jpa.example_5;
 
-import com.example.orm_jpa.example_3.entity.java.Member;
-import com.example.orm_jpa.example_3.entity.java.Team;
+import com.example.orm_jpa.example_5.entity.java.Member;
+import com.example.orm_jpa.example_5.entity.java.Team;
 
 public class ExampleJavaMain {
 

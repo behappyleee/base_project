@@ -1,10 +1,9 @@
-package com.example.orm_jpa.example_3;
+package com.example.orm_jpa.example_5;
 
-import com.example.orm_jpa.example_3.entity.jpa.Member;
-import com.example.orm_jpa.example_3.entity.jpa.Team;
+import com.example.orm_jpa.example_5.entity.jpa.Member;
+import com.example.orm_jpa.example_5.entity.jpa.Team;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 import java.util.List;

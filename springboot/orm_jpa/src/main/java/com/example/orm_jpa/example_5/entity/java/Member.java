@@ -1,4 +1,4 @@
-package com.example.orm_jpa.example_3.entity.java;
+package com.example.orm_jpa.example_5.entity.java;
 
 public class Member {
 

@@ -1,6 +1,4 @@
-package com.example.orm_jpa.example_3.entity.java;
-
-import jakarta.persistence.Entity;
+package com.example.orm_jpa.example_5.entity.java;
 
 public class Team {
 

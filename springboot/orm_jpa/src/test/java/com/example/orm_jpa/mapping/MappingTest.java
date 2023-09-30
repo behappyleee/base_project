@@ -2,8 +2,8 @@ package com.example.orm_jpa.mapping;
 
 
 
-import com.example.orm_jpa.example_3.entity.jpa.Member;
-import com.example.orm_jpa.example_3.entity.jpa.Team;
+import com.example.orm_jpa.example_5.entity.jpa.Member;
+import com.example.orm_jpa.example_5.entity.jpa.Team;
 import org.junit.jupiter.api.Test;
 
 public class MappingTest {
