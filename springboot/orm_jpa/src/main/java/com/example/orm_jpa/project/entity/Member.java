@@ -2,6 +2,9 @@ package com.example.orm_jpa.project.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 //  Table 어노테이션이 없으면 클래스명과 같은 테이블명을 매핑
 public class Member {
@@ -20,6 +23,19 @@ public class Member {
     private String street;
 
     private String zipcode;
+
+    // JPA 위 방법이 아닌
+    // 연관 관계로 매핑 (OneToMany 관계에서 mappedBy 를 사용하여 연관 관계 주인을 설정)
+    @OneToMany(mappedBy = "member")
+    private List <Order> orders = new ArrayList<Order>();
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 
     public Long getId() {
         return id;
