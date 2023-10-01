@@ -33,6 +33,18 @@ public class ExampleMain {
         Member member2 = new Member();
         member2.setAddress(address2);   // 객체를 새로 생성하여 값을 저장해 주므로 상당히 안전하다 (객체 공유를 막을 수 있다)
 
+        // 값 타입 컬렉션 사용법
+        // 값 타입 컬렉션은 INSERT 를 여러번 진행하게 된다.
+        // 값 타입 대체는 일대다 엔티티 관계로 풀어낼 수 있다. (실무에서는 주로 일대다 관계로 사용)
+        Member member3 = new Member();
+        member3.setAddress(new Address("New York"));
+        member3.getFavoritedFoods().add("짬뽕");
+        member3.getFavoritedFoods().add("짜장");
+
+        // 임베디드 값 타입 컬렉션
+        member3.getAddressHistory().add(new Address("London"));
+        member3.getAddressHistory().add(new Address("Dublin"));
+
     }
 
 }

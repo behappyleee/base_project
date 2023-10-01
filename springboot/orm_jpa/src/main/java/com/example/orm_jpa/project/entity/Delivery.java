@@ -1,5 +1,6 @@
 package com.example.orm_jpa.project.entity;
 
+import com.example.orm_jpa.project.entity.common.Address;
 import com.example.orm_jpa.project.enums.DeliveryStatus;
 import jakarta.persistence.*;
 
@@ -17,11 +18,13 @@ public class Delivery {
     @OneToOne(mappedBy = "delivery")    // 양방향 매핑 이지만 연관관계의 주인이 아닐 시 에는 mappedBy 속성을 사용
     private Order order;
 
-    private String city;
+    @Embedded
+    private Address address;
 
-    private String street;
-
-    private String zipcode;
+    // Embeded Address 값으로 아래 대체
+//    private String city;
+//    private String street;
+//    private String zipcode;
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;
@@ -42,29 +45,29 @@ public class Delivery {
         this.order = order;
     }
 
-    public String getCity() {
-        return city;
-    }
+//    public String getCity() {
+//        return city;
+//    }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
+//    public void setCity(String city) {
+//        this.city = city;
+//    }
+//
+//    public String getStreet() {
+//        return street;
+//    }
+//
+//    public void setStreet(String street) {
+//        this.street = street;
+//    }
+//
+//    public String getZipcode() {
+//        return zipcode;
+//    }
+//
+//    public void setZipcode(String zipcode) {
+//        this.zipcode = zipcode;
+//    }
 
     public DeliveryStatus getStatus() {
         return status;

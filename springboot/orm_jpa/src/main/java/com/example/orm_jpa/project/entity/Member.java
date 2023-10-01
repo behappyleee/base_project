@@ -1,5 +1,6 @@
 package com.example.orm_jpa.project.entity;
 
+import com.example.orm_jpa.project.entity.common.Address;
 import com.example.orm_jpa.project.entity.common.BaseEntity;
 import jakarta.persistence.*;
 
@@ -19,11 +20,13 @@ public class Member extends BaseEntity {    // 매핑 정보인 BaseEntity 를 �
 
     private String name;
 
-    private String city;
+    @Embedded
+    private Address address;
 
-    private String street;
-
-    private String zipcode;
+    // 아래 값들은 Embeded Address 값들로 대체
+//    private String city;
+//    private String street;
+//    private String zipcode;
 
     // JPA 위 방법이 아닌
     // 연관 관계로 매핑 (OneToMany 관계에서 mappedBy 를 사용하여 연관 관계 주인을 설정)
@@ -54,27 +57,28 @@ public class Member extends BaseEntity {    // 매핑 정보인 BaseEntity 를 �
         this.name = name;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
+    // Embeded Address 값으로 대체
+//    public String getCity() {
+//        return city;
+//    }
+//
+//    public void setCity(String city) {
+//        this.city = city;
+//    }
+//
+//    public String getStreet() {
+//        return street;
+//    }
+//
+//    public void setStreet(String street) {
+//        this.street = street;
+//    }
+//
+//    public String getZipcode() {
+//        return zipcode;
+//    }
+//
+//    public void setZipcode(String zipcode) {
+//        this.zipcode = zipcode;
+//    }
 }

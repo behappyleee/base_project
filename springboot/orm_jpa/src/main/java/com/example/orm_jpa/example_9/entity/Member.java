@@ -23,11 +23,12 @@ public class Member {
 
     // 값 타입 Collection
     // 값 타입을 하나 이상 저장하려면 컬렉션에 보관하고 @ElementCollection, @CollectionTable 어노테이션을 사용하면 된다.
+    // 데이터 베이스의 컬럼은 컬렉션을 포함할 수 없다. 별도의 테이블을 추가하여 @CollectionTable 을 사용해서 추가하여야 한다.
     @ElementCollection
     @CollectionTable(name="FAVORITE_FOODS"
         , joinColumns = @JoinColumn(name = "MEMBER_ID"))
     @Column(name = "FOOD_NAME")
-    private Set<String> favoritedFodds = new HashSet<String>();
+    private Set<String> favoritedFoods = new HashSet<String>();
 
     @ElementCollection
     @CollectionTable(name = "ADDRESS"
@@ -55,12 +56,29 @@ public class Member {
 
     // @AttributeOverrides 는 엔티티에 설정을 하여야 한다.
     // @AttributeOverride 를 사용하여 Embedded 속성도 재정의 가 가능핟.
+    @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "city", column = @Column(name = "COMPANY_CITY"))
             , @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STREET"))
             , @AttributeOverride(name = "zipcode", column = @Column(name = "COMPANY_ZIPCODE"))
     })
     Address companyAddress;
+
+    public Set<String> getFavoritedFoods() {
+        return favoritedFoods;
+    }
+
+    public void setFavoritedFoods(Set<String> favoritedFodds) {
+        this.favoritedFoods = favoritedFodds;
+    }
+
+    public List<Address> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<Address> addressHistory) {
+        this.addressHistory = addressHistory;
+    }
 
     public Long getId() {
         return id;
