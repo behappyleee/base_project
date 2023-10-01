@@ -1,5 +1,6 @@
 package com.example.orm_jpa.project.entity;
 
+import com.example.orm_jpa.project.entity.item.Item;
 import jakarta.persistence.*;
 
 @Entity

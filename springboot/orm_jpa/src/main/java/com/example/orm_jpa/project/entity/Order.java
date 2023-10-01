@@ -1,5 +1,6 @@
 package com.example.orm_jpa.project.entity;
 
+import com.example.orm_jpa.project.entity.common.BaseEntity;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseEntity { // 매핑 정보인 BaseEntity 를 상속 (날짜 데이터 엔티티) 상속시 DDL 생성 시 에도 자동 추가 됨
 
     @Id
     @GeneratedValue
@@ -27,6 +28,10 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
+    @OneToOne          // 주문과 배송은 1:1 관계 (OneToOne)
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;  // 배송 정보
+
     @Temporal(TemporalType.TIMESTAMP)   // 날짜 형식 타입
     private Date orderDate;     // 주문 날짜
 
@@ -41,6 +46,10 @@ public class Order {
         }
         this.member = member;
         member.getOrders().add(this);
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
     }
 
     public void addOrderItem(OrderItem orderItem) {

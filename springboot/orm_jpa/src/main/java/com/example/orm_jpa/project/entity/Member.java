@@ -1,5 +1,6 @@
 package com.example.orm_jpa.project.entity;
 
+import com.example.orm_jpa.project.entity.common.BaseEntity;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 @Entity
 //  Table 어노테이션이 없으면 클래스명과 같은 테이블명을 매핑
-public class Member {
+public class Member extends BaseEntity {    // 매핑 정보인 BaseEntity 를 상속 (날짜 데이터 엔티티) 상속시 DDL 생성 시 에도 자동 추가 됨
 
     // 식별자는 ID 와 GeneratedValue 를 통하여 데이터 베이스에서 자동 생성이 됨
     // GeneratedValue 의 기본 생성 잔략은 AUTO 이므로 선택한 데이터베이스 방언에 따라 Identity, Sequence, Table 중 하나가 선택이 됨
