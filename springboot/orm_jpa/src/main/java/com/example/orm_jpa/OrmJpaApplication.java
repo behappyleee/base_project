@@ -8,6 +8,10 @@ import java.util.Objects;
 @SpringBootApplication
 public class OrmJpaApplication {
 
+    // TODO
+    // JPA Project 학습 필요 !!!
+    // 가능하면 Spring 을 -> Springboot 로 옮겨서 학습하기 !!!
+
     // 패러다임의 불일치
     // 객체와 관계형 데이터 베이스는 서로 지향하는 목적이 다르므로 둘의 기능과 표현 방법도 다르다
     // 따라서 객체 구조를 테이블 구조에 저장하는 데는 한계가 있음

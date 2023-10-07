@@ -9,6 +9,21 @@ public class TestClass {
     Logger logger = LoggerFactory.getLogger(TestClass.class);
 
     @Test
+    public void testRawString() {
+        String variableTest = "!!variable start !!";
+        String rawStr = """
+                This is Raw String !
+                Test !!
+                """ + variableTest + """
+                Spance ... ?
+                """;
+
+        final var rawStrTest = "RWA STRING ~ !!";
+
+        System.out.println(rawStr);
+    }
+
+    @Test
     public void debugRunTest() {
         // Debugging 동작 방식 Test
 

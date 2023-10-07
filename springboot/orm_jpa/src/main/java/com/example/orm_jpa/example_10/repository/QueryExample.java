@@ -24,7 +24,7 @@ public class QueryExample {
 
         // 2. 위치 기준 바인딩
         // 위치 기준 Positional Parameters 를 사용하려면 ? 다음에 위치 값을 지정해 주면 됨
-        // List<Member> members = em.createQuery("SELECT m FROM Member m WHERE m.username = ?1").setParameter(1, usernameParam).getResultList();
+        // List<Member> members = em.creat  eQuery("SELECT m FROM Member m WHERE m.username = ?1").setParameter(1, usernameParam).getResultList();
 
 
     }
