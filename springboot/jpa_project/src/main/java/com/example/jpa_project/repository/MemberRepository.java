@@ -1,16 +1,17 @@
 package com.example.jpa_project.repository;
 
-import jpabook.jpashop.domain.Member;
+import com.example.jpa_project.domain.Member;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 /**
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오전 1:08
  */
+
 @Repository
 public class MemberRepository {
 

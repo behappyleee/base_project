@@ -1,11 +1,12 @@
 package com.example.jpa_project.domain.item;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+
 @Entity
 @DiscriminatorValue("M")
 public class Movie extends Item {

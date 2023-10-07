@@ -1,15 +1,15 @@
 package com.example.jpa_project.repository;
 
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderSearch;
+import com.example.jpa_project.domain.Member;
+import com.example.jpa_project.domain.Order;
+import com.example.jpa_project.domain.OrderSearch;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +17,7 @@ import java.util.List;
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오후 10:28
  */
+
 @Repository
 public class OrderRepository {
 

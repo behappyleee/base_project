@@ -1,17 +1,17 @@
 package com.example.jpa_project.service;
 
-import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.item.Book;
+import com.example.jpa_project.domain.Address;
+import com.example.jpa_project.domain.Member;
+import com.example.jpa_project.domain.item.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 /**
- * User: HolyEyE
- * Date: 2013. 12. 4. Time: 오후 10:51
+ * Created by holyeye on 2014. 3. 12..
  */
+
 @Service
 public class MockCreateService {
 

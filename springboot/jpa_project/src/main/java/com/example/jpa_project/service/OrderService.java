@@ -1,9 +1,9 @@
 package com.example.jpa_project.service;
 
-import jpabook.jpashop.domain.*;
-import jpabook.jpashop.domain.item.Item;
-import jpabook.jpashop.repository.MemberRepository;
-import jpabook.jpashop.repository.OrderRepository;
+import com.example.jpa_project.domain.*;
+import com.example.jpa_project.domain.item.Item;
+import com.example.jpa_project.repository.MemberRepository;
+import com.example.jpa_project.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Created by holyeye on 2014. 3. 12..
  */
+
 
 @Service
 @Transactional

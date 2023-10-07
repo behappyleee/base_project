@@ -1,10 +1,10 @@
 package com.example.jpa_project.repository;
 
-import jpabook.jpashop.domain.item.Item;
+import com.example.jpa_project.domain.item.Item;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 /**

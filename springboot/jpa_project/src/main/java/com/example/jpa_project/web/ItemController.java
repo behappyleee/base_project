@@ -1,8 +1,8 @@
 package com.example.jpa_project.web;
 
-import jpabook.jpashop.domain.item.Book;
-import jpabook.jpashop.domain.item.Item;
-import jpabook.jpashop.service.ItemService;
+import com.example.jpa_project.domain.item.Book;
+import com.example.jpa_project.domain.item.Item;
+import com.example.jpa_project.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

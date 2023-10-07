@@ -1,10 +1,11 @@
 package com.example.jpa_project.domain;
 
-import javax.persistence.Embeddable;
+import jakarta.persistence.Embeddable;
 
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+
 @Embeddable
 public class Address {
 

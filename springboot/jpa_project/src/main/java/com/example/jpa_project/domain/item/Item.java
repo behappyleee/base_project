@@ -1,9 +1,9 @@
 package com.example.jpa_project.domain.item;
 
-import jpabook.jpashop.domain.Category;
-import jpabook.jpashop.exception.NotEnoughStockException;
+import com.example.jpa_project.domain.Category;
+import com.example.jpa_project.exception.NotEnoughStockException;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 

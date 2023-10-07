@@ -1,12 +1,13 @@
 package com.example.jpa_project.domain;
 
-import jpabook.jpashop.domain.item.Item;
+import com.example.jpa_project.domain.item.Item;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+
 @Entity
 @Table(name = "ORDER_ITEM")
 public class OrderItem {

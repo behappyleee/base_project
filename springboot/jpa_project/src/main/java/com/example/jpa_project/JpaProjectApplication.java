@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JpaProjectApplication {
 
     // JPA 실전 프로젝트 !
-
     public static void main(String[] args) {
         SpringApplication.run(JpaProjectApplication.class, args);
     }

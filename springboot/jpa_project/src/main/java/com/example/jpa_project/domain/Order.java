@@ -1,6 +1,6 @@
 package com.example.jpa_project.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+
 @Entity
 @Table(name = "ORDERS")
 public class Order {

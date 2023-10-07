@@ -1,12 +1,12 @@
 package com.example.jpa_project.web;
 
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderSearch;
-import jpabook.jpashop.domain.item.Item;
-import jpabook.jpashop.service.ItemService;
-import jpabook.jpashop.service.MemberService;
-import jpabook.jpashop.service.OrderService;
+import com.example.jpa_project.domain.Member;
+import com.example.jpa_project.domain.Order;
+import com.example.jpa_project.domain.OrderSearch;
+import com.example.jpa_project.domain.item.Item;
+import com.example.jpa_project.service.ItemService;
+import com.example.jpa_project.service.MemberService;
+import com.example.jpa_project.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,14 +1,15 @@
 package com.example.jpa_project.domain;
 
-import jpabook.jpashop.domain.item.Item;
+import com.example.jpa_project.domain.item.Item;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+
 @Entity
 public class Category {
 

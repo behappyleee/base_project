@@ -1,11 +1,11 @@
 package com.example.jpa_project.domain;
 
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Created by holyeye on 2014. 3. 11..
  */
+
 @Entity
 public class Delivery {
 

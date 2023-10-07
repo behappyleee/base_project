@@ -1,7 +1,7 @@
 package com.example.jpa_project.service;
 
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
+import com.example.jpa_project.domain.Member;
+import com.example.jpa_project.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +12,7 @@ import java.util.List;
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오전 1:07
  */
+
 @Service
 @Transactional
 public class MemberService {
