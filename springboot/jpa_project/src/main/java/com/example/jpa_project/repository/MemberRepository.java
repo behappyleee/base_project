@@ -12,4 +12,7 @@ import java.util.List;
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
     List<Member> findByName(String name);
+
+    Member findOne(Long memberId);
+
 }

@@ -1,7 +1,7 @@
 package com.example.jpa_project.service;
 
 import com.example.jpa_project.domain.Member;
-import com.example.jpa_project.repository.spring.MemberRepository;
+import com.example.jpa_project.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

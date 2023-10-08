@@ -10,4 +10,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
+    Item findOne(Long itemid);
+
 }

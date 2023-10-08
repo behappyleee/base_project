@@ -2,8 +2,8 @@ package com.example.jpa_project.service;
 
 import com.example.jpa_project.domain.*;
 import com.example.jpa_project.domain.item.Item;
-import com.example.jpa_project.repository.spring.MemberRepository;
-import com.example.jpa_project.repository.spring.OrderRepository;
+import com.example.jpa_project.repository.MemberRepository;
+import com.example.jpa_project.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,9 +19,14 @@ import java.util.List;
 @Transactional
 public class OrderService {
 
-    @Autowired MemberRepository memberRepository;
-    @Autowired OrderRepository orderRepository;
-    @Autowired ItemService itemService;
+    @Autowired
+    MemberRepository memberRepository;
+
+    @Autowired
+    OrderRepository orderRepository;
+
+    @Autowired
+    ItemService itemService;
 
     /** 주문 */
     public Long order(Long memberId, Long itemId, int count) {

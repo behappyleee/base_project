@@ -15,9 +15,14 @@ import jakarta.annotation.PostConstruct;
 @Service
 public class MockCreateService {
 
-    @Autowired MemberService memberService;
-    @Autowired ItemService itemService;
-    @Autowired OrderService orderService;
+    @Autowired
+    MemberService memberService;
+
+    @Autowired
+    ItemService itemService;
+
+    @Autowired
+    OrderService orderService;
 
     @PostConstruct
     public void initCreateMock() {
