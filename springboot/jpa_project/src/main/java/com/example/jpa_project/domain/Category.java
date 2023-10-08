@@ -13,7 +13,10 @@ import java.util.List;
 @Entity
 public class Category {
 
-    @Id @GeneratedValue
+    // 상품과 다대다 관계를 맺는다.
+
+    @Id
+    @GeneratedValue
     @Column(name = "CATEGORY_ID")
     private Long id;
 

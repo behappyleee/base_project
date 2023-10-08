@@ -1,36 +1,13 @@
 package com.example.jpa_project.repository;
 
 import com.example.jpa_project.domain.item.Item;
-import org.springframework.stereotype.Repository;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오후 9:48
  */
+public interface ItemRepository extends JpaRepository<Item, Long> {
 
-@Repository
-public class ItemRepository {
-
-    @PersistenceContext
-    EntityManager em;
-
-    public void save(Item item) {
-        if (item.getId() == null) {
-            em.persist(item);
-        } else {
-            em.merge(item);
-        }
-    }
-
-    public Item findOne(Long id) {
-        return em.find(Item.class, id);
-    }
-
-    public List<Item> findAll() {
-        return em.createQuery("select i from Item i",Item.class).getResultList();
-    }
 }

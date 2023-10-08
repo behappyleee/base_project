@@ -9,9 +9,16 @@ import java.util.List;
  */
 
 @Entity
+// JPA NamedQuery 는 어노테이션을 사용하여 쿼리를 직접 정의가 가능
+@NamedQuery(name = "Member.findByUsername", query = "SELECT m FROM Member m WHERE m.name= :username")
 public class Member {
 
-    @Id @GeneratedValue
+    // 테이블의 기본 키 컬럼 이름은 해당 테이블 이름을 포함하도록 설계
+    // 테이블의 기본 키 이름은 MEMBER_ID 이런 식으로 네이밍을 하였으며
+    // 엔티티 식별자 자체의 ID 는 ID 로 사용할 수 있도록 하였다.
+
+    @Id
+    @GeneratedValue
     @Column(name = "MEMBER_ID")
     private Long id;
 
@@ -22,7 +29,6 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<Order>();
-
 
     public Long getId() {
         return id;

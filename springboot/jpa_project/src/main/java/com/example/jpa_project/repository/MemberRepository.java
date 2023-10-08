@@ -1,39 +1,15 @@
 package com.example.jpa_project.repository;
 
 import com.example.jpa_project.domain.Member;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 /**
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오전 1:08
  */
+public interface MemberRepository extends JpaRepository<Member, Long> {
 
-@Repository
-public class MemberRepository {
-
-    @PersistenceContext
-    EntityManager em;
-
-    public void save(Member member) {
-        em.persist(member);
-    }
-
-    public Member findOne(Long id) {
-        return em.find(Member.class, id);
-    }
-
-    public List<Member> findAll() {
-        return em.createQuery("select m from Member m", Member.class)
-                .getResultList();
-    }
-
-    public List<Member> findByName(String name) {
-        return em.createQuery("select m from Member m where m.name = :name", Member.class)
-                .setParameter("name", name)
-                .getResultList();
-    }
+    List<Member> findByName(String name);
 }

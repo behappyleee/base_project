@@ -9,6 +9,8 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class Address {
 
+    // 값 타입 (임베디드 타입) 이다 회원과 배송에서 사용 한다.
+
     private String city;
     private String street;
     private String zipcode;

@@ -9,7 +9,10 @@ import jakarta.persistence.*;
 @Entity
 public class Delivery {
 
-    @Id @GeneratedValue
+    // 주문 시 하나의 배송 정보를 생성한다. 주문과 배송은 일대일 관계이다.
+
+    @Id
+    @GeneratedValue
     @Column(name = "DELIVERY_ID")
     private Long id;
 

@@ -16,7 +16,10 @@ import java.util.List;
 @DiscriminatorColumn(name = "DTYPE")
 public abstract class Item {
 
-    @Id @GeneratedValue
+    // 앨범, 도서, 영화 타입을 통합해서 하나의 테이블로 만들었다. DTYPE 컬럼으로 타입을 구분
+
+    @Id
+    @GeneratedValue
     @Column(name = "ITEM_ID")
     private Long id;
 
@@ -39,7 +42,6 @@ public abstract class Item {
         }
         this.stockQuantity = restStock;
     }
-
 
     //==Getter Setter==//
     public Long getId() {

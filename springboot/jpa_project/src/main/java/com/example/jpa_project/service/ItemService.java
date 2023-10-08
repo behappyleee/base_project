@@ -1,7 +1,7 @@
 package com.example.jpa_project.service;
 
 import com.example.jpa_project.domain.item.Item;
-import com.example.jpa_project.repository.ItemRepository;
+import com.example.jpa_project.repository.spring.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
