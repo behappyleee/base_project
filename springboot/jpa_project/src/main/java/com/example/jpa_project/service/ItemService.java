@@ -29,6 +29,7 @@ public class ItemService {
     }
 
     public Item findOne(Long itemId) {
-        return itemRepository.findOneByType(itemId);
+        return itemRepository.findByOne(itemId);
     }
+
 }
