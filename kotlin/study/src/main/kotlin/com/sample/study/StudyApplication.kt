@@ -9,6 +9,9 @@ import com.sample.study.basic.makeStr2
 @SpringBootApplication
 class StudyApplication
 
+// Kotlin 공식 문서 사이트 !
+// https://kotlinlang.org/docs/home.html
+
 fun main(args: Array<String>) {
 	makeStr();
 	makeStr2();
