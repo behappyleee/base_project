@@ -1,15 +1,17 @@
 package com.example.jpa_project.repository;
 
 import com.example.jpa_project.domain.Member;
+import jakarta.persistence.QueryHint;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * User: HolyEyE
@@ -31,9 +33,17 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     // Paging 사용 (count 쿼리 사용 안 함)
     // List<Member> findByName(String name, Pageable pageable);
 
+    // Sort 사용
+    List<Member> findByName(String name, Sort sort);
+
     // 스프링 데이터 JPA 는 도메인 클래스.메서드이름 으로 쿼리를 찾아서 실행 함
     // Member 엔티티에서 정의한 @NamedQuery 를 사용 (Parameter 로 username 을 넘겨줌)
     List<Member> findByUsername(@Param("username") String username);
+
+    // JPA 쿼리 힌트를 사용하려면 @QueryHints 어노테이션을 사용하면 된다.
+    // 참고로 @QueryHints 어노테이션은 SQL 에 대한 힌트가 아닌 JPA 구현체에 대한 힌트이다.
+    @QueryHints(value = {@QueryHint(name = "org.hibernate.readOnly", value = "true")}, forCounting = true)
+    Page<Member> findByNameTest(String name, Pageable pageable);
 
     // Repository 에 직접 명시 하는 방법 @Query 어노테이션을 통하여 Repository 에 직접 명시
     // @Query("SELECT m FROM Member m where m.address= :address") // Parameter Name 기반 (사용하도록 권장)
