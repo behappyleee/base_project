@@ -8,8 +8,12 @@ import java.util.List;
  * Created by holyeye on 2014. 3. 11..
  */
 
-@Entity
-// JPA NamedQuery 는 어노테이션을 사용하여 쿼리를 직접 정의가 가능
+// Entity 어노테이션은 필수 (Entity 만 어노테이션 사용 시 DB 와 연결 시 테이블 명은 클래스 명과 동일하게 설정 됨)
+// 반면 @Table 어노테이션은 외부에서 호출하는 용도가 아닌 실제 DB 에 붙을 테이블명 어노테이션명 을 말함 (실제 table 명을 지정) @Table 어노테이션은 생략이 가능
+
+@Entity // Entity 어노테이션은 데이터 베이스의 테이블과 일대일로 매칭하는 객체 단위이며 Entity 객체의 인스턴스 하나가 테이블에서 하나의 레코드 값을 의미
+// JPA NamedQuery 는 어노테이션을 사용하여 쿼리를 직접 정의가 가능 (어노테이션으로 @NamedQuery 관리하는 방법과 XML 파일로 관리하는 방법이 있음)
+// JPA Named 쿼리 처럼 애플리케이션 실행 시점에 문법 오류를 발견 할 수 있는 장점이 있다.
 @NamedQuery(name = "Member.findByUsername", query = "SELECT m FROM Member m WHERE m.name= :username")
 public class Member {
 
