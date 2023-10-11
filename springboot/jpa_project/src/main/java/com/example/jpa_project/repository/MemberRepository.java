@@ -17,7 +17,9 @@ import java.util.List;
  * User: HolyEyE
  * Date: 2013. 12. 3. Time: 오전 1:08
  */
-public interface MemberRepository extends JpaRepository<Member, Long> {
+
+// 4. 사용자 정의 클래스를 똑같이 MemberRepositoryCustom 으로 상속 한다 (그러면 JPA 가 알아서 사용자가 정의 한 구현 클래스로 인식을 함)
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
 
     // spring-data-jpa 는 쿼리 메서드에 의하여 페이징과 정렬 기능을 사용할 수 있도록 2가지 특별한 파라미터를 제공
     // org.springframework.data.domain.Sort (정렬 기능)
@@ -39,6 +41,9 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     // 스프링 데이터 JPA 는 도메인 클래스.메서드이름 으로 쿼리를 찾아서 실행 함
     // Member 엔티티에서 정의한 @NamedQuery 를 사용 (Parameter 로 username 을 넘겨줌)
     List<Member> findByUsername(@Param("username") String username);
+
+    // Pageable 사용 한 전체 멤버 조회 메서드
+    Page<Member> findMembers(Pageable pageable);
 
     // JPA 쿼리 힌트를 사용하려면 @QueryHints 어노테이션을 사용하면 된다.
     // 참고로 @QueryHints 어노테이션은 SQL 에 대한 힌트가 아닌 JPA 구현체에 대한 힌트이다.
