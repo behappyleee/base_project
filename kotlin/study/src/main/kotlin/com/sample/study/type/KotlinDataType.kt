@@ -28,14 +28,15 @@ class KotlinDataType {
     val e  = 2.71828182;       // Double
     val eFloat = 2.7182F;    // Float
 
-    // TODO
-    // Kotlin 학습 하기 !!!
-    // TODO
-    // https://kotlinlang.org/docs/numbers.html#floating-point-types
-    // 공식 문서
-    // TODO
-    // Unlike some other languages, there are no implicit widening conversions for numbers in Kotlin. For example, a function with a Double parameter can be
-    // 해당 부분부터 학습 필요 ~ !!!
+    // Unlike someother languages, there are no implicit widening conversions for numbers in Kotlin.
+    // For example, a function with a Double paramter can be called only on Double values, but not Float, Int or other numeric values.
+    // var ttt = doubleParameterFunction(3.5f); // Error 발생
+    var test = doubleParameterFunction(3.6);   // doubleㄹ 하여애 에러 발생하지 않음
+
+    // On the JVM platform, numbers are stored as primitive types: int, double, and so on.
+
+
+
 
 }
 
@@ -43,3 +44,13 @@ fun main() {
 
     var classNew = KotlinDataType();
 }
+
+fun doubleParameterFunction(param: Double) {
+
+
+
+}
+
+
+
+
