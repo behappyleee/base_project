@@ -18,13 +18,13 @@ import java.util.List;
 
 public class OrderRepositoryImpl extends QuerydslRepositorySupport implements CustomOrderRepository {
 
-    // TODO
-    // spring-data-jpa 도 동작 가능하도록 구현 하기 !!!
-
     public OrderRepositoryImpl() {
         super(Order.class);
     }
 
+    // spring-data-jpa 는 2가지 방법으로 QueryDSL 을 적용한다.
+    // org.springframework.data.querydsl.QueryDslPredicateExecutor
+    // org.springframework.data.querydsl.QueryDslRepositorySupport
     @Override
     public List<Order> search(OrderSearch orderSearch) {
         // TODO

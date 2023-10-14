@@ -10,6 +10,8 @@ public class OrderSpec {
     // 명세를 정의하기 위하여서는 Specification 인터페이스를 구현하면 된다.
     // JPA Criteria 의 Root, CriteriaQuery, CriteriaBuilder 클래스가 모두 파라미터로 주어진다.
 
+    // 명세 적용 (Specification 로 검색하는 기능을 사용하기 위하여서는 org.springframework.data.jpa.repository.JpaSpecificationExecutor 를 추가로 상속 받아야 한다.
+
     public static Specification<Order> memberNameLike(final String memberName) {
         return new Specification<Order>() {
             @Override
