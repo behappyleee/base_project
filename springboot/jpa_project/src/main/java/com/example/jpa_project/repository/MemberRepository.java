@@ -24,7 +24,6 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     // spring-data-jpa 는 쿼리 메서드에 의하여 페이징과 정렬 기능을 사용할 수 있도록 2가지 특별한 파라미터를 제공
     // org.springframework.data.domain.Sort (정렬 기능)
     // org.springframework.data.domain.Pageable (페이징 기능 내부에 sort 포함) Pageable 사용 시 타입으로 List 나 (org.springframework.data.domain.Page) 반환
-
     List<Member> findByName(String name);
 
     Member findOne(Long memberId);

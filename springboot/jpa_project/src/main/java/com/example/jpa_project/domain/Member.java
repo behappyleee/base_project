@@ -20,7 +20,6 @@ public class Member {
     // 테이블의 기본 키 컬럼 이름은 해당 테이블 이름을 포함하도록 설계
     // 테이블의 기본 키 이름은 MEMBER_ID 이런 식으로 네이밍을 하였으며
     // 엔티티 식별자 자체의 ID 는 ID 로 사용할 수 있도록 하였다.
-
     @Id
     @GeneratedValue
     @Column(name = "MEMBER_ID")

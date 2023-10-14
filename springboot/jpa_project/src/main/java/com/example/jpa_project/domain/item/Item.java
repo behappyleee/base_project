@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * Created by holyeye on 2014. 3. 11..
  */
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE")
