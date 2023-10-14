@@ -59,6 +59,12 @@ public class OrderService {
     }
 
     /** 주문 검색 */
+
+    //    public List<Order> findOrders(OrderSearch orderSearch) {
+//        return orderRepository.findAll(orderSearch);
+//    }
+
+    // spring-data-jpa 에서 findOrders 사용
     public List<Order> findOrders(OrderSearch orderSearch) {
         return orderRepository.findAll(orderSearch);
     }
