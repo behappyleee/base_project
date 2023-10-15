@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3a3a11-afab-4bd9-a595-3d6fcbdd3af0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VirtualThreadEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/virtual_thread.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../kotlin/kotlin_basic/src/main/kotlin/StringType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gs-securing-web" beforeDir="false" afterPath="$PROJECT_DIR$/../gs-securing-web" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/kotlin_basic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/kotlin_basic/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StackQueueCompare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ThreadForLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VirtualThreadEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VirtualThreadEx.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2Wchl7qcLOI8R0luaUEApYhyZom" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -40,16 +37,50 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Chul Han/Desktop/workspace/study/base_project/java/virtual_thread",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.ThreadForLoop">
+    <configuration name="StackQueueCompare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StackQueueCompare" />
+      <module name="virtual_thread" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadForLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadForLoop" />
+      <module name="virtual_thread" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VirtualThreadEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VirtualThreadEx" />
+      <module name="virtual_thread" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ThreadForLoop" />
+        <item itemvalue="Application.VirtualThreadEx" />
+        <item itemvalue="Application.StackQueueCompare" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,6 +90,9 @@
       <option name="presentableId" value="Default" />
       <updated>1697037924145</updated>
       <workItem from="1697037925171" duration="1055000" />
+      <workItem from="1697350958922" duration="546000" />
+      <workItem from="1697351950874" duration="1769000" />
+      <workItem from="1697376530365" duration="3782000" />
     </task>
     <servers />
   </component>
