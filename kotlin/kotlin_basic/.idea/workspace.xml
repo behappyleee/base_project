@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5fa24b-08c7-4db6-9b3a-f6607bbade1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/Array.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/ListLinkedList.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/TestKotlin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java/virtual_thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/virtual_thread/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/GraphData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697036909267</updated>
       <workItem from="1697036910279" duration="1403000" />
-      <workItem from="1697720461318" duration="3032000" />
+      <workItem from="1697720461318" duration="3278000" />
     </task>
     <servers />
   </component>
