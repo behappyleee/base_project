@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5fa24b-08c7-4db6-9b3a-f6607bbade1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/src/VirtualThreadEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/virtual_thread/virtual_thread.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/StringType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java/gs-securing-web" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/gs-securing-web" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/Array.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/ListLinkedList.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/TestKotlin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/virtual_thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/virtual_thread/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -32,6 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2WcfgebBJv917wZ9wqdrUmVXgTE" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -40,10 +39,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/dhfhf/Desktop/myfolder/workspace/base-project/kotlin/kotlin_basic/src/main",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Chul Han/Desktop/workspace/open-source/Kotlin-Algorithm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,7 +61,14 @@
       <recent name="C:\Users\dhfhf\Desktop\myfolder\workspace\base-project\kotlin\kotlin_basic\src\main\kotlin" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.ListLinkedListKt">
+    <configuration name="ListLinkedListKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="data_structure.ListLinkedListKt" />
+      <module name="kotlin_basic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StringTypeKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StringTypeKt" />
       <module name="kotlin_basic" />
@@ -70,6 +78,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ListLinkedListKt" />
         <item itemvalue="Kotlin.StringTypeKt" />
       </list>
     </recent_temporary>
@@ -83,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697036909267</updated>
       <workItem from="1697036910279" duration="1403000" />
+      <workItem from="1697720461318" duration="3032000" />
     </task>
     <servers />
   </component>
