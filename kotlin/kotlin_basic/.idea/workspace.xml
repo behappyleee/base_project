@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5fa24b-08c7-4db6-9b3a-f6607bbade1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/GraphData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data_structure/GraphData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data_structure/GraphData.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2WcfgebBJv917wZ9wqdrUmVXgTE" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -41,7 +40,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Chul Han/Desktop/workspace/open-source/Kotlin-Algorithm",
+    "last_opened_file_path": "C:/Users/Chul Han/Desktop/workspace/study/base_project/kotlin/study",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,7 +88,8 @@
       <option name="presentableId" value="Default" />
       <updated>1697036909267</updated>
       <workItem from="1697036910279" duration="1403000" />
-      <workItem from="1697720461318" duration="3278000" />
+      <workItem from="1697720461318" duration="4221000" />
+      <workItem from="1697870591093" duration="30000" />
     </task>
     <servers />
   </component>
