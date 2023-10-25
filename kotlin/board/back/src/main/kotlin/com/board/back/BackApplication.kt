@@ -1,11 +1,11 @@
-package com.sample.board
+package com.board.back
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class BoardApplication
+class BackApplication
 
 fun main(args: Array<String>) {
-	runApplication<BoardApplication>(*args)
+	runApplication<BackApplication>(*args)
 }
