@@ -2,9 +2,11 @@ package com.board.back.controller
 
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
+@RequestMapping("/v1/board")
 class BoardController {
 
     private val log = LoggerFactory.getLogger(this.javaClass);
@@ -20,6 +22,11 @@ class BoardController {
         log.info("[HELLO CONTROLLER LAST BREAK POINT !!!]");
 
         return "Hello This is From Kotlin";
+    }
+
+    @GetMapping("/list")
+    fun boardList() {
+
     }
 
 }
