@@ -11,7 +11,6 @@ class KotlinDataType {
     // When initialize numbers a variable with no explicit type specification, the compiler automatically
     // infers the type with the smallest range enough to represent the value starting from Int.
     // If it is not exceeding the range of Int, the type is Int. If is exceeds the type is Long.
-
     val one = 1;    // Int
     val threeBillion = 300000000000;    // Long
     val oneLong = 1L    // Long
@@ -36,8 +35,6 @@ class KotlinDataType {
     // On the JVM platform, numbers are stored as primitive types: int, double, and so on.
     // Exceptions are cases when you create a nullable number reference such as Int? or use generics.
     // In thesse cases numbers are boxed in Java classes Integer, Double and so on.
-
-
 
 }
 
