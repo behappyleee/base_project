@@ -1,5 +1,7 @@
 package com.sample.study.classtype
 
+import com.sample.study.basic.Student
+
 fun main() {
 
     // Companion Class Type
@@ -16,6 +18,7 @@ fun main() {
     var objectMake = CompanionTest();
 
     // objectMake.intData; // 해당 처럼 접근 시 에러가 발생
+
 }
 
 class CompanionTest {
