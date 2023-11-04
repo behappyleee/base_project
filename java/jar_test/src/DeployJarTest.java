@@ -8,4 +8,11 @@ public class DeployJarTest {
         return "This is Check String ";
     }
 
+    public static void main(String[] args) {
+
+        System.out.printf("[Don't worry every thing will be fine, BE HAPPY !!]");
+        System.out.printf("[Hello THis is Hello Class Check Main !!!]");
+
+    }
+
 }
