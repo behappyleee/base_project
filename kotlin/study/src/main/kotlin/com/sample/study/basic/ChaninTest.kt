@@ -1,5 +1,7 @@
 package com.sample.study.basic
 
+import java.util.stream.Stream
+
 
 fun main() {
     var mapTest = hashMapOf<String, Int>()
@@ -22,6 +24,9 @@ fun main() {
     var per5 = Persons("test5" , 24);
 
     var listTest = listOf(per1, per2, per3, per4, per5);
+
+
+
 
 
 }
