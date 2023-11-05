@@ -16,16 +16,16 @@ java {
 
 repositories {
     mavenCentral()
+    flatDir{
+        dirs 'libs' // JAR 파일이 있는 디렉토리명 입력
+    }
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
-
-    // implementation file(dir: 'libs', include: '*.jar')
-    //implementation(fileTree(Pair("dir", "libs"), Pair("include", listOf("*.jar"))))
-
+    implementation name: 'jar_test', version: '1.0', ext: 'jar'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
