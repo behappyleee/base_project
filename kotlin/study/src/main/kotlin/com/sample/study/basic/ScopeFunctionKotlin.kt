@@ -48,6 +48,7 @@ fun main() {
     // with 는 인자로 context object 를 받지만 apply 는 extension function 이기 때문에 객체를 생성해서
     // 할당 하기 전에 사용이 가능 (apply 코드 블록이 모두 수행 된 후 인스턴스가 할당이 되기에 apply 는 객체 생성 시점에
     // 초기화를 할 떄 유용함
+    // apply 는 주로 객체의 프로퍼티를 변경 시에는 apply 가 적합
     val per2 = PersonScope("test3", 24).apply {
         name = "test4"
     }
@@ -75,7 +76,12 @@ fun main() {
        print(it)
    }
 
+    firstPersonAge.let {
+        print("firstAge : ${it}")
+    }
 
+    // Scope Function 체이닝이 지나치게 반복이 되면 가독성이 떨어져 값을 예측하기 어렵고 디버깅이 어렵다.
+    // 가능하면 Scope Function 체이닝을 최소화 하고 객체에 적당한 책임을 할당해서 해결하도록 필요
 
 }
 
@@ -84,3 +90,9 @@ class PersonScope(var name: String, var age: Int) {
         return "This is Test Function !!";
     }
 };
+
+class HappyPerson(var name: String, var year: Int) {
+    fun testHappy(): String {
+        return "I am Happy !!";
+    }
+}
