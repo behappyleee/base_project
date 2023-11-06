@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f3a3a11-afab-4bd9-a595-3d6fcbdd3af0" name="Changes" comment="" />
+    <list default="true" id="8f3a3a11-afab-4bd9-a595-3d6fcbdd3af0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../kotlin/study/src/main/kotlin/com/sample/study/basic/ScopeFunctionKotlin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Chul Han/Desktop/workspace/open-source/code-examples/aws/aws-hello-world",
+    "last_opened_file_path": "C:/Users/Chul Han/Desktop/workspace/study/base_project/java/virtual_thread",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,6 +92,7 @@
       <workItem from="1697376530365" duration="5266000" />
       <workItem from="1697549294614" duration="606000" />
       <workItem from="1697640338761" duration="2814000" />
+      <workItem from="1699277879047" duration="302000" />
     </task>
     <servers />
   </component>
