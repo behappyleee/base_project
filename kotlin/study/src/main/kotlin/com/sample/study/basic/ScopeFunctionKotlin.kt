@@ -65,10 +65,15 @@ fun main() {
             , PersonScope("test8",28)
             , PersonScope("test9", 29));
 
-    peopleList.first().apply {
-        println("PEOPLE NAME : " + name)
-        println("PEOPLE AGE : " + age)
-    }
+   val firstPersonNameLength = peopleList.first().run { name.length }
+
+   val firstPersonAge = peopleList.first().let {
+       pe -> pe.age + 3
+   }
+
+   firstPersonAge.let {
+       print(it)
+   }
 
 
 
