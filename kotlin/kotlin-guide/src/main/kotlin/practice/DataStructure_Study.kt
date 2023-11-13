@@ -27,6 +27,22 @@ fun maps() {
         "Batman & Robin" to "George Clooney",
     )
 
+    class TestCheck (var a: String, var b: String) {
+
+    }
+
+    var mutableMap = mutableMapOf(
+        "Test From 1" to "Test To 1",
+        "Test From 2" to 3,
+        "Test From 3" to TestCheck("aaa", "bbb")
+    )
+
+
+    mutableMap.put("Object Check", TestCheck("2", "7"))
+    mutableMap.put("Test From 3", 120L)
+    mutableMap.put("Test From 2" , 2);
+
+
     println(movieBatmans["Batman Returns"])
     println("Batman Begins" !in movieBatmans)   // true
 
@@ -41,7 +57,6 @@ fun maps() {
 
     // treemap keys
     println(treeMap.keys)
-
 
 }
 
