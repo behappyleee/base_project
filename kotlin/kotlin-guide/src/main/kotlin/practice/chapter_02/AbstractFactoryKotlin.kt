@@ -44,22 +44,14 @@ interface ServerConfiguration {
 
 data class ServerConfigurationImpl(
     override val properties: List<Property>,
-): ServerConfiguration {
-
-}
-
+): ServerConfiguration
 
 data class StringProperty(
     override val name: String,
     override val value: String
-
 ): Property
 
 data class IntProperty(
-
     override val name: String,
     override val value: Int
-
 ): Property
-
-
