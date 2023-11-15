@@ -47,16 +47,9 @@ class MailBuilder {
         this.recepients = recepients
         return this
     }
-
     // More function to be implements here
-
 }
 
-
-
 class BuilderKotlin {
-
-
-
 
 }
