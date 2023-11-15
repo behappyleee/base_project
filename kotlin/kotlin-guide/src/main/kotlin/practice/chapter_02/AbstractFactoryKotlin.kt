@@ -32,10 +32,8 @@ class Parser {
 }
 
 interface Property {
-
     val name: String
     val value: Any
-
 }
 
 interface ServerConfiguration {
