@@ -15,7 +15,6 @@ fun main() {
 
     val s = (Stream.generate{42}).toList()
     println(s)
-
 }
 
 fun <T> collectionProcessing(c: Collection<T>) {
