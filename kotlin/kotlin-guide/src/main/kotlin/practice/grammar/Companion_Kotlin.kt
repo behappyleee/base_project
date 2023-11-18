@@ -9,6 +9,7 @@ fun main(args: Array<String>) {
 
 class MyClass {
     companion object {
+        
         val count = 1   // Behaves like STATIC variable
 
         @JvmStatic
