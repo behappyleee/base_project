@@ -38,4 +38,23 @@ fun main(args: Array<String>) {
         j--
     }
 
+    // Kotlin Do While Loop
+    var k = 0
+
+    do {
+        if(k % 2 == 0) {
+            println("Kotlin Do Loop 1 : " + k)
+        }
+        k++
+    } while(k <= 6)
+
+    var l: Int = 10
+
+    do {
+        if(l % 2 == 0) {
+            println("Koltin Do Loop 2 : " + l)
+        }
+        l--
+    } while(l >= 0)
+
 }
