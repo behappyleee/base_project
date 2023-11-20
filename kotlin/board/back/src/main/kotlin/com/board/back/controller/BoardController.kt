@@ -1,5 +1,6 @@
 package com.board.back.controller
 
+import com.board.back.client.HttpClient
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
