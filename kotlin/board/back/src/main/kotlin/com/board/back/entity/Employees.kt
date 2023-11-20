@@ -8,7 +8,7 @@ class Employees(
         @Id val userId: String
 
 ) {
-    constructor() : this() {
-
-    }
+//    constructor() : this() {
+//
+//    }
 }

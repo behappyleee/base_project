@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository
 @Repository
 class BoardRepository {
 
-    fun getEmployees();
+    fun getEmployees() {
+
+    }
 
 }
