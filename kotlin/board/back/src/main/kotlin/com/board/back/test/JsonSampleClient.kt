@@ -1,4 +1,4 @@
-package com.board.back.client
+package com.board.back.test
 
 import com.board.back.dto.Carts
 import org.springframework.context.annotation.Bean
