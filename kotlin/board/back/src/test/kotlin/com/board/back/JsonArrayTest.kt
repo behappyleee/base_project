@@ -27,8 +27,12 @@ class JsonArrayTest {
             val userData = mapper.readValue(user, UserJson::class.java)
 
             println(userData)
-        }
+            println("ID : " + userData.id)
+            println("FIRST NAME : " + userData.firstName)
 
+            val userToJson = mapper.writeValueAsString(userData)
+            println("USER JSON : " + userToJson)
+        }
     }
 
 }
