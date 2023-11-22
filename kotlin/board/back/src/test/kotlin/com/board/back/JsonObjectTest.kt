@@ -1,5 +1,6 @@
 package com.board.back
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.jupiter.api.Test
@@ -15,20 +16,35 @@ class JsonObjectTest {
         println(jsonObj)
 
         val jsonData = JSONObject()
+        val jsonArray = JSONArray()
+        val jsonArray2 = JSONArray()
         val jsonUsers: JSONArray = jsonObj.getJSONArray("users")
 
         (0 until jsonUsers.length()).forEach {
             val user: JSONObject = jsonUsers.getJSONObject(it)
-            val userName: String = user.getJSONObject("lastName")
-            val userAddress: String = user.getJSONObject("address").getJSONObject("city")
+            val userName: String = user.getString("lastName")
+            val userAddress: String = user.getJSONObject("address").getString("city")
+            val jsonAddress = user.getJSONObject("address")
+
             val user1 = UserTest(userName, userAddress)
 
             println(user)
+            println(jsonAddress)
 
             jsonData.put("user", user1)
+            jsonArray.put(user1)
+            jsonArray2.put(jsonAddress)
         }
 
         println(jsonData)
+        println(jsonArray)
+        println(jsonArray2)
+
+        // 역직렬화 Java 객체를 -> Json 객체로 변환
+//        val mapper = ObjectMapper()
+//        val jsonTest = mapper.writeValueAsString(jsonArray)
+//        println(jsonTest)
+
     }
 }
 
