@@ -3,10 +3,10 @@ package practice.grammar
 fun main(args: Array<String>) {
     var per1 = Person1()
 
-        println("ORIGIN PER NAME 1 : " + per1.name)
-        println("ORIGIN PER AGE 1 : " + per1.age)
+    println("ORIGIN PER NAME 1 : " + per1.name)
+    println("ORIGIN PER AGE 1 : " + per1.age)
 
-        with(per1) {
+    with(per1) {
         name = "Mike"
         age = 23
     }

@@ -2,7 +2,6 @@ package practice.grammar
 
 /*
 *   Kotlin Predicate !
-*   
 * */
 
 fun main(args: Array<String>) {
