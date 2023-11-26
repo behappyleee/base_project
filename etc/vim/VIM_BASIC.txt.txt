@@ -1,0 +1,10 @@
+1. INSERT MODE : Press I Button
+
+2. Move Cursor : H - Move Right, J - Move Down, K - Move Top, L - Move Left
+
+3. To Navigate the text : w - Moves to the next start of next word, e - Moves to the end of the word, b - Moves to beginning of the word.
+
+4. Vim 단어 검색 - /찾을 단어 (찾을 단어 Bottom : Press n, 찾을 단어 Top : Press Shift + n)
+
+
+
