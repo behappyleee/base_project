@@ -7,5 +7,11 @@ import org.springframework.boot.runApplication
 class BackApplication
 
 fun main(args: Array<String>) {
+	println("CURRENT THREAD : ${Thread.currentThread().name}")
+	val t1 = Thread();
+	println("NEW THREAD NAME : ${t1.name}")
+	t1.start();
 	runApplication<BackApplication>(*args)
 }
+
+
