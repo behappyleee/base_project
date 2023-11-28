@@ -15,11 +15,9 @@ class StudyApplication
 fun main(args: Array<String>) {
 	makeStr();
 	makeStr2();
-
 	val kotlinObjTest = KotlinClassTest();
 	kotlinObjTest.makeClassFunctionTest();
 	kotlinObjTest.makeClassFunctionTest2();
-
 
 	runApplication<StudyApplication>(*args)
 }
