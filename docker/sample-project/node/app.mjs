@@ -5,8 +5,10 @@
 // 하지만 Docker 를 사용하면 코드를 컨테이너에서 실행하면 컨테이너는 항상 이미지 기반이라
 // Image 생성을 위해서 Dockerfile 을 생성 후 DockerScript 를 기입
 
-const express = require('express');
-const connectToDataBase = require('./helpers.js')
+// const express = require('express');
+// const connectToDataBase = require('./helpers.js')
+import express from 'express';
+import connectToDataBase from './helpers.mjs';
 
 const app = express()
 
@@ -16,7 +18,7 @@ app.get('/', (req, res) => {
 
 // 비동기 코드로 작동하는 NodeJS 기능으며 14.3 버전 이상에서 작동
 // Error 발생하여 일단 주석 처리 !
-// await connectToDataBase();
+await connectToDataBase();
 
 // Port Number 3000 으로 시작
 app.listen(3000);
