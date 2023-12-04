@@ -24,7 +24,8 @@ WORKDIR /app
 # ./ 는 도커 컨테이너의 현재 작업 디렉토리를 의미
 # WORKDIR 를 /app 으로 변경 했기에 
 # RUN 뿐만 아니라 COPY 명령어도 WORKDIR 기준으로 실행이 됨 (상대경로로 설정 함)
-COPY . ./
+# COPY . ./
+COPY package.json /app/
 
 # 해당 방식으로 작성해 도 됨 (WORKDIR 설정 하여도)
 # COPY ./app
@@ -35,6 +36,9 @@ COPY . ./
 # 컨테이너 파일 시스템의 루트 폴더임
 # 여기에서는 코드를 app 폴더에 복사를 하였기에 app 폴더 내에서 실행이 되어야 함
 RUN npm install
+
+# 이렇게 Docker Script 를 변경 시 RUN npm install 이 재 빌드시 cache 된 것을 사용하여 속도가 훨씬 빨라 짐 !!
+COPY . /app/
 
 # 마지막 명령은 모든 작업이 완료 되었을 때 서버를 실행하여야 함
 # 이렇게 할 수 도 있지만 이거는 이미지가 빌드 될 때 마다 실행이 되기에 이 명령은 올바르지 않음
