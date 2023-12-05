@@ -1,6 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
+// Image 와 Container 구성
+// 모든 도커 명령에 --help 를 추가하면 모든 옵션 확인이 가능
+// 컨테이너 중지 재 시작
+// 이미지와 컨테이너 관리
+
 const app = express();
 
 let userGoal = 'Learn Docker!';
@@ -24,7 +29,7 @@ app.get('/', (req, res) => {
           <h2>My Course Goal Hello Docker World !!!!! T2</h2>
           <h3>This is DOcker !!!</h3>
           <h3>Testing for Docker Cache Test !!</h3>
-          <h3>${userGoal}</h3>
+          <h3 id="setGoadId">${userGoal}</h3>
         </section>
         <form action="/store-goal" method="POST">
           <div class="form-control">
@@ -40,7 +45,7 @@ app.get('/', (req, res) => {
 
 app.post('/store-goal', (req, res) => {
   const enteredGoal = req.body.goal;
-  console.log(enteredGoal);
+  console.log('this is new image from docker : ' + enteredGoal);
   userGoal = enteredGoal;
   res.redirect('/');
 });

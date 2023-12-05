@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3a3a11-afab-4bd9-a595-3d6fcbdd3af0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../kotlin/study/src/main/kotlin/com/sample/study/lambda/Kotlin_High_Order.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../kotlin/study/src/main/kotlin/com/sample/study/lambda/Kotlin_Lambda_Advance.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +135,8 @@
       <workItem from="1701526397789" duration="599000" />
       <workItem from="1701580937185" duration="6562000" />
       <workItem from="1701612237436" duration="3564000" />
-      <workItem from="1701688539808" duration="1109000" />
+      <workItem from="1701688539808" duration="1110000" />
+      <workItem from="1701733961210" duration="1958000" />
     </task>
     <servers />
   </component>
