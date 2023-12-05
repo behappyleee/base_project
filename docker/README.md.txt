@@ -34,6 +34,18 @@ attached Mode / dettached Mode
 docker logs --help 사용 시 docker log 추적이 가능해짐
 docker logs -f {Container Name} -> 해당 명령어 사용 시 Container Log 추적이 가능 해짐
 
+docker run --help 를 검색하여 인터랙티브 모드 인 -i 옵션을 확인
+docker run -t 옵션은 TTY 옵션임
+docker run -it 옵션을 사용 하면 컨테이너는 실제로 입력을 받는 입장이 됨 
+
+
+
+
+
+
+
+
+
 
 
 

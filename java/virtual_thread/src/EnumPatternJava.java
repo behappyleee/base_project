@@ -182,5 +182,5 @@ enum UnderJavaSevenVersion {
 }
 
 class TestClassGeneric<T,R> {
-    
+
 }
