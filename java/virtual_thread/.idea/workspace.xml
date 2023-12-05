@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f3a3a11-afab-4bd9-a595-3d6fcbdd3af0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnumPatternJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnumPatternJava.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +138,7 @@
       <workItem from="1701612237436" duration="3564000" />
       <workItem from="1701688539808" duration="1110000" />
       <workItem from="1701733961210" duration="1958000" />
+      <workItem from="1701786942037" duration="931000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,4 @@
+import java.lang.annotation.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
@@ -32,6 +33,8 @@ public class EnumPatternJava {
         // Enum 의 가장 큰 장점은 문맥 Context 를 담는 것
         // Enum 을 통하여 확실한 부분과 불 확실한 부분 분리가 가능해짐
         // 
+
+        TestClassGeneric<String, Integer> aa = new TestClassGeneric<String, Integer>();
 
 
     }
@@ -170,4 +173,14 @@ enum UnderJavaSevenVersion {
         }
     };
     abstract public int getCal(int value);
+}
+
+@Target(ElementType.METHOD)
+@Documented
+@interface TestAnnotiation {
+
+}
+
+class TestClassGeneric<T,R> {
+    
 }
