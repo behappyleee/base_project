@@ -76,8 +76,35 @@ Successfully copied 2.05kB to C:\Users\Chul Han\Desktop\workspace\study\base_pro
 - 파일을 복사하는 것은 좋은 해결책은 아님 -> 더 나은 방법들이 존재
 - Docker Container 에서 파일을 복사하는 것은 꽤 흥미로움 -> 꽤 많은 양의 Log 파일들을 로컬로 복사해서 확인이 가능
 
+- Image 는 실제로 Repository 와 Tag 를 가지고 있음
+- 컨테이너에 고유 이름을 지을 수 있으며 이미지에도 고유의 이름을 짓는 것이 가능
 
+-- 컨테이너에 이름을 짓는 방법
+-- docker --name 옵션을 사용 docker run -p 3000:80 0d --rm --name goalsapp 0809f116e75a 
+====> docker 를 detachmode 와 중지 시 삭제와 Container 이름을 goalsapp 으로 지정
+- docker 에 container 이름을 명시할 시 기억하기도 좋고 stop 이나 start 명령을 사용하기에도 좋다
+- docker build . 을 할 시 docker build 시 자동으로 생성 된 Id 값을 가지지만 Image 태그는 2가지 부분으로 구성 이름 - 이미지의 Repository
+- name:tag 이름을 사용하여 이미지의 특정화 된 이미지 그룹을 만들 수 있음
+- ex) docker hub 에서 name:tag 확인이 가능 docker node:14 처럼 14 다양한 태그 확인이 가능
+- 노드는 일반적인 이미지 그룹임 이미지에 태그가 없으면 이름만으로도 고유 식별자임
+- docker build --help 검색 시 많은 옵션이 검색 되는데 -t 옵션을 사용 시 tag 사용이 가능
+- docker build -t goals:latest(이름<Repository>:태그로 구성) . ===> 이름 태그 지정 후 docker images 명령어로 이미지 검색이 가능
+- 만약에 이미지에 이름:태그 를 지정 시 이미지를 실행 시 docker run 이름:태그 로 사용이가능
 
+- 이미지 이름 뒤에 적절한 태그를 주면서 실별할 수 있는 특정화 된 다양한 버전 사용이 가능
+- 도커와 컨테이너를 사용 시 많은 이점 얻는 것이 가능
+- 이미지가 있는 모든 사람은 그 이미지를 기반으로 컨테이너를 만들 수 있음
+- 이미지를 공유 시 Dockerfile 을 사용 Dockerfile 과 소스 코드를 공유하면 그 이미지를 직접 빌드하고 그 이미지를 기반으로 컨테이너를 실행
+- 언제나 이미지를 공유하는 두번쨰 방법이 있고 빌드 된 전체 이미지를 공유가 가능, 빌드 된 이미지를 공유하면 즉시 컨테이너 실행이 가능 (모든 것이 이미지에 포함되어 있음)
+- 완성 된 이미지는 docker images 로 확인이 가능하고 실제 이미지 파일은 대신 도커에 이미지 공유를 위해 명령이 있음
+- 이미지를 공할 때 이미지를 push 할 수 있는 곳이 docker hub 와 개인 Repository 가 있음
+- Repository 에 이미지를 저장 시 public / private 선택이 가능
+- docker hub 에 image 를 push 하여 다른 사람과 이미지 공유가 가능
+- push 된 이미지를 공유가 가능, push 및 pulling 시 이미지 공유가 가능
+- docker hub repository 계정을 생성 후 Repository 들어간 후 Docker commands 명령어를 복사 (docker push {계정}/{저장소})
+- docker hub 에 push 할려고 할 떄 image 랑 계정 명이랑 같아야 함, 
+- docker tag node-app:test {docker 계정}/{push 하려는 repository} (이미지의 이름을 변경 함 이미지의 이름을 변경해도 image 는 사라지지 않고 복제가 됨)
+- 
 
 
 
