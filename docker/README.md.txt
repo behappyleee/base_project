@@ -104,6 +104,7 @@ Successfully copied 2.05kB to C:\Users\Chul Han\Desktop\workspace\study\base_pro
 - docker hub repository 계정을 생성 후 Repository 들어간 후 Docker commands 명령어를 복사 (docker push {계정}/{저장소})
 - docker hub 에 push 할려고 할 떄 image 랑 계정 명이랑 같아야 함, 
 - docker tag node-app:test {docker 계정}/{push 하려는 repository} (이미지의 이름을 변경 함 이미지의 이름을 변경해도 image 는 사라지지 않고 복제가 됨)
+- docker 계정이 자기것이 아니면 docker login 을 진행 후 docker push 를 시도하여야 함 !
 - 
 
 
