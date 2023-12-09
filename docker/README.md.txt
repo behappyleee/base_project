@@ -105,6 +105,33 @@ Successfully copied 2.05kB to C:\Users\Chul Han\Desktop\workspace\study\base_pro
 - docker hub 에 push 할려고 할 떄 image 랑 계정 명이랑 같아야 함, 
 - docker tag node-app:test {docker 계정}/{push 하려는 repository} (이미지의 이름을 변경 함 이미지의 이름을 변경해도 image 는 사라지지 않고 복제가 됨)
 - docker 계정이 자기것이 아니면 docker login 을 진행 후 docker push 를 시도하여야 함 !
+- docker images 삭제
+- docker image prune -a 명령어를 사용 시 사용하지 않는 모든 Images 들을 삭제
+- docker logout 을 먼저 한 후 docker image 를 pull 받을 수 있음
+- docker pull 에는 docker login 과는 상관이 없음
+
+- Public Docker images 는 Docker login 과는 아무 상관없이 이미지 다운로드 접근이 가능함
+- docker hub repository 에 Push 를 위하여서는 Docker Login 을 하여야 하지만 Docker pull 을 위하여서는 Docker Login 과는 상관이 없음
+- docker run {container name} 을 사용하여 docker image 를 container 로 run 가능
+- docker run -p {local port} : {image binding port} --rm (docker container 가 멈추면 즉시 실행 중단) 
+- docker hub 에는 많은 기능이 있으며 배포에 많은 도움이 됨
+- 원격 이미지 Pulling docker pull 이 명령을 실행 하면 항상 컨테이너 레지스트리에서 latest 이미지를 가져옴
+- docker pull 을 할 시 최신 이미지를 가져옴, (update 를 위해 자동으로 체크를 함)
+- docker run 로컬에 이미지가 없으면 자동으로 docker hub 를 뒤짐
+- docker run {image Name} 만약 IMAGE 가 Local 에 없으면 컨테이너 히스토리에 자동으로 접근함
+- 이 경우에는 docker hub 에서 체크 함 (이미지를 사용하여 자동으로 Pulling 함)
+- Module Summary 
+- Docker 의 핵심은 - 도커는 이미지와 컨테이너에 관한 것
+- 이미지는 템플릿 컨테이너의 블루프린트 이며 하나의 동일한 이미지를 기반으로 하는 여러개의ㅣ
+- 컨테이너 생산이 가능, 이러한 컨테이너가 이미지위 작은 레이어로
+- 컨테이너가 아닌 설치 및 구성 된 어플리케이션을 진행
+- 동일한 어플리케이션을 실행하는 여러 컨테이너가 시스템에서 매우 적은 공간을 차지
+- docker pull or docker build 는 새로운 image 를 생성함
+- Base Image 를 사용, Image 로 무엇을 복사할지 제어, 마지막 CMD 명령어는 컨테이너를 기반으로 프로그램을 실행 시 필요한 걸 기입
+- 이미지는 여러 레이어로 구성이 됨 레이어 개념은 빌드 속도를 최적화 하기 위해 존재
+- dockre run 명령어를 통해 이미지를 기반으로 컨테이너를 실행
+- 컨테이너를 인터랙티브 하게 만들기 위해서는 -it 옵션도 사용이 가능
+- 모든 핵심 개념을 명확히 이해하여야 함 (Docker Module 들을)
 - 
 
 
