@@ -1,2 +1,3 @@
 java_script/simple_weather/keySet/
 *.hprof
+*./node_modules
