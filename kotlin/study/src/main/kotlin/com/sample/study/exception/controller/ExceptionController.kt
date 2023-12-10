@@ -140,6 +140,23 @@ class ExceptionController(
 ////        }
 //        }
     }
+
+    @GetMapping("/test/loop/exception")
+    fun testLoopException() {
+        val listNumbers = listOf(3, 1, 2, 7, 0, 3)
+
+        listNumbers.forEach {
+            try {
+                val divNum = 3 / it
+                println("DIVIDE NUM : " + divNum)
+            } catch (e: ArithmeticException) {
+                println("DIVNUM CHECK : ")
+                println("WHEN IT HAPPEN ERROR IN LIST : ${it}")
+                println("THIS IS KOTLIN ARTIMETIC EXCEPTION !!! [ONLY ERROR MESSAGE : ${e.message} ]")
+            }
+        }
+
+    }
 }
 
 class CustomRuntimeException(message: String): RuntimeException(message)
