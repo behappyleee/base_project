@@ -13,11 +13,12 @@ class StudyApplication
 // https://kotlinlang.org/docs/home.html
 
 fun main(args: Array<String>) {
-	makeStr();
-	makeStr2();
-	val kotlinObjTest = KotlinClassTest();
-	kotlinObjTest.makeClassFunctionTest();
-	kotlinObjTest.makeClassFunctionTest2();
+// 생성 시 실행 시켜 줌 !
+//	makeStr();
+//	makeStr2();
+//	val kotlinObjTest = KotlinClassTest();
+//	kotlinObjTest.makeClassFunctionTest();
+//	kotlinObjTest.makeClassFunctionTest2();
 
 	runApplication<StudyApplication>(*args)
 }

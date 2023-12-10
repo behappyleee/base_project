@@ -151,6 +151,7 @@ class ExceptionController(
                 println("DIVIDE NUM : " + divNum)
             } catch (e: ArithmeticException) {
                 println("DIVNUM CHECK : ")
+                // it 로 접근이 가능
                 println("WHEN IT HAPPEN ERROR IN LIST : ${it}")
                 println("THIS IS KOTLIN ARTIMETIC EXCEPTION !!! [ONLY ERROR MESSAGE : ${e.message} ]")
             }
