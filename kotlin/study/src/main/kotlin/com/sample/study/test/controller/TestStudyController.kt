@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController
 class TestStudyController(
     val service: TestStudyService,
 ) {
+    // Create a global Exception handler using @ControllerAdvice to handle exceptions
+    // across your application. This is handler can be used to centralize exception handling logic.
+
+    //
 
     val logger = LoggerFactory.getLogger(TestStudyController::class.java)
 
@@ -23,5 +27,7 @@ class TestStudyController(
         return "This is Test Controller !"
     }
 
+    // Add more exception handlers as needed
+    // Handling Enum Error Code
 
 }

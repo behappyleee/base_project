@@ -1,6 +1,7 @@
 package com.sample.study.exception.controller
 
 import com.sample.study.exception.custom.CustomException
+import com.sample.study.exception.enums.ErrorCode
 import com.sample.study.exception.service.ExceptionService
 import lombok.RequiredArgsConstructor
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,7 +15,15 @@ class ExceptionController(
     private val service: ExceptionService,
 ) {
     // Java 와 달리 Kotlin 은 메서드 옆에 throws 절이 없다는 점이 가장 큰 차이점
-    
+
+    // Exception Handling is an essential aspect of writing robus and maintainable code, In kotlin
+    // like in many other programming languages you can use try cat finally and throw for handling exceptions.
+    // Use Specific Exceptions Types ===> Catch only the exceptions that you expect and can handle, Avoid catching general
+    // exceptions like 'Exception' unless absolutely necessary. This helps in maintaining code clarify.
+
+    // finally for Clean up,
+
+
     // Exception Handling in kotlin similar to many other programming languages
     // In Kotlin exceptions are instances of classes that inherit from 'Throwable' class
     // Exception (for exceptional conditions that a program should catch)
@@ -32,7 +41,7 @@ class ExceptionController(
         try {
             val result = divide(10, 0)
             println("[RESULT] :  $result")
-        } catch(e: IOException) {
+        } catch (e: IOException) {
             println("Exception caught : ${e.message}")
         } finally {
             println("Finally Block Execute !!")
@@ -47,9 +56,9 @@ class ExceptionController(
         try {
             val result = divide(10, 0)
             println("Result : $result")
-        } catch(e: ArithmeticException) {
+        } catch (e: ArithmeticException) {
             println("Arithmetic Exception : ${e.message}")
-        } catch(e: IllegalArgumentException) {
+        } catch (e: IllegalArgumentException) {
             println("IllegalArgumentException : ${e.message}")
         } finally {
             println("This is finally block !")
@@ -73,7 +82,7 @@ class ExceptionController(
     fun customTest(): String {
         try {
             throw CustomException("This is a Custom Exception !")
-        } catch(e: CustomException) {
+        } catch (e: CustomException) {
             println("Custom Exception Pring [${e.message} , ${e.localizedMessage} , ${e.cause}]")
         }
         return "This is custom exception !"
@@ -89,6 +98,50 @@ class ExceptionController(
         return a / b
     }
 
+    @GetMapping("/throw/check")
+    fun throwCheck(): String {
+        val throwCheck = try {
+            "Check Throw !"
+        } catch (e: Exception) {
+            throw Exception("This is Kotlin Exception !")
+        }
+        return throwCheck
+    }
+
+    @GetMapping("/trigger/enum/exception")
+    fun enumException(): String {
+        throw MyCustomExceptionUseEnum(ErrorCode.INVALID_REQUSET)
+    }
+
+    @GetMapping("/trigger/exception")
+    fun triggerException(): String {
+        // 만약 throw 가 던져졌을 시 처리해주는 try / catch 문이 존재 하지 않을 시 Controller Advice 에서 모든 throw Exception 을 처리해 줌 !!!!
+        // throw 를 던졌을 시 처리해주는 try / catch 문이 존재 시 ControllerAdvide 를 통하지 않음 !!
+        // throw CustomBrowserException("This is Customer Browser Exception from Trigger Exception Controller !")
+        throw Exception("This is Exception Exception ! From Trigger Exception CONTROLLER !!!")
+        return "Test Return !"
+//        return try {
+//            // throw Exception("This is Trigger Exception Test It is made !!")
+//            // throw CustomRuntimeException("This is My Customer Exception !!")
+//            throw CustomBrowserException("This is Browser Exception Test Check !!")
+//
+//        } catch (e :CustomBrowserException) {
+//            println("PRINTING IN CATCH BLOCK ! : " + e.message)
+//            return "Ths is Error Please Parameter Check !"
+//        // Exception 이 제일 상위에 존재 시 모든 것이 Exception Catch 문에서 걸려 버림 !
+//        // 항상 Exception 은 맨 뒤에 위치 하거나 주의해서 배치 !
+//        } catch(e: Exception) {
+//            println("THIS IS EXCEPTION CATCH !!! : " + e.message)
+//            return e.message.toString()
+//        }
+////        } catch (e :CustomBrowserException) {
+////            println(e.message)
+////            "Ths is Error Please Parameter Check !"
+////        }
+//        }
+    }
 }
 
-
+class CustomRuntimeException(message: String): RuntimeException(message)
+class CustomBrowserException(message: String): IllegalArgumentException(message + "My Custom Exception !")
+class MyCustomExceptionUseEnum(val errorCode: ErrorCode): RuntimeException(errorCode.message)
