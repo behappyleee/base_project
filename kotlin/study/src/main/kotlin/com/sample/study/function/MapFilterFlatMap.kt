@@ -26,8 +26,36 @@ fun main() {
     println(characters)
 
     // Flat map advance example
-    //
+    // flatmap is particularly useful when dealing with collections of collections or when you need
+    // to perform a transformation that results in a list for each element, and then you want to
+    // merge all these lists into one.
 
+    // Advance Example 1. List of List
+    val listOfList = listOf(listOf(1, 2), listOf(3, 4), listOf(5, 6))
+    val flattenedList= listOfList.flatMap { it }
+    println(flattenedList)
+
+    // Advance Example 2. Complex Data Structure
+    data class PersonSample(val name: String, val hobbies: List<String>)
+
+    val people = listOf(
+        PersonSample("Alice", listOf("Reading", "Hiking")),
+        PersonSample("Bob", listOf("Gaming", "Cooking")),
+        PersonSample("Carol", listOf("Running", "Painting"))
+    )
+
+    val hobbies = people.flatMap { person -> person.hobbies }
+    println(hobbies)   // Output: [Reading, Hiking, Gaming, Cooking, Running, Painting]
+
+    // Advance Example 3. Combining map and flatMap
+    val numbers3 = listOf(1, 2, 3, 4, 5, 6, 7)
+    val result = numbers3.flatMap { number ->
+        (1 .. number).map { factor ->
+            "Number $number : Factor $factor"
+        }
+    }
+
+    println(result)
 
 }
 
