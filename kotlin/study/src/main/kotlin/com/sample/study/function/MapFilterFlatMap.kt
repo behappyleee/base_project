@@ -22,8 +22,14 @@ fun main() {
     // Each of these functions is a powerful tool in Kotlin, especially when dealing with collections, map transforms elements.
     // transforms each element into a collection and then flattens all the collections into a single one.
     val words = listOf("hello", "world")
-    val characters = words.flatMap { word -> word.toList() }
+    val characters = words.flatMap { word ->
+        println("CHECK FLATMAP WORD : $word")
+        word.toList() }
     println(characters)
+
+    val words2 = listOf("hello", "word")
+    val characters2 = words2.map { word -> word.toList() }
+    println(characters2)
 
     // Flat map advance example
     // flatmap is particularly useful when dealing with collections of collections or when you need
