@@ -21,11 +21,8 @@ public class ColorPoint {
      *  Returns the point-view of this color point.
      *
      * */
-
     public Point asPoint() {
         return point;
     }
-
-
 
 }

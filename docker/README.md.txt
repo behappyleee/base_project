@@ -132,7 +132,9 @@ Successfully copied 2.05kB to C:\Users\Chul Han\Desktop\workspace\study\base_pro
 - dockre run 명령어를 통해 이미지를 기반으로 컨테이너를 실행
 - 컨테이너를 인터랙티브 하게 만들기 위해서는 -it 옵션도 사용이 가능
 - 모든 핵심 개념을 명확히 이해하여야 함 (Docker Module 들을)
-- 
+- Image (Read-only), Container (Read-Write)
+- Permanant App Data, 영구 앱 데이터는 Read-Write
+- 볼륨은 핵심 개념 중 하나, 
 
 
 
