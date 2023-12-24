@@ -42,7 +42,12 @@ app.post('/create', async (req, res) => {
     if (exists) {
       res.redirect('/exists');
     } else {
-      await fs.rename(tempFilePath, finalFilePath);
+      // 해당 코드의 문제가 있음
+      // await fs.rename(tempFilePath, finalFilePath);
+      // rename 메서드가 아닌 copyFile 메서드로 대체
+      await fs.copyFile(tempFilePath, finalFilePath);
+      await fs.unlink(tempFilePath);
+      
       res.redirect('/');
     }
   });

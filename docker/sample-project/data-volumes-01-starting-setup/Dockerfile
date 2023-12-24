@@ -15,5 +15,13 @@ COPY . .
 # PORT 를 노출 시켜 줌
 EXPOSE 80
 
+# Docker 에 Volume 을 추가하는 가장 쉬운 방법
+# Container 파일 내부 경로에 데이턱 ㅏ존재
+# 현재 파일 경로에서 feedback 이 영구적으로 저장이 되는 경로이고
+# Temp 는 일시적으로 저장이 되는 경로
+# WORKDIR 인 /app 아래 /feedback 디렉토리가 영구 저장되는 디렉토리 (Container 내부 경로)
+# Container 외부에 Mapping 이 될  Container 내부 경로
+VOLUME [ "/app/feedback" ]
+
 # 명령어로 서버를 실행 Dockerfile Script 를 완성
 CMD ["node", "server.js"]
