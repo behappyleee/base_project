@@ -8,4 +8,5 @@
 ### 3. docker build -t feedback-node . (Docker Image 생성하는 명령어)
 ### 4. docker image 를 build 후 docker container 를 실행 시켜 줌
 ### 5. docker run -p 3000:80 -d --name feedbaack-app --rm feedback-node (docker image 인 feedback-node 를 실행 하며 port 를 3000 번과 docker 내부 포트인 80 번을 맵핑 시켜 줌, -d 옵션은 Terminal 을 바로 사용 할 수 있게 detach mode 로 docker container 를 RUN 함, --name 은 Container Name 을 지정, --rm 옵션은 컨테이너가 중지 될 시 Container 를 바로 자동으로 제거가 됨)
-### 6. 
+### 6. 컨테이너와 로컬 이미지와는 어떤 연결점도 없음
+### 7. 
