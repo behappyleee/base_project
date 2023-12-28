@@ -22,9 +22,9 @@ public class ThreadThiefPolice {
         threads.add(new AscendingHackerClass(vault));
         threads.add(new DescendingHackerThread(vault));
         threads.add(new PoliceThread());
-        
+
+        threads.forEach(Thread::start);
         // Thread 들을 실행
-        threads.stream().forEach(Thread::start);
     }
 
     private static class Vault {
