@@ -34,7 +34,6 @@ public class JoinFactorialThread {
             threads.forEach(thread -> {
                 // Daemon Thread 를 true 로 설정해주어야 만약 끝나지 않은 스레드들이 존재 시 그냥 끝내 버림
                 thread.setDaemon(true); // Daemon 스레드를 true 로 설정
-
                 thread.start();
                 try {
                     // 각 모든 실행 한 Thread 에 join 을 붙여 줌
