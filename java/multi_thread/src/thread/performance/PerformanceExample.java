@@ -13,6 +13,9 @@ public class PerformanceExample {
     // 각 픽셀의 색깔은 ARGB 로 불리는 네 가지 바이트로 표현이 됨
     // RGB 컴포넌트를 사용하여 모든 색상을 얻는게 가능
 
+    // 해당 강의 주요 Point
+    // Thread 는 물리 코어 갯수를 넘어가면 역효과가 나는 것 같음 !!
+
     public static final String IMAGE_FILE = "C:\\Users\\Chul Han\\Desktop\\workspace\\study\\base_project\\java\\multi_thread\\images\\many-flowers.jpg";
     public static final String OUTPUT_FILE = "C:\\Users\\Chul Han\\Desktop\\workspace\\study\\base_project\\java\\multi_thread\\images\\out\\test-make-image.jpg";
 
