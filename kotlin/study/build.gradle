@@ -47,3 +47,11 @@ tasks.withType(KotlinCompile) {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.register('helloGradle') {
+	doFirst {
+		println("[HELLO GRADLE TEST TASK ! ] [HELLO KOTLIN !]")
+	}
+}
+
+
