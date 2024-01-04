@@ -1,4 +1,4 @@
-package com.sample.study.generic;
+package generic;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +19,6 @@ public class GenericWildCard {
         // List<Object> objectList = stringList;    // 이것은 불가능 함, 에러가 발생
 
         // Type Parameter 간에는 상/하위 관계가 없고 raw-type 에서만 상-하위 관계가 존재
-
         Collection<String> c = new ArrayList<>();
         c.add("hi");
         c.add("hlelo");
