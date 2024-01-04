@@ -1,9 +1,6 @@
 package com.sample.study.coroutine.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TestJavaClass {
 
@@ -21,8 +18,28 @@ public class TestJavaClass {
         // TestBoundedGeneric<String> dd = new TestBoundedGeneric<String>();
         TestBoundedGeneric<Integer> dd = new TestBoundedGeneric<>();
 
+        // Type Parameter 간에는 상-하위 가 존재하지 않음
+        List<String> stringList = new ArrayList<>();
+        // List<Object> objectList = stringList
+
+        // Sub Type
+        String strA = "test str a";
+        Object objA = strA;
+
+        Collection<String> collectStr = new ArrayList<>();
+        collectStr.add("sdd");
+
+        // Compile 조차 안 됨 만약 함수 ? 카드 사용하지 않을 시 !!
+        printCollection(collectStr);
 
     }
+
+    public static void printCollection(Collection<?> tests) {
+        for(Object test: tests) {
+            System.out.println(test);
+        }
+    }
+
 
 }
 
