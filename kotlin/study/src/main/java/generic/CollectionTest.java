@@ -19,7 +19,6 @@ public class CollectionTest {
         SimpleCollectionGeneric<Integer> sc1 = new SimpleCollectionGeneric<>();
         sc1.add(2323);
         sc1.add(213213);
-
     }
 
 }
