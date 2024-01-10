@@ -1,7 +1,5 @@
 package thread.stack.heap;
 
-import jdk.incubator.vector.VectorOperators;
-
 public class StackHeapThread {
 
     // Stack Memory Region
