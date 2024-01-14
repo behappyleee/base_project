@@ -13,12 +13,12 @@ public class CollectionTest {
         sc.add("world");
 
         // 만약 Generic 을 사용하지 않는다면 Runtime Exception 에러가 발생
-        int aTest = (Integer)sc.get(0);
-
-        // Generice 을 타입을 지정 해주었으므로 Integer 만 사용이 가능 !
-        SimpleCollectionGeneric<Integer> sc1 = new SimpleCollectionGeneric<>();
-        sc1.add(2323);
-        sc1.add(213213);
+//        int aTest = (Integer)sc.get(0);
+//
+//        // Generice 을 타입을 지정 해주었으므로 Integer 만 사용이 가능 !
+//        SimpleCollectionGeneric<Integer> sc1 = new SimpleCollectionGeneric<>();
+//        sc1.add(2323);
+//        sc1.add(213213);
 
     }
 
