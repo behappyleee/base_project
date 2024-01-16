@@ -1,7 +1,6 @@
 package com.sample.study.jwt
 
-import io.netty.handler.codec.serialization.ObjectEncoderOutputStream
-import java.util.Base64.Encoder
+import java.util.*
 
 fun main() {
 
@@ -10,6 +9,8 @@ fun main() {
     }
 
     fun encodeKey(seceretKey: String): String {
+        val nowDate = Date()
+        nowDate.time
         return "String Test"
     }
 
