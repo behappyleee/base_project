@@ -13,7 +13,6 @@ public class DataCometeThread {
 
         // 컴파일러와 CPU 가 다른 코어에서 실행되는 스레드를 인지하지 못하고 동일 변수를 읽고 특정 처리 순서에 의존
         // 그 결과 예상치 못한 잘 못된 결과가 나옴
-
         SharedClass sc = new SharedClass();
         Thread t1 = new Thread(() -> {
            for(int i=0; i< Integer.MAX_VALUE; i++) {
