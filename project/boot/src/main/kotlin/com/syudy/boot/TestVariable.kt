@@ -9,5 +9,4 @@ class TestVariable {
 fun main() {
     val aa = TestVariable()
 
-
 }
