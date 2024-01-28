@@ -8,6 +8,10 @@ class CoroutineApplicationTests {
 
     @Test
     fun contextLoads() {
+        val a = true
+
+        println(a.not())
+        a.not()
     }
 
 }
