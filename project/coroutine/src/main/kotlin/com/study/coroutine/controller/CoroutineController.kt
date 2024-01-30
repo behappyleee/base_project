@@ -32,9 +32,7 @@ class CoroutineController(
     }
 
     companion object {
-
         private val logger = LoggerFactory.getLogger(CoroutineController::class.java)
-
     }
 
 }
