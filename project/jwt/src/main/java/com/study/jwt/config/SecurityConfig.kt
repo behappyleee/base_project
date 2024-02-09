@@ -1,9 +1,11 @@
 package com.study.jwt.config
 
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer.AuthorizationManagerRequestMatcherRegistry
@@ -24,6 +26,7 @@ class SecurityConfig() {
         http
             .csrf {
                     csrfConfig: CsrfConfigurer<HttpSecurity> -> csrfConfig.disable()
+                    csrfConfig.ignoringRequestMatchers("/h2-console/**")
             } // 1번
             .headers { headerConfig: HeadersConfigurer<HttpSecurity?> ->
                 headerConfig.frameOptions(
@@ -37,19 +40,9 @@ class SecurityConfig() {
                     .requestMatchers(AntPathRequestMatcher("/api/hello")).permitAll()
                     .requestMatchers(AntPathRequestMatcher("/swagger-ui/**")).permitAll()
                     .requestMatchers(AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
-//                    .requestMatchers(AntPathRequestMatcher("/swagger-resources/**")).permitAll()
-//                    .requestMatchers(AntPathRequestMatcher("/favicon.ico")).permitAll()
-//                    .requestMatchers(AntPathRequestMatcher("/error")).permitAll()
+                    .requestMatchers(PathRequest.toH2Console()).permitAll()
                     .anyRequest().authenticated()
             } // 3번
-//            .exceptionHandling { exceptionConfig: ExceptionHandlingConfigurer<HttpSecurity?> ->
-//                exceptionConfig.authenticationEntryPoint(
-//                    unauthorizedEntryPoint
-//                ).accessDeniedHandler(accessDeniedHandler)
-//            } // 401 403 관련 예외처리
-
         return http.build()
     }
-
-
 }

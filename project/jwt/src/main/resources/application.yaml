@@ -2,7 +2,6 @@ spring:
   h2:
     console:
       enabled: true
-
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
@@ -17,5 +16,15 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
 
+# jwt 설정 (secret key 값은 64 비트 이상 사용을 해야 함 ! --> 더 확인이 필요 .. !!)
+jwt:
+  header: Authorization
+  secret: 'test-secret'
+  token-validitiy-in-seconds: 86400
 

@@ -14,7 +14,7 @@ import jakarta.persistence.Table
 // Kotlin 에서 JPA 사용하기 위하여서는 kotlin.plugin.jpa plugin 추가가 필요 !
 // Springboot 시작 시 resource 밑에 data.sql 이 자동실행이 됨 !
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 data class User (
     @JsonIgnore
     @Id
