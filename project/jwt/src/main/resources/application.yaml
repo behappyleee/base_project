@@ -26,5 +26,5 @@ spring:
 jwt:
   header: Authorization
   secret: 'test-secret'
-  token-validitiy-in-seconds: 86400
+  validity: 86400
 
