@@ -19,8 +19,8 @@ import java.util.stream.Collectors
 
 @Component
 class TokenProvider(
-    @param:Value("\${jwt.secret}") private val secret: String,
-    @Value("\${jwt.token-validity-in-seconds}") tokenValidityInSeconds: Long
+    @Value("\${jwt.secret}") private val secret: String,
+    @Value("\${jwt.validity}") tokenValidityInSeconds: Long
 ) : InitializingBean {
 
     private val logger = LoggerFactory.getLogger(TokenProvider::class.java)

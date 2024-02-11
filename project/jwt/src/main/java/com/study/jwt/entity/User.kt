@@ -20,21 +20,21 @@ data class User (
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val userId: Long,
+    val userId: Long,
 
     @Column(name = "username", length = 50, unique = true)
-    private val userName: String,
+    val username: String,
 
     @JsonIgnore
     @Column(name = "password", length = 100)
-    private val password: String,
+    val password: String,
 
     @Column(name = "nickname", length = 50)
-    private val nickName: String,
+    val nickname: String,
 
     @JsonIgnore
     @Column(name = "activated")
-    private val activated: Boolean,
+    val isActivated: Boolean,
 
     // ManyToMany Join 테이블 어노테이션은 회원 객체와 권한 객체를 1:다 다:1 관계를 서로 맵핑
     @ManyToMany
@@ -42,7 +42,6 @@ data class User (
         name = "user_authority",
         joinColumns = [JoinColumn(name = "user_id", referencedColumnName = "user_id")],
         inverseJoinColumns = [JoinColumn(name="authority_name", referencedColumnName = "authority_name")]
-    )
-    private val authorities: Set<Authority>
+    ) val authorities: Set<Authority>
 )
 

@@ -23,8 +23,9 @@ spring:
       data-locations: classpath:data.sql
 
 # jwt 설정 (secret key 값은 64 비트 이상 사용을 해야 함 ! --> 더 확인이 필요 .. !!)
+# jwt secret 설정 시 64 bit 이상 사용을 하여야 함 !
 jwt:
   header: Authorization
-  secret: 'test-secret'
+  secret: 'c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK'
   validity: 86400
 
