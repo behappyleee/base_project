@@ -12,15 +12,12 @@ class SealedClassTest {
     // 2. 가독성 향상
     // 3. 패턴 매칭
 
-
-
 }
 
 sealed class ResultTest<out T> {
     data class Success<out T>(val test: T) : ResultTest<T>()
 
     data class Error(val exception: Exception): ResultTest<Nothing>()
-
 
 }
 
