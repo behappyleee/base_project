@@ -15,3 +15,16 @@ class CoroutineBasicController {
     }
 
 }
+
+fun main() {
+
+    val reverseStr = reverseString("abcd")
+    println(reverseStr)
+
+}
+
+fun reverseString(str: String): String {
+    return str
+}
+
+
