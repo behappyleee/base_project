@@ -9,7 +9,10 @@ class Kotlin_Function {
 
     // 함수는 데이터와 비슷 String 이나 Int 등의 타입이 있는 다른 데이터와 마찬가지로 함수도 타입이 있다
     // 순수 함수는 인자가 같을 때 같은 결과를 돌려주어야 함
-    
+
+    // 프로그래머들은 진정함 함수를 순수 함수라고 부른다. 이와 반대로 진정한 함수가 아닌 함수들은 순수 하지 않은 함수라고 부름
+    //
+
 }
 
 fun main(args: Array<String>) {
@@ -23,7 +26,9 @@ fun main(args: Array<String>) {
     val per3 = Person8(name = "TEST")
     val per4 = Person8(name = "TEST")
 
-    println(per3 == per4) // Data Class 동등성 비교 - true
+    println(per3 == per4) // Data Class 동등성 비교 - true, Data Class 가 아니면 정의 한 equals 에 따라 동등성이 달라짐
+    println(per3.equals(per4))  // true data class 는 내부 값으로 equals 를 비교 함 !
+
 
 }
 
