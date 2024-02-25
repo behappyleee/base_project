@@ -32,7 +32,9 @@ fun main(args: Array<String>) {
     // Compile 오류 해당 코드가 컴파일이 되면 문자열 List 에 Int 를 집어넣을 수 도 있음
     // val aasM: MutableList<Any> = aaMuta
 
-    // 자바에서는 파라미터화한 타입이 파라미터 타입에 대해 무공변성 이다. 
+    // 자바에서는 파라미터화한 타입이 파라미터 타입에 대해 무공변성 이다.
+    // 즉 A 가 B 의 부모 타입이라 하더라도 List<A>, List<B> 와 사이에는 아무런 부모 자식 타입 관계가 성립 하지 않음
+
 
 }
 
