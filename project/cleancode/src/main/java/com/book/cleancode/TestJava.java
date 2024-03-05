@@ -3,6 +3,7 @@ package com.book.cleancode;
 public class TestJava {
 
     public static void main(String[] args) {
+        // String.format()
         try {
             testException();
         } catch (Exception e) {
