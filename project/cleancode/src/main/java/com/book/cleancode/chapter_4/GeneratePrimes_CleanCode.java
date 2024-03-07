@@ -2,89 +2,81 @@ package com.book.cleancode.chapter_4;
 
 /**
  * This class Generates prime numbers up to a user specified
- * maximum. The algorithm used is the Sieve of Eratosthenes.
- *
- * @author Alphonse
- * @version 13 Feb 2002 atp
+ * maximum.  The algorithm used is the Sieve of Eratosthenes.
+ * Given an array of integers starting at 2:
+ * Find the first uncrossed integer, and cross out all its
+ * multiples.  Repeat until there are no more multiples
+ * in the array.
  */
-
 public class GeneratePrimes_CleanCode {
 
     // 필요없는 주석까지 추가한 코드 필요 없는 주석은 너무 혼잡 스럽다.
 
-    /**
-     * @param maxValue is the generation limit.
-     */
-
-    private static boolean crossedOut;
+    private static boolean[] crossedOut;
     private static int[] result;
 
-    public static int[] generatePrimesTest(int maxValue) {
-        if (maxValue < 2) {
+    public static int[] generatePrimes(int maxValue) {
+        if (maxValue < 2)
             return new int[0];
-        } else {
+        else {
             uncrossIntegersUpTo(maxValue);
             crossOutMultiples();
             putUncrossedIntegersIntoResult();
             return result;
         }
-
-        // FOR TEST !
-//        return new int[0];
     }
 
+    private static void uncrossIntegersUpTo(int maxValue) {
+        crossedOut = new boolean[maxValue + 1];
+        for (int i = 2; i < crossedOut.length; i++)
+            crossedOut[i] = false;
+    }
 
-    public static int[] generatePrimes(int maxValue)
-    {
-        if (maxValue >= 2) // the only valid case
-        {
-            // declarations
-            int s = maxValue + 1; // size of array
-            boolean[] f = new boolean[s];
-            int i;
-            // initialize array to true.
-            for (i = 0; i < s; i++)
-                f[i] = true;
+    private static void crossOutMultiples() {
+        int limit = determineIterationLimit();
+        for (int i = 2; i <= limit; i++)
+            if (notCrossed(i))
+                crossOutMultiplesOf(i);
+    }
 
-            // get rid of known non-primes
-            f[0] = f[1] = false;
+    private static int determineIterationLimit() {
+        // Every multiple in the array has a prime factor that
+        // is less than or equal to the root of the array size,
+        // so we don't have to cross out multiples of numbers
+        // larger than that root.
+        double iterationLimit = Math.sqrt(crossedOut.length);
+        return (int) iterationLimit;
+    }
 
-            // sieve
-            int j;
-            for (i = 2; i < Math.sqrt(s) + 1; i++)
-            {
-                if (f[i]) // if i is uncrossed, cross its multiples.
-                {
-                    for (j = 2 * i; j < s; j += i)
-                        f[j] = false; // multiple is not prime
-                }
-            }
+    private static void crossOutMultiplesOf(int i) {
+        for (int multiple = 2 * i;
+             multiple < crossedOut.length;
+             multiple += i)
+            crossedOut[multiple] = true;
+    }
 
-            // how many primes are there?
-            int count = 0;
-            for (i = 0; i < s; i++)
-            {
-                if (f[i])
-                    count++; // bump count.
-            }
+    private static boolean notCrossed(int i) {
+        return crossedOut[i] == false;
+    }
 
-            int[] primes = new int[count];
+    private static void putUncrossedIntegersIntoResult() {
+        result = new int[numberOfUncrossedIntegers()];
+        for (int j = 0, i = 2; i < crossedOut.length; i++)
+            if (notCrossed(i))
+                result[j++] = i;
+    }
 
-            // move the primes into the result
-            for (i = 0, j = 0; i < s; i++)
-            {
-                if (f[i])             // if prime
-                    primes[j++] = i;
-            }
+    private static int numberOfUncrossedIntegers() {
+        int count = 0;
+        for (int i = 2; i < crossedOut.length; i++)
+            if (notCrossed(i))
+                count++;
 
-            return primes; // return the primes
-        }
-        else // maxValue < 2
-            return new int[0]; // return null array if bad input.
+        return count;
     }
 
     public static void main(String[] args) {
-        for (int i: generatePrimes(50)) {
+        for (int i : generatePrimes(50)) {
             System.out.print(i + " ");
         }
     }
