@@ -1,8 +1,5 @@
 package com.book.cleancode.chpt_1;
-
-
 public class CleanCode_1 {
-
     public static void main(String[] args) {
         
         // Clean 코드의 가장 중요한 점
