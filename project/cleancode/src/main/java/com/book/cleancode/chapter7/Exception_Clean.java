@@ -1,5 +1,7 @@
 package com.book.cleancode.chapter7;
 
+import org.springframework.cglib.core.Local;
+
 public class Exception_Clean {
 
     // 뭔가 잘 못 되면 바로 잡을 책임은 프로그래머에게 있다.
@@ -78,3 +80,42 @@ public class Exception_Clean {
 ////    }
 //    }
 //}
+
+// 직접 커스텀을 시도 해 봄 .... !
+// My Custom Interface 를 통하여 다양한 Port 를 받도록 해보자 !
+interface LocalPort {
+    void open();
+}
+
+class ACMEPort implements LocalPort {
+    @Override
+    public void open() {
+        System.out.printf("ACME Port Open !");
+    }
+}
+
+class PortConnectCustom {
+
+    private LocalPort port;
+
+    public PortConnectCustom(LocalPort port) {
+        this.port = port;
+    }
+
+    public void connectTest() {
+        port.open();
+
+        genericConnectingTesst(port);
+    }
+
+    public static <T extends LocalPort> void genericConnectingTesst(T port) {
+        // Generic 을 통하여 사용하는 Port 를 받도록 해보았다 .. !
+        port.open();
+    }
+}
+
+class OtherClassTest {
+    public static void main(String[] args) {
+        PortConnectCustom.genericConnectingTesst(new ACMEPort());
+    }
+}
