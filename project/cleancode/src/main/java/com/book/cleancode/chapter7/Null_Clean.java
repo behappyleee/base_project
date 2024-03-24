@@ -1,5 +1,8 @@
 package com.book.cleancode.chapter7;
 
+import java.util.HashMap;
+import java.util.Optional;
+
 public class Null_Clean {
 
     // 절대 NULL 을 반환하지마라
@@ -10,5 +13,12 @@ public class Null_Clean {
 
     // 대부분의 경우 특수 사례 감싸기가 가장 쉬운 방법이다.
 
+    // 대다수 프로그래밍 언어는 호출자가 실수로 넘기는 null 을 적절히 처리하는 방법이 없다.
+    // 꺠끗한 코드는 읽기도 좋아야 하지만 안정성도 높아야 한다. 이 둘은 상출하는 목표가 아니다.
+    // 오류 처리를 프로그램 논리와 분리해 독자적인 사안으로 고려하면 튼튼하고 꺠끗한 코드 작성이 가능하다.
+    // 오류 처리를 프로그램 논리와 분리 하면 독립적인 추론이 가능해지며 코드 유지 보수성도 크게 좋아진다.
 
+    public static void main(String[] args) {
+
+    }
 }
