@@ -1,5 +1,7 @@
 package com.book.cleancode.chapter_9;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -52,3 +54,10 @@ class Stack_Clan {
     }
 }
 
+class TestChild {
+
+    public void testPrint() {
+        System.out.println("THIS IS TEST PRIN !!");
+    }
+
+}

@@ -1,10 +1,23 @@
 package com.book.cleancode.chapter_9;
 
-public class SRP_Class {
+import org.springframework.boot.Banner;
 
+public class SRP_Class {
     // 중요 !!!!!!!
     // 이상적인 시스템이라면 새 기능을 추가할 시 시스템을 확장할 뿐 기존 코드는 변경하지 않는다.
     // 결합도가 낮다는 말은 각 시스템 요소가 다른 요소로부터 그리고 변경으로부터 잘 격리되어 있다는 뜻이다.
+
+    // 객체 지향 설계 주요 원칙
+    // 1. SRP (Single Responsibility Principle)
+    // 2. OCP (Open-Closed Principle) - 확장에 개방적이고 수정에 폐쇄적이여야 함
+    // 3. DIP (Dependency Inversion Principle) - 상세한 구현이 아니라 추상화에 의존하여야 한다는 원칙
+
+    // 소프트웨어 시스템은 다른 일반적인 물리적인 시스템들과 다르다. 관심사를 적절하게 분리해 관리를 한다면
+    // 소프트웨어 아키텍처는 점진적으로 발전할 수 있다.
+
+    public static void main(String[] args) {
+
+    }
 
 }
 
