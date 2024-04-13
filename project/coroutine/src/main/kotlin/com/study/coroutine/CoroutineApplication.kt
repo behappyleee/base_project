@@ -9,6 +9,3 @@ class CoroutineApplication
 fun main(args: Array<String>) {
     runApplication<CoroutineApplication>(*args)
 }
-
-
-

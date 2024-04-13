@@ -1,4 +1,3 @@
-
 spring:
     datasource:
         url: jdbc:h2:mem:testdb
@@ -11,5 +10,9 @@ spring:
     jpa:
         hibernate:
             ddl-auto: update
+    data:
+        redis:
+            port: 6379
+            host: localhost
 server:
     port: 9090
