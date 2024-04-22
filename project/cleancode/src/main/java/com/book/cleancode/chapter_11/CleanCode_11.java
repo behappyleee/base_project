@@ -1,5 +1,7 @@
 package com.book.cleancode.chapter_11;
 
+import java.util.List;
+
 public class CleanCode_11 {
 
     // 창발성
@@ -13,7 +15,19 @@ public class CleanCode_11 {
     // 테스트 케이스를 만들고 계속 돌려라 간단하고 단순한 규칙을 따르면 시스템은 낮은 결합도와 높은 응집력 이라는
     // 객체 지향 방법론 목표를 저절로 달성
 
+    public void testMethodA(List<?> testList) {
+
+    }
+
+    public <E> void testMethod(List<E> testList) {
+        E e = null;
+
+    }
+
 }
+
+
+
 
 
 class Duplicate_Check {

@@ -9,5 +9,4 @@ public class CleancodeApplication {
     public static void main(String[] args) {
         SpringApplication.run(CleancodeApplication.class, args);
     }
-
 }
