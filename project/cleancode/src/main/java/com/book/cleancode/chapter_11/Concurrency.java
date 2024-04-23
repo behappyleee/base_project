@@ -29,7 +29,11 @@ public class Concurrency {
         // 같은 락으로 감싼 모든 코드 영역은 한 번에 한 스레드만 실행이 가능하다.
         // 락은 스레드를 지연 시키고 부하를 가중 시칸다.
 
+        System.out.println("Hello Test !!");
 
+        Thread.startVirtualThread(() -> {
+
+        });
 
     }
 }
