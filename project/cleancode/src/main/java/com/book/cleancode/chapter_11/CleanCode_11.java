@@ -14,6 +14,8 @@ public class CleanCode_11 {
     // 검증이 불가능한 시스템은 절대로 출시를 하면 안 됨
     // 테스트 케이스를 만들고 계속 돌려라 간단하고 단순한 규칙을 따르면 시스템은 낮은 결합도와 높은 응집력 이라는
     // 객체 지향 방법론 목표를 저절로 달성
+    // 다중 스레드 코드는 떄떄로 말이 안되는 오류를 일으킨다. 쓰레드 코드에 잠입한 버그는 실패를 재현하기가 아주 어렵다.
+    // 다중 쓰레드를 쓰는 코드 부분을 다양한 환경에 쉽게 끼워 넣을 수 있게 쓰레드 코드를 구현한다.
 
     public void testMethodA(List<?> testList) {
 
@@ -22,7 +24,14 @@ public class CleanCode_11 {
     public <E> void testMethod(List<E> testList) {
         E e = null;
 
+        for(int i=0; i<100_000; i++) {
+
+        }
+
     }
+
+
+
 
 }
 
