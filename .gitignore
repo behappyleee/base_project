@@ -1,3 +1,10 @@
 java_script/simple_weather/keySet/
 *.hprof
 node_modules
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+
+

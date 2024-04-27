@@ -40,7 +40,7 @@ sealed class KotlinOptionTest <out A> {
 
     // Some 의 인스턴스의 경ㅇ value 에 저장 된 값이 같은 경우에만 동등하며 데이터 클래스이기 때문에 이런 동등성 비교
     // 함수를 컴파일러가 자동으로 제공
-    internal data class Some <out A>(internal val value: A):
+    internal data class Some1 <out A>(internal val value: A):
         KotlinOptionTest<A>() {
         override fun isEmpty(): Boolean {
             return true
@@ -52,7 +52,7 @@ sealed class KotlinOptionTest <out A> {
         operator fun <A> invoke(a: A? = null): KotlinOptionTest<A> {
             return when(a) {
                 null -> None
-                else -> Some(a)
+                else -> Some1(a)
             }
         }
     }

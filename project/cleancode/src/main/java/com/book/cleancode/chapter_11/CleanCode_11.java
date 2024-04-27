@@ -17,16 +17,28 @@ public class CleanCode_11 {
     // 다중 스레드 코드는 떄떄로 말이 안되는 오류를 일으킨다. 쓰레드 코드에 잠입한 버그는 실패를 재현하기가 아주 어렵다.
     // 다중 쓰레드를 쓰는 코드 부분을 다양한 환경에 쉽게 끼워 넣을 수 있게 쓰레드 코드를 구현한다.
 
+    // 처음부터 그리고 자주 모든 목표 플랫포메서 코드를 돌려보아야 한다.
+
+    // 사용하는 라이브러리와 기본 알고리즘도 이해하여야 한다. 특정 라이브러리 기능이 기본 알고리즘과 유사한 문제를 어떻게 해결하는 지도 파악하여야 한다.
+    // 스레드 코드는 출시 전까지 최대한 오랫동안 돌려봐야 한다
+
     public void testMethodA(List<?> testList) {
 
     }
 
-    public <E> void testMethod(List<E> testList) {
+    public <E> void testMethod(List<E> testList) throws InterruptedException {
         E e = null;
+
+        Thread t1 = new Thread(() -> {
+            System.out.println("Thread 1 Start ! Thread Name : " + Thread.currentThread().getName());
+        });
+
 
         for(int i=0; i<100_000; i++) {
 
         }
+
+        Object.class.wait();
 
     }
 
