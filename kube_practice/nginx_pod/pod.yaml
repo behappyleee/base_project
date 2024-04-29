@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
     - name: nginx
-      images: nginx:latest
+      images: nginx:latests
