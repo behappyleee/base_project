@@ -8,8 +8,11 @@ class KotlinCallBackTest {
 
 }
 
+fun testReturn() = "Test Return !"
 
 fun main() {
+
+    println(testReturn())
 
     parameterTest { aTest ->
         println("A Tst Check $aTest")
