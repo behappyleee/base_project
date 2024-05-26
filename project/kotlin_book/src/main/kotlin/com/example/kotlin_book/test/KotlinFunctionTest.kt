@@ -7,12 +7,9 @@ class KotlinFunctionTest {
 }
 
 fun main() {
-
     b(::a)
     // b(c<String>("sd", ::a))
-
     c(ObjectTestCheck(name = "TEST 1 !!"), ::getC)
-
 }
 
 data class ObjectTestCheck(

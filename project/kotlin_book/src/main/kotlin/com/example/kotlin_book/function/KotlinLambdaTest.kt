@@ -22,14 +22,6 @@ fun main() {
         // 인자나 이 함수에서 만든 임시 결과를 가두어도 안전하다. 자바와 달리 코틀린 에서는 가변 변수도 가둘 수 있다 하지만 더 안전한 프로그램을 가변 참조 사용을 피하여야 한다.
         return n + listNumTest.size
     }
-
-
 }
-
-
-
-
-
-
 
 fun List<Int>.product(): Int = this.fold(1) { a: Int,b: Int -> a + b }
