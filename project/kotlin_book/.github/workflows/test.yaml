@@ -1,0 +1,9 @@
+name: "Thank you"
+on: push
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "Test !!"
+        name: Thank you
+
