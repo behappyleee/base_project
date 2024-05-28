@@ -1,4 +1,4 @@
-package test
+package test.check
 
 class OverrideKotlinClassTest: OpenKotlinClassTest() {
 

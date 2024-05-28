@@ -1,4 +1,4 @@
-package test
+package test.check
 
 class KotlinClassTest(
     val name: String,

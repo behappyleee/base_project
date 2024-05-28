@@ -16,6 +16,10 @@ java {
 
 repositories {
     mavenCentral()
+
+    flatDir {
+        dir("libs")
+    }
 }
 
 dependencies {
@@ -23,6 +27,11 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0")
+
+
+
+    fileTree("libs")
+    files("libs/library-test.jar")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
