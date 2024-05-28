@@ -1,4 +1,4 @@
-package service
+package test
 
 class KotlinClassTest(
     val name: String,

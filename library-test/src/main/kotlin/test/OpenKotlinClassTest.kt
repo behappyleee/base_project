@@ -1,4 +1,4 @@
-package service
+package test
 
 open class OpenKotlinClassTest {
 
