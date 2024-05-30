@@ -1,6 +1,10 @@
 package com.example.kotlin_book.sealed
 
-class KotlinMapPair {
+import org.springframework.core.env.Environment
+
+class KotlinMapPair(
+    env: Environment,
+) {
 
     // Kotlin Map
     // Map 은 Key 와 Value 로 구성되어있는 dictionary 형태
