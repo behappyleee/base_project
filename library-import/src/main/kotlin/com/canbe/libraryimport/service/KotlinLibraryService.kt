@@ -10,7 +10,13 @@ class KotlinLibraryService {
 
     fun serviceTest() {
 //        println("[KOTLIN LIBRARY SERVICE CLASS TEST CHECK !!!!!!]")
-//
+
+        val aa = listOf("a", "b", "c")
+        aa.run { println(this) }
+        aa.forEach { println(it) }
+
+
+        //
 //        // TODO - 외부 파일 jar 파일 import TEST 해보기 !!!!
 //
 //        val cccc = KotlinClassTest(
