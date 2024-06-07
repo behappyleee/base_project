@@ -20,7 +20,7 @@ class VrianceTest {
 
     fun testFun() {
         // Compile Error 가 발생 무공변 상태임 !
-        // isInvariance(test1)
+        //isInvariance(test1)
         isInvariance(test2)
         // isInvariance(test3)
 
@@ -33,10 +33,6 @@ class VrianceTest {
         invarianceTest1(test2)
         invarianceTest(test3)
     }
-
-
-
-
 }
 
 

@@ -1,23 +1,24 @@
 package com.canbe.libraryimport.service
 
+// import com.canbe.libraryimport.controller.KotlinTestController
 import com.canbe.libraryimport.controller.KotlinTestController
 import org.springframework.stereotype.Service
-import test.check.KotlinClassTes
+// import test.check.KotlinClassTes
 
 @Service
 class KotlinLibraryService {
 
     fun serviceTest() {
-        println("[KOTLIN LIBRARY SERVICE CLASS TEST CHECK !!!!!!]")
-
-        // TODO - 외부 파일 jar 파일 import TEST 해보기 !!!!
-
-        val cccc = KotlinClassTest(
-            name = "SDSD",
-            str = "asdasdasd",
-        )
-
-        cccc.printTest()
+//        println("[KOTLIN LIBRARY SERVICE CLASS TEST CHECK !!!!!!]")
+//
+//        // TODO - 외부 파일 jar 파일 import TEST 해보기 !!!!
+//
+//        val cccc = KotlinClassTest(
+//            name = "SDSD",
+//            str = "asdasdasd",
+//        )
+//
+//        cccc.printTest()
 
 //        val ttt = KotlinClassTest (
 //            name = "name TEST",

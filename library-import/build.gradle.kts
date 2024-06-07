@@ -16,10 +16,6 @@ java {
 
 repositories {
     mavenCentral()
-
-    flatDir {
-        dir("libs")
-    }
 }
 
 dependencies {
@@ -28,9 +24,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0")
 
-
-
-    fileTree("libs")
+    fileTree(baseDir = "libs")
     files("libs/library-test.jar")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
