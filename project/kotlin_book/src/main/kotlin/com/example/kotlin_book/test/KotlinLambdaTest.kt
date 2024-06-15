@@ -28,8 +28,6 @@ fun main() {
     // liTest.find {  }
     liTest.let {  }
 
-
-
 }
 
 fun <T, R> List<T>.te7(te: () -> R) {
