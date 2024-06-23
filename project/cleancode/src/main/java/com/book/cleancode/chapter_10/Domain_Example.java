@@ -1,5 +1,13 @@
 package com.book.cleancode.chapter_10;
 
+import org.apache.logging.log4j.ThreadContext;
+import org.apache.tomcat.util.threads.ThreadPoolExecutor;
+import org.springframework.boot.autoconfigure.web.embedded.TomcatVirtualThreadsWebServerFactoryCustomizer;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+import java.lang.management.ThreadInfo;
+import java.util.concurrent.ThreadFactory;
+
 public class Domain_Example {
 
     // 소프트웨어 분야에서도 최근 들어 DSL (Domain Specific Language) 가 새롭게 조명 받기 시작하였다.
@@ -10,5 +18,11 @@ public class Domain_Example {
     // 사용해 각 구현 관심사를 분리하여야 한다.
 
     // 시스템을 설계하든 개별 모듈을 설계하든 실제로 돌아가는 가장 단순한 수단을 사용해야 한다는 사실을 명심이 필요
+
+    public static void main(String[] args) {
+
+
+
+    }
 
 }
