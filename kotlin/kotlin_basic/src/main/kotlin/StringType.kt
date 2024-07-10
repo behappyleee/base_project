@@ -3,6 +3,4 @@ fun main() {
     var str = "abcd 123";
 
     print(str);
-
-
 }
