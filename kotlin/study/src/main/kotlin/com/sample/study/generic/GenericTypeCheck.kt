@@ -1,19 +1,15 @@
 package com.sample.study.generic
 
-import kotlin.reflect.KClass
+data class PersonTest(val name: String)
 
-sealed class TestSealed
-
-data class PersonTest(val name: String): TestSealed()
-
-data class PersonTest2(val age: Int): TestSealed()
+data class PersonTest2(val age: Int)
 
 object GenericTypeCheck {
 
-    fun testByClass(test: TestSealed): TestSealed {
+    fun <T>testByClass(test: T): T {
         return when(test) {
             is PersonTest ->
-                test.copy(name = "SDSD")
+                test.copy(name = "SDSD") as T
 
             else -> test
         }
@@ -29,5 +25,14 @@ object GenericTypeCheck {
             else -> test
         }
     }
+}
+
+fun main() {
+    val pt1 = PersonTest(name = "NAME_AS")
+    val aa = GenericTypeCheck.testByClass(test = pt1)
+    println(aa)
+
+    val bb = GenericTypeCheck.specialHandlingByClass(test = pt1)
+    println(bb)
 }
 
