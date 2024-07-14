@@ -16,7 +16,8 @@ object GenericTypeCheck {
     }
 
 
-    inline fun <reified T>specialHandlingByClass(test: T): T {
+    inline fun <reified T>specialHandlingByClass(test: T, test1: () -> Unit = { Unit }): T {
+        test1.invoke()
         return when(test) {
             is PersonTest ->
                 test.copy(name = "TEST 111") as T
@@ -27,7 +28,32 @@ object GenericTypeCheck {
     }
 }
 
+fun testInt(a : Int): Int {
+    return a
+}
+
 fun main() {
+    val listTest = listOf(1, 2, 3, 4, 5, 6, 7)
+
+    val takeIf1 = listTest.takeIf { true }.run {
+        println(this)
+    }.let {
+        println(it)
+        println("TESTTT" + ::testInt)
+
+        val cc = testInt(a = 3)
+        val dd = ::testInt
+        dd(2)
+    }
+
+    println(takeIf1)
+
+    val takeIf2 = listTest.takeIf { false }.run {
+        println(this)
+    }?.let { println("SDSDS  $it") }
+
+    println(takeIf2)
+
     val pt1 = PersonTest(name = "NAME_AS")
     val aa = GenericTypeCheck.testByClass(test = pt1)
     println(aa)
