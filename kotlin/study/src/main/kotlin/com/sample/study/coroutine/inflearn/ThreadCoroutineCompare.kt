@@ -1,4 +1,4 @@
-package com.sample.study.coroutine
+package com.sample.study.coroutine.inflearn
 
 class ThreadCoroutineCompare {
 

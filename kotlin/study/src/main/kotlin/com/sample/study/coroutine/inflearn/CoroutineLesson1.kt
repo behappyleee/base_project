@@ -1,4 +1,4 @@
-package com.sample.study.coroutine
+package com.sample.study.coroutine.inflearn
 
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
