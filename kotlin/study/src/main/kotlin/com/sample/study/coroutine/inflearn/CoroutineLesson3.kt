@@ -9,6 +9,10 @@ class CoroutineLesson3 {
 
 }
 
+// start() - 코루틴 시작 신호
+// cancel() - 코루틴 취소 신호
+// join() - 코루틴이 완료 될 때 까지 대기
+
 fun main(): Unit = runBlocking {
     // 실제로는 delay 때문에 2초를 예상하지만 실제로는 1.1 초 정도 걸림 Job1 delay 가 걸리는 동안 job2 가 바로 실행이 됨
     val job1 = launch {
@@ -16,6 +20,8 @@ fun main(): Unit = runBlocking {
         printWithThread("Job 1")
 
     }
+
+    job1.join() // join 을 사용하는 순간은 job1 이 끝날 때 까지 기다렸다가 job2 가 실행이 됨 ! job 을 넣으면 총 2초가 걸림 !
 
     val job2 = launch {
         delay(1_000L)
