@@ -1,0 +1,18 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+<!-- script 태그가 실행 되려는 html 태그보다 앞에 있으면 실행이 안됨 javascript 실행 시점에는 html 값을 몾찾으므로 ! document.querySelector('a') ===> 값이 null 임 !!   -->
+<!--     java_script_test.html:8 Uncaught TypeError: Cannot set properties of null (setting 'innerText')
+    at java_script_test.html:8:51 해당 에러가 발생 !-->
+<!--        <script>-->
+<!--            document.querySelector('a').innerText = '구글로 이동';-->
+<!--        </script>-->
+        <a href="https://www.google.com">어떤 링크</a>
+        <!-- 참조하려는 html 코드 보다 뒤에 있어여 javascript 실행이 가능 ! -->
+        <script>
+            document.querySelector('a').innerText = '구글로 이동';
+        </script>
+    </body>
+</html>
