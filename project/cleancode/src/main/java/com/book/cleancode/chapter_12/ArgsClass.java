@@ -13,7 +13,7 @@ public class ArgsClass {
     private Map<Character, Integer> intArgs = new HashMap<>();
     private Set<Character> argsFound = new HashSet<>();
     private int currentArgument;
-    private char errorArgumentId = '\\0';
+    private char errorArgumentId = '0';
     private String errorParameter = "TILT";
     private ErrorCode errorCode = ErrorCode.OK;
 

@@ -1,7 +1,12 @@
 package com.book.cleancode.chpt_1;
 public class CleanCode_1 {
     public static void main(String[] args) {
-        
+
+        for (int i = 0; i < 0; i++) {
+            System.out.println("TEST I : " + i);
+        }
+
+
         // Clean 코드의 가장 중요한 점
         // 1. 중복 줄이기
         // 2. 시스템 내 모든 설께 아이디어를 표현
