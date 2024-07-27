@@ -1,6 +1,8 @@
 package com.study.backendbook.controller
 
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -21,4 +23,12 @@ class SimpleRestController {
         return "<h1>Hello This is world !</h1>"
     }
 
+    @PostMapping("/article")
+    fun article(
+        @RequestParam(name = "post") post: String,
+        @RequestParam(name = "title") title: String,
+        @RequestParam(name = "content") content: String,
+    ): String {
+        return "Some Messages $post $title $content"
+    }
 }

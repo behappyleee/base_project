@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Controller Test</title>
+</head>
+<body>
+  <script>
+      function onReadyStateChange(event) {
+        if (ajaxRequest.readyState === XMLHttpRequest.DONE) {
+          if(ajaxRequest.status === 200) {
+            console.log(ajaxRequest.responseText)
+          } else {
+            console.error("Request Failed !!")
+          }
+        }
+      }
+
+      const ajaxRequest = new XMLHttpRequest();
+
+      // 특정 이벤트가 발생 하였을 때 호출되는 함수를 이벤트 핸들러 라고 함
+      ajaxRequest.onreadystatechange = onReadyStateChange;
+      ajaxRequest.open('GET', '/get-with-no-parameters');
+      ajaxRequest.send();
+
+  </script>
+
+
+</body>
+</html>
