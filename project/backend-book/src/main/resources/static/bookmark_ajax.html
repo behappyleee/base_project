@@ -17,11 +17,16 @@
         </ol>
 
         <script>
+            // 이벤트 핸들러 - 특정 이벤트가 발생하였을 때 호출 되는 함수를 이벤트 핸들러 라고 함 !!!
+
+            // JSON Parse - JSON 문자열 -> 자바 스크립트 객체
+            // JSON Stringify -> 자바 스크립트 객체 -> JSON 문자열
+
             function addBookmarkRequest() {
                 const name = document.querySelector('input[name=name]').value;
                 const url = document.querySelector('input[name=url]').value;
                 const requestObject = {name: name, url: url};
-                const requestJson = JSON.stringify(requestObject)
+                const requestJson = JSON.stringify(requestObject)   // 자바 스크립트 객체를 JSON 문자열로 바꾸어주어야 함 !
 
                 function onReadyStateChange(event) {
                     const currentAjaxRequest = event.currentTarget;
@@ -37,7 +42,7 @@
 
                 const ajaxRequest = new XMLHttpRequest();
 
-                ajaxRequest.onreadystatechange = onReadyStateChange;
+                ajaxRequest.onreadystatechange = onReadyStateChange; // readyState 가 변경 되는 이벤트가 발쌩할 때 핸들러가 실행이 됨 !
                 ajaxRequest.open('POST', '/bookmark');
                 ajaxRequest.setRequestHeader('Content-type', 'application/json');
                 ajaxRequest.send(requestJson);

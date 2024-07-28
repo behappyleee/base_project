@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class BookMarkController {
 
+    // 직렬화 Serialization 인스턴스 메모리 자바 객체 -> 문자열
+    // 역 직렬 화 DeSerialization 문자열 -> 자바 객체
+    
+    // 메모리 상에 존재하는 인스턴스를 바이너리 형태나 문자열로 만드는 것 -> 직렬화 Serialization
+    // 반대가 역 직렬화 Deserialization
+
     private val bookmarks = mutableListOf<BookMark>()
 
     @PostMapping("/bookmark")
