@@ -2,9 +2,15 @@ package com.study.backendbook.version;
 
 import org.springframework.lang.NonNull;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class JavaOptional {
+
+    // 일반 ArrayList는 ThreadSafe 하지 않음, CopyOnWriteArrayList 는 ThreadSafe 한 List 임
+    // 보통 파라미터로 List 를 넘겨줄 시에는 ArrayList 를 사용 (단일 스레드에서 접근하므로 !)
+    private List<String> test = new CopyOnWriteArrayList<>();
 
     // without Optional
     private static String getTestData() {

@@ -1,6 +1,6 @@
 package com.study.backendbook.controller.product.controller
 
-import com.study.backendbook.controller.product.dto.Product
+import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.service.ProductService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController
 class ProductController(
     private val service: ProductService,
 ) {
+    // 표현 계층 Controller
+
     @PostMapping("/products")
     fun createProduct(
         @RequestBody product: Product
