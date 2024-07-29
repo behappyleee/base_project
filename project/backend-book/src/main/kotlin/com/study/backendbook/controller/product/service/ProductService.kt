@@ -12,4 +12,6 @@ class ProductService {
     fun createProduct(product: Product) {
         ProductRepository.saveProduct(product = product)
     }
+
+    fun getProducts() = ProductRepository.getProducts()
 }

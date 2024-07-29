@@ -8,8 +8,14 @@ package com.study.backendbook.controller.product.domain
 // 반대로 도메인 객체에 비즈니스 로직이 모이지 않으면 비즈니스 로직이 서비스 코드애 구현이 되면 도메인 객체의 응집력이 낮아지고 서비스 코드와의 결합도가 증가하여 곳곳에 중복코드가 생김
 
 data class Product(
-    val id: Long,
-    val name: String,
-    val price: Number,
-    val amount: Number,
-)
+    private var _id: Long,
+    private val name: String,
+    private val price: Number,
+    private val amount: Number,
+) {
+    var id: Long = _id
+        get() = _id
+        set(value) {
+            field = value
+        }
+}

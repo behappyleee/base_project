@@ -2,6 +2,7 @@ package com.study.backendbook.controller.product.controller
 
 import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.service.ProductService
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
@@ -12,6 +13,7 @@ class ProductController(
 ) {
     // 표현 계층 Controller
 
+    // TODO - 확인이 필요 !! Sequence 만 저장이 됨 ... .!!!
     @PostMapping("/products")
     fun createProduct(
         @RequestBody product: Product
@@ -20,4 +22,8 @@ class ProductController(
         service.createProduct(product = product)
         return product
     }
+
+    @GetMapping("/products")
+    fun getProducts() = service.getProducts()
+
 }
