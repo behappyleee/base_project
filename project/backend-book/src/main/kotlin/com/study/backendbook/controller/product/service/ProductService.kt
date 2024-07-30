@@ -10,5 +10,7 @@ class ProductService {
     // 어플리케이션 계층 Service
     fun createProduct(product: Product): Product = ProductRepository.saveProduct(product = product)
 
-    fun getProducts() = ProductRepository.getProducts()
+    fun getProducts() = ProductRepository.findAll()
+
+    fun findById(id: Long) = ProductRepository.findById(id = id)
 }

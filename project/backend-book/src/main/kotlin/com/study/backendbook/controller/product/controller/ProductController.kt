@@ -4,6 +4,7 @@ import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.service.ProductService
 import com.study.backendbook.controller.product.controller.dto.ProductDto
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
@@ -26,5 +27,10 @@ class ProductController(
 
     @GetMapping("/products")
     fun getProducts() = service.getProducts()
+
+    @GetMapping("/products/{id}")
+    fun findById(
+        @PathVariable(name = "id") id: Long,
+    ) = service.findById(id = id)
 }
 

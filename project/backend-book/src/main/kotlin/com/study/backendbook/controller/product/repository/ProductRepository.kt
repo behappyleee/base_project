@@ -1,6 +1,5 @@
 package com.study.backendbook.controller.product.repository
 
-import com.study.backendbook.controller.product.controller.dto.ProductDto
 import com.study.backendbook.controller.product.domain.Product
 import java.util.concurrent.atomic.AtomicLong
 
@@ -23,5 +22,9 @@ object ProductRepository {
         return saveProduct
     }
 
-    fun getProducts(): List<Product> = products
+    fun findAll(): List<Product> = products
+
+    fun findById(id: Long) = products.first { product -> product.id == id }
 }
+
+
