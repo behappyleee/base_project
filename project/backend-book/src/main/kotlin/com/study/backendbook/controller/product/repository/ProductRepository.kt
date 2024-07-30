@@ -32,6 +32,15 @@ object ProductRepository {
         // product -> product.name.contains(name)
         product -> product.containName(name = name)
     }
+
+    // updateProduct 는 ThreadSafe 하지 않다. ThreadSafe 하도록 고민이 필요 하다 !
+    fun updateProduct(product: Product): Product {
+        // 만약 products 리스트에서 index 가 존재하지 않으면 ArrayIndexOutOfBoundsException 에러가 발생한다.
+        // 인프라 스트럭쳐 계층 에러가 컨트롤러까지 전파되는 것은 좋지 않다. --> 글로벌 익셉션 처리를 구현하자 !
+        val indexOfProduct = products.indexOf(element = product)
+        products.set(index = indexOfProduct, product)
+        return product
+    }
 }
 
 
