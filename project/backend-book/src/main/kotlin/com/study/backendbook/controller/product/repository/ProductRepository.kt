@@ -25,6 +25,8 @@ object ProductRepository {
     fun findAll(): List<Product> = products
 
     fun findById(id: Long) = products.first { product -> product.id == id }
+
+    fun findByContainsName(name: String) = products.filter { product -> product.name.contains(name) }
 }
 
 

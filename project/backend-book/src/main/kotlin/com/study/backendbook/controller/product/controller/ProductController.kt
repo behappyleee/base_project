@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -32,5 +33,13 @@ class ProductController(
     fun findById(
         @PathVariable(name = "id") id: Long,
     ) = service.findById(id = id)
-}
 
+    @GetMapping("/products")
+    fun findByName(
+        @RequestParam(name = "name") name: String
+    ): List<ProductDto> =
+        service.findByContainsName(name = name)
+            .map { product ->
+                ProductDto.toProductDto(product = product)
+            }
+}

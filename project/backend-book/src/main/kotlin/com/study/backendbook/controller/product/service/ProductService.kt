@@ -13,4 +13,6 @@ class ProductService {
     fun getProducts() = ProductRepository.findAll()
 
     fun findById(id: Long) = ProductRepository.findById(id = id)
+
+    fun findByContainsName(name: String): List<Product> = ProductRepository.findByContainsName(name = name)
 }
