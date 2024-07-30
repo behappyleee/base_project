@@ -18,6 +18,13 @@ data class Product(
     val price: Number,
     val amount: Number,
 ) {
+    // 인스턴스 생성 실패시 예외를 던짐
+    init {
+        if (name.length > 100 || name.isEmpty()) {
+            throw RuntimeException("Domain 객체의 Name 길이가 적절하지 않습니다.")
+        }
+    }
+
     companion object {
         fun toProduct(productDto: ProductDto): Product {
             return Product(

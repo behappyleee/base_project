@@ -12,7 +12,7 @@ object ProductRepository {
 
     private val sequence = AtomicLong(1)
 
-    fun saveProduct(product: Product): Product {
+    fun add(product: Product): Product {
         val saveProduct =
             product.copy(
                 id = sequence.getAndAdd(1L)

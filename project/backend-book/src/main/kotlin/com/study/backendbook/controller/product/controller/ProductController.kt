@@ -35,7 +35,8 @@ class ProductController(
         @PathVariable(name = "id") id: Long,
     ) = service.findById(id = id)
 
-    @GetMapping("/products")
+    // TODO - URL Path 명 적절하게 수정하기 !
+    @GetMapping("/products:name")
     fun findByName(
         @RequestParam(name = "name", required = false) name: String
     ): List<ProductDto> =
