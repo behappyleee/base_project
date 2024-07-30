@@ -28,4 +28,6 @@ data class Product(
             )
         }
     }
+
+    fun containName(name: String): Boolean = name.contains(name)
 }

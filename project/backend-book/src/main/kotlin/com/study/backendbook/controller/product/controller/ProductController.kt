@@ -36,7 +36,7 @@ class ProductController(
 
     @GetMapping("/products")
     fun findByName(
-        @RequestParam(name = "name") name: String
+        @RequestParam(name = "name", required = false) name: String
     ): List<ProductDto> =
         service.findByContainsName(name = name)
             .map { product ->
