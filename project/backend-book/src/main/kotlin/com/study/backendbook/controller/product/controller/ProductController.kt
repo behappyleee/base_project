@@ -2,6 +2,7 @@ package com.study.backendbook.controller.product.controller
 
 import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.service.ProductService
+import com.study.backendbook.controller.product.controller.dto.ProductDto
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -12,18 +13,18 @@ class ProductController(
     private val service: ProductService,
 ) {
     // 표현 계층 Controller
-
-    // TODO - 확인이 필요 !! Sequence 만 저장이 됨 ... .!!!
+    // 표현 계층 에서는 DTO 를 사용 어플리케이션 내부에서는 domain 을 사용
     @PostMapping("/products")
     fun createProduct(
-        @RequestBody product: Product
-    ): Product {
-        // TODO - Product 를 생성하고 리스트에 넣는 작업이 필요함 !
-        service.createProduct(product = product)
-        return product
-    }
+        @RequestBody productDto: ProductDto
+    ): ProductDto =
+        ProductDto.toProductDto(
+            product = service.createProduct(
+                product = Product.toProduct(productDto = productDto)
+            )
+        )
 
     @GetMapping("/products")
     fun getProducts() = service.getProducts()
-
 }
+

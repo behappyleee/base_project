@@ -1,5 +1,6 @@
 package com.study.backendbook.controller.product.repository
 
+import com.study.backendbook.controller.product.controller.dto.ProductDto
 import com.study.backendbook.controller.product.domain.Product
 import java.util.concurrent.atomic.AtomicLong
 
@@ -12,17 +13,15 @@ object ProductRepository {
 
     private val sequence = AtomicLong(1)
 
-    fun saveProduct(product: Product) {
-        products.add(
+    fun saveProduct(product: Product): Product {
+        val saveProduct =
             product.copy(
-                // TODO
-                // data class 필드명 setter / getter 필드명 동일하게 사용이 안될까 ... ?! ----> 확인이 필요 !
-                _id = sequence.getAndAdd(1L)
+                id = sequence.getAndAdd(1L)
             )
-        )
+
+        products.add(saveProduct)
+        return saveProduct
     }
 
-    fun getProducts(): List<Product> {
-        return products
-    }
+    fun getProducts(): List<Product> = products
 }
