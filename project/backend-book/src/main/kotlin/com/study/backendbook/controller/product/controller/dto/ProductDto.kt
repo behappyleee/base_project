@@ -1,6 +1,8 @@
 package com.study.backendbook.controller.product.controller.dto
 
 import com.study.backendbook.controller.product.domain.Product
+import jakarta.validation.constraints.NotEmpty
+import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
 import java.util.Vector
 
@@ -8,6 +10,9 @@ import java.util.Vector
 // DTO 는 표현 계층 부터 어플리케이션 계층 까지 역할을 하고 그 안쪽까지는 전달이 되지는 않는다.
 data class ProductDto(
     var id: Long,
+    // TODO
+    // 왜 data 클래스에서는 해당 어노테이션이 작동 안하는 지 확인이 필요 .... !!
+    @NotEmpty
     val name: String,
     val price: Number,
     val amount: Number,
