@@ -1,6 +1,8 @@
 package com.study.backendbook.controller.product.domain
 
 import com.study.backendbook.controller.product.controller.dto.ProductDto
+import jakarta.validation.constraints.Max
+import jakarta.validation.constraints.Min
 
 // 도메인 계층
 // 도메인 객체는 어플리케이션에서 사용 되는 데이터와 그 데이터를 다루는 로직을 하나로 묶는 것
@@ -14,8 +16,14 @@ import com.study.backendbook.controller.product.controller.dto.ProductDto
 // TODO - Study 필요 data class private 은 Response 시 왜 숨겨질까 .. ?!
 data class Product(
     val id: Long,
+
     val name: String,
+
+    // TODO - kotlin data class 에는 spring-boot-validtion 이 왜 안걸릴까 .. ?!
+    @Max(1_000_000)
+    @Min(0)
     val price: Number,
+
     val amount: Number,
 ) {
     // 인스턴스 생성 실패시 예외를 던짐

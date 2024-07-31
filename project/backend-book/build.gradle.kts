@@ -20,6 +20,9 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	// bean validation 을 위하여 추가
+	implementation("org.springframework.boot:spring-boot-starter-validation:3.3.1")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation(kotlin("stdlib-jdk8"))
