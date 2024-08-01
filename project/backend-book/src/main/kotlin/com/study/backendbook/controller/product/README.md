@@ -18,3 +18,8 @@
 ### 동기화라는 것은 결국 Lock 같은 동기화 매커니즘을 사용하여 성능을 희생하게 됨
 
 ### Bean Validation 을 통한 유효성 검사
+
+
+### 예외 처리 전략
+#### Checked Exception - try - catch 문이 강제 되는 예외를 의미
+#### Unchecked Exception - try - catch 문이 강제되지 않은 예외를 의미
