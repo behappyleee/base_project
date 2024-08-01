@@ -1,5 +1,6 @@
 package com.study.backendbook.controller.presentation
 
+import com.study.backendbook.controller.product.domain.EntityNotFoundException
 import jakarta.validation.ConstraintViolationException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -41,4 +42,13 @@ class GlobalExceptionHandler {
         return ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST)
     }
 
+    @ExceptionHandler(EntityNotFoundException::class)
+    fun handleEntityNotFoundException(
+        exception: EntityNotFoundException,
+    ): ResponseEntity<ErrorMessage> {
+        val errors = listOf(exception.message.orEmpty())
+        val errorMessage = ErrorMessage(errors = errors)
+
+        return ResponseEntity(errorMessage, HttpStatus.NOT_FOUND)
+    }
 }

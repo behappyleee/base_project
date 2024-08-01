@@ -1,5 +1,6 @@
 package com.study.backendbook.controller.product.repository
 
+import com.study.backendbook.controller.product.domain.EntityNotFoundException
 import com.study.backendbook.controller.product.domain.Product
 import java.util.concurrent.atomic.AtomicLong
 
@@ -24,7 +25,8 @@ object ProductRepository {
 
     fun findAll(): List<Product> = products
 
-    fun findById(id: Long) = products.first { product -> product.id == id }
+    fun findById(id: Long) = products.firstOrNull { product -> product.id == id }
+        ?: EntityNotFoundException("찾으시는 Product 가 존재하지 않습니다.")
 
     fun findByContainsName(name: String) = products.filter {
         // 밑에 처럼 바로 name 을 가져와서 비교하는 로직을 짤 수 도 있지만 이런 식으로 하게되면 객체지향적이지 않게 된다
