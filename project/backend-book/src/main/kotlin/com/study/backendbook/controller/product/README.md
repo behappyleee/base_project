@@ -24,3 +24,23 @@
 #### Unchecked Exception - try - catch 문이 강제되지 않은 예외를 의미
 
 ### 애플리케이션의 각 레이어에서 발생하는 예외는 가급적 특정 레이어 내에서 특정 기술에 종속적인 예외를 사용하기 보다는 애플리케이션 내에서 의미 있는 예외를 정의하여 사용하여야 한다.
+
+### 에러 코드가 포함 된 응답 바디
+
+#### https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#oidc-get-id-token-info-sample
+
+### 정의 된 에러 코드 목록
+
+#### https://developers.kakao.com/docs/latest/ko/kakaologin/trouble-shooting#guide
+
+##### 현재 존재하는 Schema 조회 명령어
+- Docker my sql 실행 명령어
+  - docker run --name some-mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD= -d mysql:8.0.29 --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+- SHOW SCHEMAS;
+- SCHEMA 생성
+  - CREATE SCHEMA PRODUCT_MANAGEMENT;
+- CREATE TABLE products (id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL, price INT NOT NULL, amount INT NOT NULL);
+- 더미 데이터 삽입
+  - INSERT INTO products (name, price, amount) VALUES ('product 1', 100, 10);
+  - INSERT INTO products (name, price, amount) VALUES ('product 2', 300, 25);
+  - INSERT INTO products (name, price, amount) VALUES ('product 3', 500, 75);
