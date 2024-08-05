@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: backend-book
+  datasource:
+    url: jdbc:mysql://localhost:3307/board
+    username: root
+    password: hanbit
+    driver-class-name: com.mysql.cj.jdbc.Driver
