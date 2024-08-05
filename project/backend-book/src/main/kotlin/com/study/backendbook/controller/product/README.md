@@ -44,3 +44,9 @@
   - INSERT INTO products (name, price, amount) VALUES ('product 1', 100, 10);
   - INSERT INTO products (name, price, amount) VALUES ('product 2', 300, 25);
   - INSERT INTO products (name, price, amount) VALUES ('product 3', 500, 75);
+
+
+#### Application 과 데이터 베이스 사이의 연결은 커넥션 이라고 표현이 됨
+#### 애플리케이션에서는 데이터 베이스와의 연결을 수행하는 커넥션 인스턴스를 생성하고 데이터 베이스에서는 그에 상응하는 인스턴스를 만들어서 대응
+#### Connection Pool -> 커넥션 풀은 애플리케이션이 앞으로 사용할 커넥션들을 미리 만들어 두고 애플리케이션에서 커넥션이 필요한 곳에 커넥션을 빌려주었다가 돌려받음
+#### Connection Pool 은 spring-starter-jdbc 에서 자동생성, 다만 첫번째 요청이 오기 전까지는 커넥션 풀을 만들지 않음
