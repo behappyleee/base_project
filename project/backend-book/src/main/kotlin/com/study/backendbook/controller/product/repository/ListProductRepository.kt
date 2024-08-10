@@ -5,7 +5,7 @@ import com.study.backendbook.controller.product.domain.Product
 import java.util.concurrent.atomic.AtomicLong
 
 // Repository DB 연결이 아닌 임시로 object 에 List 를 선언하여 사용
-object ProductRepository {
+object ListProductRepository {
 
     // 인프라 스트럭처 레이어 Infrastructure Layer
     // Kotlin 에 mutableList 는 ThreadSafe 하지 않음 !

@@ -1,12 +1,14 @@
 package com.study.backendbook.controller.product.service
 
-import com.study.backendbook.controller.product.repository.ProductRepository
+import com.study.backendbook.controller.product.repository.ListProductRepository
 import com.study.backendbook.controller.product.domain.Product
+import com.study.backendbook.controller.product.repository.DatabaseProductRepository
 import org.springframework.stereotype.Service
 
 @Service
 class ProductService(
     private val validationService: ValidationService,
+    private val productRepository: DatabaseProductRepository,
 ) {
 
     // 어플리케이션 계층 Service
@@ -39,14 +41,16 @@ class ProductService(
             )
         }
 
-        return  ProductRepository.add(product = product)
+        // ListRepository 가 아닌 Database Repository 를 사용하도록 변경
+        return productRepository.add(product = product)
+//        return  ListProductRepository.add(product = product)
     }
 
-    fun getProducts() = ProductRepository.findAll()
+    fun getProducts() = ListProductRepository.findAll()
 
-    fun findById(id: Long) = ProductRepository.findById(id = id)
+    fun findById(id: Long) = ListProductRepository.findById(id = id)
 
-    fun findByContainsName(name: String): List<Product> = ProductRepository.findByContainsName(name = name)
+    fun findByContainsName(name: String): List<Product> = ListProductRepository.findByContainsName(name = name)
 
-    fun updateProduct(product: Product): Product = ProductRepository.updateProduct(product = product)
+    fun updateProduct(product: Product): Product = ListProductRepository.updateProduct(product = product)
 }

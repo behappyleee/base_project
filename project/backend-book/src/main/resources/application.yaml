@@ -6,3 +6,5 @@ spring:
     username: root
     password: hanbit
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3307/product_management
