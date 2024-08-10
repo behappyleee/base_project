@@ -3,6 +3,7 @@ plugins {
     id("org.springframework.boot") version "3.3.2"
     id("io.spring.dependency-management") version "1.1.6"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
+    kotlin("plugin.allopen") version "2.0.10" // TODO - allopen 이 제대로 적용 된 것 같지 않아 확인이 필요 !!
     kotlin("jvm") version "2.0.0"
 }
 
