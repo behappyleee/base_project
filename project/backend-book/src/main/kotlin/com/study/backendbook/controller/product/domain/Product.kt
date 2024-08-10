@@ -4,6 +4,7 @@ import com.study.backendbook.controller.product.controller.dto.ProductDto
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.Size
+import org.hibernate.validator.constraints.Length
 
 // 도메인 계층
 // 도메인 객체는 어플리케이션에서 사용 되는 데이터와 그 데이터를 다루는 로직을 하나로 묶는 것
@@ -16,7 +17,7 @@ import jakarta.validation.constraints.Size
 // TODO - Study 필요 data class private 은 Response 시 왜 숨겨질까 .. ?!
 data class Product(
     var id: Long,
-    @field:Size(min = 1, max = 100, message = "Product Name 은 1 글자 이상 100 글자 이하만 가능 합니다.")
+    @field:Length(min = 1, max = 100, message = "Product Name 은 1 글자 이상 100 글자 이하만 가능 합니다.")
     val name: String,
     @field:Max(1_000_000, message = "Price 는 1,000,000 을 초과할 수 없습니다.")
     @field:Min(0, message = "Price 는 0원 이상 이여야 합니다.")

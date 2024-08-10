@@ -2,6 +2,7 @@ package com.study.backendbook.controller.product.repository
 
 import com.study.backendbook.controller.product.domain.EntityNotFoundException
 import com.study.backendbook.controller.product.domain.Product
+import com.study.backendbook.controller.product.domain.ProductRepository
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
@@ -14,8 +15,8 @@ import org.springframework.stereotype.Repository
 open class DatabaseProductRepository(
     private val jdbcTemplate: JdbcTemplate,
     private val namedParameterJdbcTemplate: NamedParameterJdbcTemplate,
-) {
-    open fun add(product: Product): Product {
+): ProductRepository {
+    override fun add(product: Product): Product {
         val keyHolder = GeneratedKeyHolder()
 
         val sqlParameters = BeanPropertySqlParameterSource(product)
@@ -31,7 +32,7 @@ open class DatabaseProductRepository(
         return product
     }
 
-    open fun findById(id: Long): Product {
+    override fun findById(id: Long): Product {
         // MapParameterSource 는 BeanPropertySqlParameterSource 와 다르게 Product 같은 객체를 매핑해주는 것이 아닌 Key-Value 형태 매핑이 가능
         val namedParameter = MapSqlParameterSource("id", id)
 
@@ -49,7 +50,7 @@ open class DatabaseProductRepository(
             ?: throw EntityNotFoundException("조회 하신 $id 의 상품을 찾을 수 없습니다.")
     }
 
-    open fun findAll(): List<Product> {
+    override fun findAll(): List<Product> {
         return jdbcTemplate.query(
             "SELECT id, name, price, amount FROM products",
         ) {
@@ -63,7 +64,7 @@ open class DatabaseProductRepository(
         }
     }
 
-    open fun findByName(name: String): List<Product> {
+    override fun findByNameContaining(name: String): List<Product> {
         val namedParameter = MapSqlParameterSource("name", "%$name%")
         return namedParameterJdbcTemplate.query(
             "SELECT id, name, price, amount WHERE name like :name",
@@ -79,7 +80,7 @@ open class DatabaseProductRepository(
         }
     }
 
-    open fun update(product: Product): Product {
+    override fun update(product: Product): Product {
         val namedParameters = BeanPropertySqlParameterSource(product)
 
         namedParameterJdbcTemplate.update(
@@ -91,7 +92,7 @@ open class DatabaseProductRepository(
         return product
     }
 
-    open fun delete(id: Long) {
+    override fun delete(id: Long) {
         val namedParameter = MapSqlParameterSource("id", id)
 
         jdbcTemplate.update(

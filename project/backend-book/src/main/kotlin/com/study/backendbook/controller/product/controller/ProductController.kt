@@ -42,7 +42,7 @@ class ProductController(
     fun findByName(
         @RequestParam(name = "name", required = false) name: String,
     ): List<ProductDto> =
-        service.findByContainsName(name = name)
+        service.findByNameContaining(name = name)
             .map { product ->
                 ProductDto.toProductDto(product = product)
             }

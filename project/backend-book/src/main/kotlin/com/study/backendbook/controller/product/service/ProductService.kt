@@ -2,12 +2,14 @@ package com.study.backendbook.controller.product.service
 
 import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.repository.DatabaseProductRepository
+import com.study.backendbook.controller.product.repository.ListProductRepository
 import org.springframework.stereotype.Service
 
 @Service
 class ProductService(
     private val validationService: ValidationService,
-    private val productRepository: DatabaseProductRepository,
+    private val dataBaseProductRepository: DatabaseProductRepository,
+    private val listProductRepository: ListProductRepository,
 ) {
     // 어플리케이션 계층 Service
     fun createProduct(product: Product): Product {
@@ -38,31 +40,31 @@ class ProductService(
         }
 
         // ListRepository 가 아닌 Database Repository 를 사용하도록 변경
-        return productRepository.add(product = product)
-//        return  ListProductRepository.add(product = product)
+        return dataBaseProductRepository.add(product = product)
+//        return  listProductRepository.add(product = product)
     }
 
     fun getProducts(): List<Product> {
         // Product Repository 로 변경 !
-        return productRepository.findAll()
-//        return ListProductRepository.findAll()
+        return dataBaseProductRepository.findAll()
+//        return listProductRepository.findAll()
     }
 
     fun findById(id: Long): Product {
         // Database Repository 로 변경 !
-        return productRepository.findById(id = id)
-        // return ListProductRepository.findById(id = id)
+        return dataBaseProductRepository.findById(id = id)
+        // return listProductRepository.findById(id = id)
     }
 
-    fun findByContainsName(name: String): List<Product> {
+    fun findByNameContaining(name: String): List<Product> {
         // DatabaseRepository 로 변경
-        return productRepository.findByName(name = name)
-//        return ListProductRepository.findByContainsName(name = name)
+        return dataBaseProductRepository.findByNameContaining(name = name)
+//        return listProductRepository.findByContainsName(name = name)
     }
 
     fun updateProduct(product: Product): Product {
         // DatabaseRepository 로 변경
-        return productRepository.update(product = product)
-//        return ListProductRepository.updateProduct(product = product)
+        return dataBaseProductRepository.update(product = product)
+//        return listProductRepository.updateProduct(product = product)
     }
 }
