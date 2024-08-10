@@ -11,7 +11,6 @@ class ProductService(
 ) {
     // 어플리케이션 계층 Service
     fun createProduct(product: Product): Product {
-        // TODO - Validation 서비스를 이용하여 Valid 검증 !
         // @Validate 어노테이션은 해당 클래스에 있는 Valid 부은 메서드 매개변수를 검증하겠다는 의미이다!
         validationService.checkValid(validationTarget = product)
 

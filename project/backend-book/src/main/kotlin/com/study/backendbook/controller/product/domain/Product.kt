@@ -16,15 +16,14 @@ import jakarta.validation.constraints.Size
 // TODO - Study 필요 data class private 은 Response 시 왜 숨겨질까 .. ?!
 data class Product(
     var id: Long,
-    @Size(min = 1, max = 100)
+    @field:Size(min = 1, max = 100, message = "Product Name 은 1 글자 이상 100 글자 이하만 가능 합니다.")
     val name: String,
-    // TODO - kotlin data class 에는 spring-boot-validtion 이 왜 안걸릴까 .. ?!
-    @Max(1_000_000)
-    @Min(0)
+    @field:Max(1_000_000, message = "Price 는 1,000,000 을 초과할 수 없습니다.")
+    @field:Min(0, message = "Price 는 0원 이상 이여야 합니다.")
     val price: Number,
     val amount: Number,
 ) {
-    // 인스턴스 생성 실패시 예외를 던짐
+    // 인스턴스 생성 실패시 예외를 던짐, 위에 Validation 어노테이션으로 해당 로직을 대체
     init {
 //        if (name.length > 100 || name.isEmpty()) {
 //            throw RuntimeException("Domain 객체의 Name 길이가 적절하지 않습니다.")

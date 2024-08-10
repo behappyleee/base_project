@@ -20,7 +20,8 @@ class ProductController(
     // 표현 계층 에서는 DTO 를 사용 어플리케이션 내부에서는 domain 을 사용
     @PostMapping("/products")
     fun createProduct(
-        @RequestBody @Valid productDto: ProductDto,
+        @RequestBody @Valid
+        productDto: ProductDto,
     ): ProductDto =
         ProductDto.toProductDto(
             product =
@@ -37,7 +38,6 @@ class ProductController(
         @PathVariable(name = "id") id: Long,
     ) = service.findById(id = id)
 
-    // TODO - URL Path 명 적절하게 수정하기 !
     @GetMapping("/products:name")
     fun findByName(
         @RequestParam(name = "name", required = false) name: String,
