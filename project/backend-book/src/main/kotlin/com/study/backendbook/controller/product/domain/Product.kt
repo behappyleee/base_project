@@ -13,18 +13,15 @@ import jakarta.validation.constraints.Size
 // 반대로 도메인 객체에 비즈니스 로직이 모이지 않으면 비즈니스 로직이 서비스 코드애 구현이 되면 도메인 객체의 응집력이 낮아지고 서비스 코드와의 결합도가 증가하여 곳곳에 중복코드가 생김
 
 // DTO Data Transfer Obejct - 데이터를 전송하는 역할을 가진 객체 클라이언트에게 노출되는 데이터 구조와 백엔드 애플리케이션 내부 데이터 구조를 분리하기 위하여 사용
-
 // TODO - Study 필요 data class private 은 Response 시 왜 숨겨질까 .. ?!
 data class Product(
-    val id: Long,
+    var id: Long,
     @Size(min = 1, max = 100)
     val name: String,
-
     // TODO - kotlin data class 에는 spring-boot-validtion 이 왜 안걸릴까 .. ?!
     @Max(1_000_000)
     @Min(0)
     val price: Number,
-
     val amount: Number,
 ) {
     // 인스턴스 생성 실패시 예외를 던짐
@@ -33,6 +30,7 @@ data class Product(
 //            throw RuntimeException("Domain 객체의 Name 길이가 적절하지 않습니다.")
 //        }
     }
+
     companion object {
         fun toProduct(productDto: ProductDto): Product {
             return Product(

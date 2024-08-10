@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class TestController {
-
     // OPTIONS HTTP METHOD 를 사용하여 API 조회 시
     // Allow GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS
     @RequestMapping("/request-mapping")

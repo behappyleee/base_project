@@ -1,8 +1,8 @@
 package com.study.backendbook.controller.product.controller
 
+import com.study.backendbook.controller.product.controller.dto.ProductDto
 import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.service.ProductService
-import com.study.backendbook.controller.product.controller.dto.ProductDto
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -20,12 +20,13 @@ class ProductController(
     // 표현 계층 에서는 DTO 를 사용 어플리케이션 내부에서는 domain 을 사용
     @PostMapping("/products")
     fun createProduct(
-        @RequestBody @Valid productDto: ProductDto
+        @RequestBody @Valid productDto: ProductDto,
     ): ProductDto =
         ProductDto.toProductDto(
-            product = service.createProduct(
-                product = Product.toProduct(productDto = productDto)
-            )
+            product =
+                service.createProduct(
+                    product = Product.toProduct(productDto = productDto),
+                ),
         )
 
     @GetMapping("/products")
@@ -39,7 +40,7 @@ class ProductController(
     // TODO - URL Path 명 적절하게 수정하기 !
     @GetMapping("/products:name")
     fun findByName(
-        @RequestParam(name = "name", required = false) name: String
+        @RequestParam(name = "name", required = false) name: String,
     ): List<ProductDto> =
         service.findByContainsName(name = name)
             .map { product ->
@@ -52,12 +53,15 @@ class ProductController(
         @RequestBody productDto: ProductDto,
     ): ProductDto =
         ProductDto.toProductDto(
-            product = service.updateProduct(
-                product = Product.toProduct(
-                    productDto = productDto.copy(
-                        id = id,
-                    )
-                )
-            )
+            product =
+                service.updateProduct(
+                    product =
+                        Product.toProduct(
+                            productDto =
+                                productDto.copy(
+                                    id = id,
+                                ),
+                        ),
+                ),
         )
 }
