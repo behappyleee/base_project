@@ -11,11 +11,10 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.transaction.annotation.Transactional
 
-
 @SpringBootTest
-@ActiveProfiles("prod")
+@ActiveProfiles("test")
 open class ProductServiceTest {
-
+    // 해당 테스트는 통합 테스트 !ㄴ
     @Autowired
     private lateinit var productService: ProductService
 
@@ -23,7 +22,7 @@ open class ProductServiceTest {
     // Transaction 어노테이션은 원래 트랜잭셔널한 처리를 지원하기 위하여 사용되는 어노테이션이다.
     // 테스트 코드에 @Transactional 을 사용하면 자동 Rollback 이 된다. 테스트 코드에서 추가한 데이터가 실제로는 데이터 베이스에 반영되지 않도록 한다.
     // 해당 데이터는 커밋되지 않고 자동으로 롤백이 됨 !
-    @Transactional
+//    @Transactional
     @Test
     @DisplayName("상품을 추가한 후 id 로 조회 하면 해당 상품이 조회 되어야 한다.")
     open fun productAddAndFindByIdTest() {
