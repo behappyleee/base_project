@@ -1,10 +1,4 @@
+# Spring 의 기본 프로필을 test profile 로 지정
 spring:
-  application:
-    name: backend-book
-  datasource:
-    url: jdbc:mysql://localhost:3307/product_management
-    username: root
-    password: hanbit
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      jdbc-url: jdbc:mysql://localhost:3307/product_management
+  profiles:
+    active: test

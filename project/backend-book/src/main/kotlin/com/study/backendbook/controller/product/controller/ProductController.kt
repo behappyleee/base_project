@@ -1,7 +1,6 @@
 package com.study.backendbook.controller.product.controller
 
 import com.study.backendbook.controller.product.controller.dto.ProductDto
-import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.service.ProductService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
@@ -26,7 +25,7 @@ class ProductController(
         ProductDto.toProductDto(
             product =
                 service.createProduct(
-                    product = Product.toProduct(productDto = productDto),
+                    product = ProductDto.toProductEntity(productDto = productDto),
                 ),
         )
 
@@ -56,12 +55,11 @@ class ProductController(
             product =
                 service.updateProduct(
                     product =
-                        Product.toProduct(
-                            productDto =
-                                productDto.copy(
-                                    id = id,
-                                ),
-                        ),
+                        ProductDto.toProductEntity(
+                            productDto = productDto.copy(
+                                id = id,
+                            ),
+                        )
                 ),
         )
 }

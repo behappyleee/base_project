@@ -3,6 +3,8 @@ package com.study.backendbook.controller.product.repository
 import com.study.backendbook.controller.product.domain.EntityNotFoundException
 import com.study.backendbook.controller.product.domain.Product
 import com.study.backendbook.controller.product.domain.ProductRepository
+import org.springframework.context.annotation.Profile
+import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository
 
 // all-open 을 사용을 해 보는건 어떨까 !
 @Repository
+@Profile(value = ["prod"])  // Profile 이 Prod 일 때만 해당 Bean 을 주입
 open class DatabaseProductRepository(
     private val jdbcTemplate: JdbcTemplate,
     private val namedParameterJdbcTemplate: NamedParameterJdbcTemplate,
@@ -36,18 +39,21 @@ open class DatabaseProductRepository(
         // MapParameterSource 는 BeanPropertySqlParameterSource 와 다르게 Product 같은 객체를 매핑해주는 것이 아닌 Key-Value 형태 매핑이 가능
         val namedParameter = MapSqlParameterSource("id", id)
 
-        return namedParameterJdbcTemplate.queryForObject(
-            "SELECT id, name, price, amount FROM products WHERE id=:id", namedParameter,
-        ) {
-                resultSet, _ ->
-            Product(
-                id = resultSet.getLong("id"),
-                name = resultSet.getString("name"),
-                amount = resultSet.getInt("amount"),
-                price = resultSet.getInt("price"),
-            )
+        // TODO - 에러를 제대로 잡지 못하는 것 같음 확인이 필요 ... !!!
+        return try {
+            namedParameterJdbcTemplate.queryForObject(
+                "SELECT id, name, price, amount FROM products WHERE id=:id", namedParameter,
+            ) { resultSet, _ ->
+                Product(
+                    id = resultSet.getLong("id"),
+                    name = resultSet.getString("name"),
+                    amount = resultSet.getInt("amount"),
+                    price = resultSet.getInt("price"),
+                )
+            }
+        } catch (e: EmptyResultDataAccessException) {
+            throw EntityNotFoundException("조회 하신 $id 의 상품을 찾을 수 없습니다.")
         }
-            ?: throw EntityNotFoundException("조회 하신 $id 의 상품을 찾을 수 없습니다.")
     }
 
     override fun findAll(): List<Product> {

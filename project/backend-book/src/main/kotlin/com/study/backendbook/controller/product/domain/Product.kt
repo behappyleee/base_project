@@ -32,14 +32,18 @@ data class Product(
     }
 
     companion object {
-        fun toProduct(productDto: ProductDto): Product {
-            return Product(
-                id = productDto.id,
-                name = productDto.name,
-                price = productDto.price,
-                amount = productDto.amount,
-            )
-        }
+        // 도메인 주고 설계 법칙에 의하면 ProductDto 는 표현계층에 위치
+        // Product 는 도메인 계층에 위치, Domain 계층에서는 어떠한 외부 계층에 의존을 하면 안된다.
+        // Domain 계층은 다른 어떠한 계층을 의존하면 안되므로 표현 계층인 ProductDto 에서 변환 작업을 해주도록 한다.
+//        fun toProduct(productDto: ProductDto): Product {
+//            return Product(
+//                // id = productDto.id,
+//                id = 0, // TODO - id 는 어떻게하는게 좋을지 고민이 필요 ... !!
+//                name = productDto.name,
+//                price = productDto.price,
+//                amount = productDto.amount,
+//            )
+//        }
     }
 
     fun containName(name: String): Boolean = name.contains(name)

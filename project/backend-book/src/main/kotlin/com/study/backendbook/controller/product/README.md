@@ -54,15 +54,21 @@
 ## 객체지향 프로그래밍
 ### 1. 캡슐화 2. 상속 3. 추상화 4. 다형성
 
+### 의존성 주입 DI (Dependency Injection) 의존성 역전 원칙 DIP (Dependency Injection Principle)
 
+#### 의존성 주입 패턴 -> ProductService -> ProductRepository 의존성을 주입, ProductService 가 정상 동작 하기 위하여서는 ProductRepository 가 필요
+#### 의존성 역전 원칙 -> 고수준 컴포넌트가 저 수준 컴포넌트에 의존하지 말아야 한다는 의미, 쉽게 이야기하면 추상화에 의존을 하여야 한다.
 
+#### 고수준과 저수준을 나누는 기준은 상대적이다. 비교 대상이 되는 두 컴포넌트가 있을 떄 도메인의 정책에 가까울수록 고수준으로 분류하고 애플리케이션에 외부에 가까울수록 저수준으로 분류
+#### 애플리케이션 외부에 가까울수록 저수준으로 분류
 
+#### ProductService (고수준) -> ProductRepository (고수준) <- DatabaseRepository / ListRepository (저수준)
+#### 위의 방향처럼 의존성 역전에 의하여 더 이상 고 수준 컴포넌트가 저 수준 컴포넌트에 의존한지 않는다.
+#### ProductService 가 추상적인 ProductRepository 에만 의존하도록 바뀜, 결정적으로 저 수준 컴포넌트 였던 두 클래스에서 ProductRepository 방향으로 의존성 방향이 생겼다.
 
-
-
-
-
-
+### Refactoring - 동일한 입력에 대해 결과의 변경 없이 코드의 구조가 개선되는 것, 핵심은 결과의 변경이 없어야 한다는 점
+### Refactoring - 결과의 변경이 없어야 한다는 점
+### 만약 코드를 의도적으로 기존과 다르게 가능하도록 변경한 경우에는 테스트 코드를 새로운 기능에 맞게 변경하여야 함
 
 
 

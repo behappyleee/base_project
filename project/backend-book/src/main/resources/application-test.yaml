@@ -1,13 +1,3 @@
 spring:
-  application:
-    name: backend-book
-  datasource:
-    url: jdbc:mysql://localhost:3307/product_management
-    username: root
-    password: hanbit
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      jdbc-url: jdbc:mysql://localhost:3307/product_management
-  # 만약 java -jar -Dspring.profiles.active=test 명령어로 실행 시 명령어 파라미터가 우선순위가 더높아 test 로 실행이 된다 !
-  profiles:
-    active: test
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

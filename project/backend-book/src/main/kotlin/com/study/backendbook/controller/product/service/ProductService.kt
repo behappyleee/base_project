@@ -1,15 +1,18 @@
 package com.study.backendbook.controller.product.service
 
 import com.study.backendbook.controller.product.domain.Product
-import com.study.backendbook.controller.product.repository.DatabaseProductRepository
-import com.study.backendbook.controller.product.repository.ListProductRepository
+import com.study.backendbook.controller.product.domain.ProductRepository
 import org.springframework.stereotype.Service
 
 @Service
 class ProductService(
     private val validationService: ValidationService,
-    private val dataBaseProductRepository: DatabaseProductRepository,
-    private val listProductRepository: ListProductRepository,
+//    ProductRepository 인터페이스로 두 구현체인 Repository 를 추상화를 하여 ProductService 가 구체적인 클래스에 의존할 필요가 없어졌다.
+//    private val dataBaseProductRepository: DatabaseProductRepository,
+//    private val listProductRepository: ListProductRepository,
+    // ProductService 를 수정하여 ProductRepository 라는 인터페이스에 의존하도록 변경하였고, 구체적인 의존체가 아닌 추상적인 존재에 의존하도록 함으로써 애플리케이션의 동작을
+    // 코드 없이 변경, 실행 시점에 결정할 수 있도록 하였다.
+    private val productRepository: ProductRepository,   // ProductRepository 인터페이스를 상속받은 Bean 은 2개의 bean 이므로 bean 이름을 명시해주어야 한다.
 ) {
     // 어플리케이션 계층 Service
     fun createProduct(product: Product): Product {
@@ -40,31 +43,36 @@ class ProductService(
         }
 
         // ListRepository 가 아닌 Database Repository 를 사용하도록 변경
-        return dataBaseProductRepository.add(product = product)
+        return productRepository.add(product = product)
+//        return dataBaseProductRepository.add(product = product)
 //        return  listProductRepository.add(product = product)
     }
 
     fun getProducts(): List<Product> {
         // Product Repository 로 변경 !
-        return dataBaseProductRepository.findAll()
+        return productRepository.findAll()
+//        return dataBaseProductRepository.getProducts()
 //        return listProductRepository.findAll()
     }
 
     fun findById(id: Long): Product {
         // Database Repository 로 변경 !
-        return dataBaseProductRepository.findById(id = id)
+        return productRepository.findById(id = id)
+//        return dataBaseProductRepository.findById(product = product)
         // return listProductRepository.findById(id = id)
     }
 
     fun findByNameContaining(name: String): List<Product> {
         // DatabaseRepository 로 변경
-        return dataBaseProductRepository.findByNameContaining(name = name)
+        return productRepository.findByNameContaining(name = name)
+//        return dataBaseProductRepository.findByNameContaining(product = product)
 //        return listProductRepository.findByContainsName(name = name)
     }
 
     fun updateProduct(product: Product): Product {
         // DatabaseRepository 로 변경
-        return dataBaseProductRepository.update(product = product)
+        return productRepository.update(product = product)
+//        return dataBaseProductRepository.update(product = product)
 //        return listProductRepository.updateProduct(product = product)
     }
 }
