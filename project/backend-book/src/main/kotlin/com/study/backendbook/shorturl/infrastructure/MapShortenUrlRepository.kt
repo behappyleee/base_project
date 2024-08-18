@@ -12,4 +12,10 @@ open class MapShortenUrlRepository: ShortenUrlRepository {
     override fun saveShortenUrl(shortenUrl: ShortenUrl) {
         shortenUrls[shortenUrl.originalUrl] = shortenUrl
     }
+
+    override fun findShortenUrlByShortenUrlKeyOrThrow(shortenUrlKey: String): ShortenUrl {
+        return shortenUrls.get(
+            key = shortenUrlKey,
+        ) ?: throw RuntimeException("존재하지 않는 Shorten Url Key 입니다.")
+    }
 }

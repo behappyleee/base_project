@@ -34,8 +34,13 @@ class ShortenUrlRestController(
     }
 
     @GetMapping("/shorten-rul/{shorten-url-key}")
-    fun <T> getShortenUrlInformation(): ResponseEntity<ShortenUrlInformation> {
-
-        return ResponseEntity.ok(null)
+    fun <T> getShortenUrlInformation(
+        @PathVariable(name = "shorten-url-key") shortenUrlKey: String,
+    ): ResponseEntity<ShortenUrlInformation> {
+        return ResponseEntity.ok(
+            shortenUrlService.getShortenUrlInformationByShortenUrlKey(
+                shortenUrlKey = shortenUrlKey,
+            )
+        )
     }
 }

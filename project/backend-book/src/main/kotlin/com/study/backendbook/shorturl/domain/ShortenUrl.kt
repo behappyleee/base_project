@@ -7,8 +7,10 @@ import kotlin.random.Random
 data class ShortenUrl(
     val originalUrl: String,
     val shortenUrl: String,
-    val redirectCount: Int = 0,
+    var redirectCount: Int = 0,
 ) {
+    fun increaseRedirectCount() = this.redirectCount++
+
     companion object {
         fun generateShortenUrl(): String {
             // Base56 인코딩에 사용되는 문자열
