@@ -24,8 +24,8 @@ class ShortenUrlService(
 
         shortenUrlRepository.saveShortenUrl(
                 shortenUrl = ShortenUrl(
-                originalUrl = originalUrl,
-                shortenUrl = shortenUrlKey,
+                    originalUrl = originalUrl,
+                    shortenUrl = shortenUrlKey,
             )
         )
 

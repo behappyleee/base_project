@@ -2,6 +2,7 @@ package com.study.backendbook.shorturl.infrastructure
 
 import com.study.backendbook.shorturl.domain.ShortenUrl
 import org.springframework.stereotype.Repository
+import java.util.concurrent.ConcurrentMap
 
 @Repository
 open class MapShortenUrlRepository: ShortenUrlRepository {
@@ -10,7 +11,7 @@ open class MapShortenUrlRepository: ShortenUrlRepository {
     private val shortenUrls : MutableMap<String, ShortenUrl> = mutableMapOf()
 
     override fun saveShortenUrl(shortenUrl: ShortenUrl) {
-        shortenUrls[shortenUrl.originalUrl] = shortenUrl
+        shortenUrls[shortenUrl.shortenUrl] = shortenUrl
     }
 
     override fun findShortenUrlByShortenUrlKeyOrThrow(shortenUrlKey: String): ShortenUrl {
