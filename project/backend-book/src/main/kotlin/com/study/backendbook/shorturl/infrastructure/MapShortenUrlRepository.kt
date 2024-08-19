@@ -1,5 +1,6 @@
 package com.study.backendbook.shorturl.infrastructure
 
+import com.study.backendbook.shorturl.domain.NotFoundShortenUrlException
 import com.study.backendbook.shorturl.domain.ShortenUrl
 import org.springframework.stereotype.Repository
 import java.util.concurrent.ConcurrentMap
@@ -17,6 +18,6 @@ open class MapShortenUrlRepository: ShortenUrlRepository {
     override fun findShortenUrlByShortenUrlKeyOrThrow(shortenUrlKey: String): ShortenUrl {
         return shortenUrls.get(
             key = shortenUrlKey,
-        ) ?: throw RuntimeException("존재하지 않는 Shorten Url Key 입니다.")
+        ) ?: throw NotFoundShortenUrlException("찾으시는 ShortenUrl 이 존재 하지 않습니다.")
     }
 }

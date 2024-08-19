@@ -47,8 +47,14 @@ class ShortenUrlService(
         )
     }
 
-    fun getOriginalUrlByShortenUrlKey(shortenUrlKey: String) {
+    // 단축 URL -> 원본 URL 로 리다이렉트를 해줘야함 !
+    fun getOriginalUrlByShortenUrlKey(shortenUrlKey: String): String {
+        val shortenUrl = shortenUrlRepository.findShortenUrlByShortenUrlKeyOrThrow(
+            shortenUrlKey = shortenUrlKey,
+        )
 
+        shortenUrl.increaseRedirectCount()
+        return shortenUrl.originalUrl
     }
 
     companion object {
