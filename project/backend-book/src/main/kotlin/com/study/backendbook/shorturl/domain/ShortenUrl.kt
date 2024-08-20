@@ -12,7 +12,7 @@ data class ShortenUrl(
     fun increaseRedirectCount() = this.redirectCount++
 
     companion object {
-        fun generateShortenUrl(): String {
+        fun generateShortenUrlKey(): String {
             // Base56 인코딩에 사용되는 문자열
             val base56Chracters = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz"
             val random = Random

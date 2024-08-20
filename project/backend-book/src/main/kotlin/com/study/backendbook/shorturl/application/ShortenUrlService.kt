@@ -1,5 +1,7 @@
 package com.study.backendbook.shorturl.application
 
+import com.study.backendbook.shorturl.domain.LackOfShortenUrlKeyException
+import com.study.backendbook.shorturl.domain.NotFoundShortenUrlException
 import com.study.backendbook.shorturl.presentation.dto.ShortenUrlCreateRequest
 import com.study.backendbook.shorturl.presentation.dto.ShortenUrlCreateResponse
 import com.study.backendbook.shorturl.domain.ShortenUrl
@@ -20,7 +22,7 @@ class ShortenUrlService(
         shortenUrlCreateRequest: ShortenUrlCreateRequest,
     ): ShortenUrlCreateResponse {
         val originalUrl = shortenUrlCreateRequest.originalUrl
-        val shortenUrlKey = ShortenUrl.generateShortenUrl()
+        val shortenUrlKey = getUniqueShortenUrlKey()
 
         shortenUrlRepository.saveShortenUrl(
                 shortenUrl = ShortenUrl(
@@ -57,8 +59,24 @@ class ShortenUrlService(
         return shortenUrl.originalUrl
     }
 
+    private fun getUniqueShortenUrlKey(): String {
+        var count = 0
+        while (count++ < GENERATE_KET_RETRY_COUNT) {
+            val shortenUrlKey = ShortenUrl.generateShortenUrlKey()
+            try {
+                shortenUrlRepository.findShortenUrlByShortenUrlKeyOrThrow(
+                    shortenUrlKey = shortenUrlKey
+                )
+            } catch (exception: NotFoundShortenUrlException) {
+                return shortenUrlKey
+            }
+        }
+
+        throw LackOfShortenUrlKeyException("생성 가능한 URL 자원이 없습니다.")
+    }
+
     companion object {
         const val SHORT_URL_KEY_LENGTH = 8
-
+        const val GENERATE_KET_RETRY_COUNT = 5
     }
 }
