@@ -1,15 +1,13 @@
-application:
-  yaml:
 spring:
   application:
     name: backend-book
   datasource:
-    url: jdbc:mysql://localhost:3307/product_management
+    url: jdbc:mysql://localhost:3306/product_management
     username: root
-    password: hanbit
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      jdbc-url: jdbc:mysql://localhost:3307/product_management
+      jdbc-url: jdbc:mysql://localhost:3306/product_management
 
 # 스프링 부트 에서는 Profile 에 따라 사용 될 설정 파일을 자동으로 맵핑을 해 준다. 맵핑 해 줄 때 기준은 application-{profile}.properties 와 같이 application 과 properties 사이에 {profile} 넣는 형태가 된다.
 # 만약 java -jar -Dspring.profiles.active=test 명령어로 실행 시 명령어 파라미터가 우선순위가 더높아 test 로 실행이 된다 !
