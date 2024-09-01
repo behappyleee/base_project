@@ -1,3 +1,6 @@
 spring:
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+# /ui/index.html 을 path 를 추가하여 구분을 준 이유는 만약 구분을 안하면 /index.html 이 URL GET /{shortenUrlKey} 랑 PATH 구분을 하지 못하여 에러가 발생
+  mvc:
+    static-path-pattern: /ui/**

@@ -14,15 +14,15 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.header
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-import kotlin.reflect.KClass
-
 @WebMvcTest(controllers = [ShortenUrlRestController::class])
-class ShortenUrlRestControllerTest(
+class ShortenUrlRestControllerTest {
+
     @MockBean
-    private val shortenUrlService: ShortenUrlService,
+    private lateinit var shortenUrlService: ShortenUrlService
+
     @Autowired
-    private val mockMvc: MockMvc,
-) {
+    private lateinit var mockMvc: MockMvc
+
     @Test
     @DisplayName(value = "원래의 URL 로 리다이렉트가 되어야 한다.")
     fun redirectOriginalUrlTest() {

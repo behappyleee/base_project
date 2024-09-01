@@ -45,7 +45,7 @@ class ShortenUrlRestController(
         return ResponseEntity(httpHeaders, HttpStatus.MOVED_PERMANENTLY)
     }
 
-    @GetMapping("/shorten-rul/{shorten-url-key}")
+    @GetMapping("/shorten-url/{shorten-url-key}")
     fun <T> getShortenUrlInformation(
         @PathVariable(name = "shorten-url-key") shortenUrlKey: String,
     ): ResponseEntity<ShortenUrlInformation> {
