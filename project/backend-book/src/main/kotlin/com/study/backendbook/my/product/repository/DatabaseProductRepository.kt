@@ -1,8 +1,8 @@
-package com.study.backendbook.controller.product.repository
+package com.study.backendbook.my.product.repository
 
-import com.study.backendbook.controller.product.domain.EntityNotFoundException
-import com.study.backendbook.controller.product.domain.Product
-import com.study.backendbook.controller.product.domain.ProductRepository
+import com.study.backendbook.my.product.domain.EntityNotFoundException
+import com.study.backendbook.my.product.domain.Product
+import com.study.backendbook.my.product.domain.ProductRepository
 import org.springframework.context.annotation.Profile
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.JdbcTemplate

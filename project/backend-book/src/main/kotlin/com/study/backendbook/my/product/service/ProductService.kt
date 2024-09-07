@@ -1,7 +1,7 @@
-package com.study.backendbook.controller.product.service
+package com.study.backendbook.my.product.service
 
-import com.study.backendbook.controller.product.domain.Product
-import com.study.backendbook.controller.product.domain.ProductRepository
+import com.study.backendbook.my.product.domain.Product
+import com.study.backendbook.my.product.domain.ProductRepository
 import org.springframework.stereotype.Service
 
 @Service

@@ -1,4 +1,4 @@
-package com.study.backendbook.controller.product.service
+package com.study.backendbook.my.product.service
 
 import jakarta.validation.Valid
 import org.springframework.stereotype.Service

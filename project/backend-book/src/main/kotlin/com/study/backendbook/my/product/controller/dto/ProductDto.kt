@@ -1,6 +1,6 @@
-package com.study.backendbook.controller.product.controller.dto
+package com.study.backendbook.my.product.controller.dto
 
-import com.study.backendbook.controller.product.domain.Product
+import com.study.backendbook.my.product.domain.Product
 import jakarta.validation.constraints.NotBlank
 
 // 실무에서는 DTO 가 자주 변경 되기에 표현 계층에서 사용 되는 데이터 클래스와 서비스에서 사용되는 데이터 클래스를 분리 시키는게 낫다

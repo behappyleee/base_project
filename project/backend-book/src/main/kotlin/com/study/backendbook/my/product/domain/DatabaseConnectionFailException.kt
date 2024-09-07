@@ -1,4 +1,4 @@
-package com.study.backendbook.controller.product.domain
+package com.study.backendbook.my.product.domain
 
 class DatabaseConnectionFailException(
     private val errorMessage: String,

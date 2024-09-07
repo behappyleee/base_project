@@ -1,8 +1,10 @@
 package com.study.backendbook.controller.product.service
 
-import com.study.backendbook.controller.product.controller.dto.ProductDto
-import com.study.backendbook.controller.product.domain.Product
-import com.study.backendbook.controller.product.domain.ProductRepository
+import com.study.backendbook.my.product.controller.dto.ProductDto
+import com.study.backendbook.my.product.domain.Product
+import com.study.backendbook.my.product.domain.ProductRepository
+import com.study.backendbook.my.product.service.ProductService
+import com.study.backendbook.my.product.service.ValidationService
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

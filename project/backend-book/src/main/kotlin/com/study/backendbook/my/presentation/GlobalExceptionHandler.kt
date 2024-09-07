@@ -1,6 +1,6 @@
-package com.study.backendbook.controller.presentation
+package com.study.backendbook.my.presentation
 
-import com.study.backendbook.controller.product.domain.EntityNotFoundException
+import com.study.backendbook.my.product.domain.EntityNotFoundException
 import jakarta.validation.ConstraintViolationException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

@@ -1,7 +1,7 @@
-package com.study.backendbook.controller.product.controller
+package com.study.backendbook.my.product.controller
 
-import com.study.backendbook.controller.product.controller.dto.ProductDto
-import com.study.backendbook.controller.product.service.ProductService
+import com.study.backendbook.my.product.controller.dto.ProductDto
+import com.study.backendbook.my.product.service.ProductService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

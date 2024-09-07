@@ -1,6 +1,6 @@
-package com.study.backendbook.controller
+package com.study.backendbook.my
 
-import com.study.backendbook.controller.dto.BookMark
+import com.study.backendbook.my.dto.BookMark
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

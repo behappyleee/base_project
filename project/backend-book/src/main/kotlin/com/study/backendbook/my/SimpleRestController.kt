@@ -1,4 +1,4 @@
-package com.study.backendbook.controller
+package com.study.backendbook.my
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping

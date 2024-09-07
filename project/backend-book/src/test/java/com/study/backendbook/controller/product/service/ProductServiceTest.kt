@@ -1,7 +1,8 @@
 package com.study.backendbook.controller.product.service
 
-import com.study.backendbook.controller.product.controller.dto.ProductDto
-import com.study.backendbook.controller.product.domain.EntityNotFoundException
+import com.study.backendbook.my.product.controller.dto.ProductDto
+import com.study.backendbook.my.product.domain.EntityNotFoundException
+import com.study.backendbook.my.product.service.ProductService
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

@@ -1,6 +1,6 @@
-package com.study.backendbook.controller.product.domain
+package com.study.backendbook.my.product.domain
 
-import com.study.backendbook.controller.product.controller.dto.ProductDto
+import com.study.backendbook.my.product.controller.dto.ProductDto
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.Size
