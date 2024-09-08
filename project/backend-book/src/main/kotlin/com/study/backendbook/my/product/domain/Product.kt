@@ -1,9 +1,7 @@
 package com.study.backendbook.my.product.domain
 
-import com.study.backendbook.my.product.controller.dto.ProductDto
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
-import jakarta.validation.constraints.Size
 import org.hibernate.validator.constraints.Length
 
 // 도메인 계층
@@ -22,7 +20,7 @@ data class Product(
     @field:Max(1_000_000, message = "Price 는 1,000,000 을 초과할 수 없습니다.")
     @field:Min(0, message = "Price 는 0원 이상 이여야 합니다.")
     val price: Number,
-    val amount: Number,
+    var amount: Number,
 ) {
     // 인스턴스 생성 실패시 예외를 던짐, 위에 Validation 어노테이션으로 해당 로직을 대체
     init {
@@ -47,4 +45,19 @@ data class Product(
     }
 
     fun containName(name: String): Boolean = name.contains(name)
+
+    // 재고 수량이 충분 한지 확인하는 메서드랑 재고 수량을 감소 시키는 메서드를 따로 분리 시켜 놓은 이유는 상품 1에 대하여 재고를 확인 후 상품 1의 재고를 차감 후
+    // 상품 3의 재고가 부족한 경우에는 어떻게 해야할까 ? 다시 상품 1을 롤백 시켜주어야 한다.
+    // 실제로 애플리케이션을 개발할 때는 롤백이 필요한 상황이 아주 많다. 트랜잭셔널한 처리가 필요한 상황이다.
+    fun checkEnoughAmountOrThrow(orderAmount: Int)  {
+        if (this.amount.toInt() < orderAmount) {
+            throw ProductAmountNotEnoughException(errorMessage = "주문 하실려는 상품의 수량이 부족 합니다. " +
+                    "주문 하시려는 상품의 갯수 :$orderAmount , 남아있는 재고 수량 : ${this.amount}")
+        }
+    }
+
+    fun decreaseProductAmountByOrderedProducs(orderedAmount: Number): Product {
+        this.amount = this.amount.toInt() - orderedAmount.toInt()
+        return this
+    }
 }
