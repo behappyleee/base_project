@@ -14,12 +14,32 @@ class CoroutineBasicController {
 
     }
 
+    companion object {
 
-
-
+    }
 }
 
 fun main() {
+    val testArray = arrayOf(3, 4, 5, 6)
+    println("TEST ARRAY $testArray")
+
+    val test = TestInterface {
+        "A"
+        "B"
+        println("TEST CHECK !!")
+        "C"
+    }
+
+    println("TEST RESULT : " +  test.test())
+    println("TEST 11 $test")
+
+    val cc = test.apply {
+        println("SDSD")
+        println("SDSD")
+        "Sdasd"
+    }
+
+    println(cc)
 
     val reverseStr = reverseString("abcd")
     println(reverseStr)
@@ -30,4 +50,6 @@ fun reverseString(str: String): String {
     return str
 }
 
-
+fun interface TestInterface {
+    fun test(): String
+}
