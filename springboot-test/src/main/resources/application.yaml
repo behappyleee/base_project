@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: springboot-test
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+  data:
+    jdbc:
+      dialect: mysql
+server:
+  port: 8080
