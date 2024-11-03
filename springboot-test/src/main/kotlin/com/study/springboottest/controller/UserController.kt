@@ -30,3 +30,16 @@ class UserController(
         return "registerUser"
     }
 }
+
+fun main() {
+    check()
+}
+
+fun test(test: (ab: String) -> Unit) {
+    test("TEST CHECK")
+}
+
+fun check() {
+    val aaa: (String) -> Unit = {strTest: String -> println(strTest) }
+    test(aaa)
+}

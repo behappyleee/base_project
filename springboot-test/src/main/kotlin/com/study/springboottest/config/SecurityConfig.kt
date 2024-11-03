@@ -9,8 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @EnableWebSecurity
 class SecurityConfig {
 
-    @Bean
-    fun httpSecurity(): HttpSecurity {
-
-    }
+//    @Bean
+//    fun httpSecurity(): HttpSecurity {
+//
+//    }
 }

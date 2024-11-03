@@ -24,9 +24,9 @@ class User {
     private val name: String? = null
         get() = field
 
-    @Column(name = "user_passwd")
-    val password: String
-        get() = field
+//    @Column(name = "user_passwd")
+//    val password: String
+//        get() = field
 
     @Column(name = "user_email")
     private val email: String? = null
