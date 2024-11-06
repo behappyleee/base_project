@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: test-module
+server:
+  port: 8081
+  tomcat:
+    connection-timeout: 10ms

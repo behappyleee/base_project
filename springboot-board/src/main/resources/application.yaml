@@ -6,3 +6,10 @@ spring:
     url: jdbc:mysql://localhost:3306
     username: root
     password: 1234
+server:
+  tomcat:
+    keep-alive-timeout: 10ms
+    threads:
+      max: 1
+    max-connections: 1 # TODO - 해당 값 설정 의미 알기 !
+    connection-timeout: 10ms
