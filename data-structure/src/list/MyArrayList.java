@@ -22,7 +22,11 @@ public class MyArrayList<T> implements MyListInterface<T> {
         myArr.add("B");
         myArr.add("C");
 
-        myArr.getArraySize();
+        int sizeCheck = myArr.getArraySize();
+
+        System.out.println("SIZE CHECK : " + sizeCheck);
+        System.out.println(myArr);
+        System.out.println(myArr.toString());
     }
 
     @Override
@@ -70,7 +74,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
     }
 
 
-    public void checkListSize() {
+    private void checkListSize() {
         if (nodeList[nodeList.length - 1] != null) {
             T[] newBigArray = (T[]) new Object[nodeList.length + 10];
 
@@ -83,5 +87,22 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
             nodeList = newBigArray;
         }
+    }
+
+    // TODO - null 처리 하기 !
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[");
+
+        for (int i=0; i<nodeList.length; i++) {
+            stringBuilder.append(nodeList[i]);
+            if (i != nodeList.length - 1) {
+                stringBuilder.append(",");
+            }
+        }
+
+        stringBuilder.append("]");
+        return stringBuilder.toString();
     }
 }
