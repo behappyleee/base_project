@@ -6,6 +6,6 @@ public class ClientApp {
         String ip = "127.0.0.1";
 
         final int port = 7733;
-        new Client1(ip, port);
+        new ListStudy(ip, port);
     }
 }

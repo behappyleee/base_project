@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Client1 {
+public class ListStudy {
 
     private Socket socket;
     private BufferedReader br;
     private PrintWriter pw;
 
-    public Client1(String ip, int port) {
+    public ListStudy(String ip, int port) {
         try {
             // 서버에 요청 보내기
             socket = new Socket(ip, port);
