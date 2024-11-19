@@ -6,7 +6,7 @@ public class BufferedInputStreamTest {
     public static void main(String[] args) throws IOException {
         long startTime = System.currentTimeMillis();
 
-        InputStream inputStream = new FileInputStream("/Users/chulhanlee/Desktop/testInput.txt");
+        InputStream inputStream = new FileInputStream("/Users/Desktop/testInput.txt");
         BufferedInputStream bis = new BufferedInputStream(inputStream);
 
         while (bis.read() != -1) {}

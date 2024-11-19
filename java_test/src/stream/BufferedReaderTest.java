@@ -10,7 +10,7 @@ public class BufferedReaderTest {
         // InputStream 은 byte 기반 스트림임, 바이트 기반이라 하면은 입출력 단위가 1 byte 임
         // 문자 데이터를 입출력 할 때 는 바이트 기반 스트림 대신 문자 기반 스트림을 사용
 
-        InputStream ipTest = new FileInputStream("/Users/chulhanlee/Desktop/testInput.txt");
+        InputStream ipTest = new FileInputStream("/Users/Desktop/testInput.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(ipTest));
         String line;
 

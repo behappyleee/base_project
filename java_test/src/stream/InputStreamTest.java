@@ -10,7 +10,7 @@ public class InputStreamTest {
 
     public static void main(String[] args) throws IOException {
         long startTime = System.currentTimeMillis();
-        InputStream inputStream = new FileInputStream("/Users/chulhanlee/Desktop/testInput.txt");
+        InputStream inputStream = new FileInputStream("/Users/Desktop/testInput.txt");
         int readByte = 0;
 
         while ((readByte = inputStream.read()) != -1) {}
