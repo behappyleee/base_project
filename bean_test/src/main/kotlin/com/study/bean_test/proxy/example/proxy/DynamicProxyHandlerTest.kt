@@ -12,10 +12,9 @@ class DynamicProxyHandlerTest(
         println("Run Proxy Name ${proxy?.javaClass?.simpleName}")
         println("Run Method Name : ${method?.name}")
 
-        val methodResultInvoke = method?.invoke(targetObject, args)
+        val methodResultInvoke = method?.invoke(targetObject, *(args ?: emptyArray()))
         println("Dynmic Proxy Method Result !! $methodResultInvoke")
         println("Dynamic Proxy End !!!")
-
 
         return methodResultInvoke ?: ""
     }
