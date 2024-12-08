@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-@ComponentScan(basePackageClasses = [BeanTestApplication::class])
+//@ComponentScan(basePackageClasses = [BeanTestApplication::class])
 class ApplicationConfig {
 
 //    @Bean
