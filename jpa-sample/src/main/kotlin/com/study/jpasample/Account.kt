@@ -20,7 +20,6 @@ class Account(
     val password: String = "",
 ) {}
 
-
 //@Entity
 ////@Table(name = "ACCOUNT")
 //class Account {

@@ -4,8 +4,12 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Objects;
 
 public class ReflectionTest {
+
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
         Class<TestClass> clazz = TestClass.class;
         Field field = clazz.getDeclaredField("privateName");
@@ -22,6 +26,11 @@ public class ReflectionTest {
         System.out.println("PRIVATE NAME : " + privateName);
         System.out.println("Field Name : " + field.getName());
         System.out.println("Field Value : ");
+
+        String a = "";
+        String b = "";
+
+
     }
 }
 

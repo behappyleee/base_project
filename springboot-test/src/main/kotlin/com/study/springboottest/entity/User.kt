@@ -17,24 +17,27 @@ class User {
     @Id
     @GeneratedValue
     @Column(name = "user_id")
-    private val id: Int? = null
-        get() = field
+    val id: Int? = null
+        get() = field!!
 
     @Column(name = "user_name")
-    private val name: String? = null
+    val name: String? = null
         get() = field
 
-//    @Column(name = "user_passwd")
-//    val password: String
-//        get() = field
+    @Column(name = "user_passwd")
+    var password: String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
 
     @Column(name = "user_email")
-    private val email: String? = null
+    val email: String? = null
         get() = field
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "roles", joinColumns = [JoinColumn(name = "user_id")])
     @Column(name = "user_role")
-    private val roles: List<String>? = null
+    val roles: List<String>? = null
         get() = field
 }

@@ -2,6 +2,7 @@ package com.study.springboottest.service
 
 import com.study.springboottest.entity.User
 import com.study.springboottest.repository.UserRepository
+import kotlin.collections.HashSet
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
+import java.util.*
 
 
 @Service
@@ -20,16 +22,17 @@ class UserServiceImpl(
 
     override fun saveUser(user: User): Int {
         var user = user
-        val passwd: String = user.password
+        val passwd: String? = user.password
         val encodedPasswod: String = passwordEncoder.encode(passwd)
-        user.setPassword(encodedPasswod)
-        user = userRepo!!.save(user)
-        return user.getId()
+        user.password = encodedPasswod
+        user = userRepository.save(user)
+
+        return user.id!!
     }
 
     @Throws(UsernameNotFoundException::class)
     override fun loadUserByUsername(email: String): UserDetails {
-        val opt: Optional<User> = userRepo!!.findUserByEmail(email)
+        val opt: Optional<User> = userRepository.findUserByEmail(email)
 
         var springUser: org.springframework.security.core.userdetails.User? = null
 
@@ -37,7 +40,7 @@ class UserServiceImpl(
             throw UsernameNotFoundException("User with email: $email not found")
         } else {
             val user: User = opt.get()
-            val roles: List<String> = user.getRoles()
+            val roles: List<String> = user.roles!!
             val ga: MutableSet<GrantedAuthority> = HashSet()
             for (role in roles) {
                 ga.add(SimpleGrantedAuthority(role))
@@ -45,7 +48,7 @@ class UserServiceImpl(
 
             springUser = org.springframework.security.core.userdetails.User(
                 email,
-                user.getPassword(),
+                user.password!!,
                 ga
             )
         }
@@ -71,7 +74,5 @@ class UserServiceImpl(
 					.collect(Collectors.toSet())
 		    );
 		}*/
-
-
 }
 

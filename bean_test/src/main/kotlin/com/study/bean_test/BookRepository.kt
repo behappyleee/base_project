@@ -1,7 +1,9 @@
 package com.study.bean_test
 
-class BookController {
+import org.springframework.stereotype.Component
+import org.springframework.stereotype.Repository
 
-    
+//@Repository
+class BookRepository {
 
 }
