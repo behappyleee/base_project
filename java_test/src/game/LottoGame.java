@@ -1,5 +1,6 @@
 package game;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class LottoGame {
@@ -19,8 +20,18 @@ public class LottoGame {
     }
 
     // TODO - Lotto 당첨 번호 6자리 !만들어주기 !
-    private static Set<Integer> lottoNumber() {
-        return null;
+    private record LottoWinningNumber(
+        Set<Integer> winningNumbers,
+        int bonusNumber
+    ) {}
+
+    private static Set<Integer> lottoPickNumbers() {
+        Set<Integer> lottoPickNumbers = new HashSet<>();
+        while (lottoPickNumbers.size() < 7) {
+            int randomNumber = (int) (Math.random() * 7 + 1);
+            lottoPickNumbers.add(lottoNumbers[randomNumber]);
+        }
+        return lottoPickNumbers;
     }
 
     // TODO - Random Special 번호 만들기 !
@@ -35,7 +46,5 @@ public class LottoGame {
             31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
             41, 42, 43, 44, 45
     };
-
-
 }
 
