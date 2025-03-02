@@ -2,6 +2,7 @@ package game;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class LottoGame {
 
@@ -16,27 +17,54 @@ public class LottoGame {
         // 3등 : 5개 번호 일치 / 1,500,000 원
         // 4등 : 4개 번호 일치 / 50,000 원
         // 5등 : 3개 번호 일치 / 5,000 원
+        Set<Integer> lottoPickNumbers = lottoPickNumbers();
+        int pickSpecialNumber = pickBonusNumber();
+        LottoWinningNumber winningNumber = new LottoWinningNumber(lottoPickNumbers, pickSpecialNumber);
 
+        PickLottoNumber[] pickLottoNumbers = new PickLottoNumber[3];
+        for (int i = 0; i < pickLottoNumbers.length; i++) {
+            pickLottoNumbers[i] =
+                new PickLottoNumber(
+                        lottoPickNumbers(),
+                        pickBonusNumber()
+                );
+        }
+
+        for (int i = 0; i < pickLottoNumbers.length; i++) {
+            LottoPrizeDataSet test = LottoPrizeDataSet.getPrize(
+                pickLottoNumbers[i],
+                winningNumber
+            );
+
+            System.out.println("Prize : " + test);
+        }
+
+        System.out.println(lottoPickNumbers);
+        System.out.println(pickSpecialNumber);
     }
 
     // TODO - Lotto 당첨 번호 6자리 !만들어주기 !
-    private record LottoWinningNumber(
+    record LottoWinningNumber(
         Set<Integer> winningNumbers,
+        int bonusNumber
+    ) {}
+
+    record PickLottoNumber(
+        Set<Integer> lottoPickNumbers,
         int bonusNumber
     ) {}
 
     private static Set<Integer> lottoPickNumbers() {
         Set<Integer> lottoPickNumbers = new HashSet<>();
         while (lottoPickNumbers.size() < 7) {
-            int randomNumber = (int) (Math.random() * 7 + 1);
+            int randomNumber = ThreadLocalRandom.current().nextInt(0, 45);
             lottoPickNumbers.add(lottoNumbers[randomNumber]);
         }
         return lottoPickNumbers;
     }
 
-    // TODO - Random Special 번호 만들기 !
-    private static int specialNumber() {
-        return 3;
+    private static int pickBonusNumber() {
+        return lottoNumbers[ThreadLocalRandom.current().nextInt(0, 45)];
     }
 
     private static final int[] lottoNumbers = {
