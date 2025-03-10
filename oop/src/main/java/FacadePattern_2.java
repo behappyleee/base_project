@@ -14,7 +14,6 @@ class FileSystemFacade {
         this.fileWriter = fileWriter;
         this.fileDeleter = fileDeleter;
     }
-
 }
 
 // 파일을 읽는 클래스, 파일을 쓰는 클래스, 파일을 삭제하는 클래스가 존재, 각 책임별로 클래스를 만듦, 하지만 Client 에서 사용하기에는
