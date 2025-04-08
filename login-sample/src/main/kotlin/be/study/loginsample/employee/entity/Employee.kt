@@ -1,4 +1,4 @@
-package be.study.loginsample.user.entity
+package be.study.loginsample.employee.entity
 
 import be.study.loginsample.type.Gender
 import jakarta.persistence.Column
