@@ -15,4 +15,12 @@ class EmployeeController(
     fun getUser(
         @PathVariable("id") id: Int
     ): EmployeeResponse = employeeService.findUserById(userId = id).toEmployeeResponse()
+
+    @GetMapping("/hello")
+    fun hello(): String = "Hello World !"
+
+    @GetMapping("/test")
+    fun testCheck() {
+        println("Test Check !")
+    }
 }
