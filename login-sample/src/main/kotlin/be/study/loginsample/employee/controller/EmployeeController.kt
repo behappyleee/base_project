@@ -23,4 +23,13 @@ class EmployeeController(
     fun testCheck() {
         println("Test Check !")
     }
+
+    data class PersonTest(
+        val age: Int,
+        val retry: RetryTest,
+    )
+
+    data class RetryTest(
+        val name: String,
+    )
 }
