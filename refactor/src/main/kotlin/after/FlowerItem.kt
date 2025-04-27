@@ -8,6 +8,7 @@ sealed class FlowerItem(
     protected open var quality: Int,
     protected open val controlFn: (Int) -> Int = {
         when {
+            quality <= 0 -> quality
             sellIn > 0 -> quality - DEFAULT_DISCOUNT_QUALITY
             sellIn <= 0 -> quality - (DEFAULT_DISCOUNT_QUALITY * 2)
             else ->  quality - DEFAULT_DISCOUNT_QUALITY
