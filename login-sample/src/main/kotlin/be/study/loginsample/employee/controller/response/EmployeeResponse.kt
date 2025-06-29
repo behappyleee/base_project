@@ -22,3 +22,21 @@ fun Employee.toEmployeeResponse() = EmployeeResponse(
     hireDate = this.hireDate,
 )
 
+fun main() {
+    Thread.startVirtualThread {
+
+    }
+
+    data class Person(
+        val name: String,
+        val age: Int,
+    )
+    val person = Person(name = "Test", age = 21)
+    person.let {
+        val name = it.name
+        val age = it.age
+
+        println("Person name  $name")
+        println("Person age $age")
+    }
+}
