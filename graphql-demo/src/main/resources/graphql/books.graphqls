@@ -1,0 +1,35 @@
+type Book {
+    id: ID!
+    title: String!
+    genre: String
+    author: Author
+    publisher: Publisher
+    reviews: [Review]
+}
+
+type Author {
+    id: ID!
+    name: String!
+    nationality: String
+}
+
+type Publisher {
+    id: ID!
+    name: String!
+}
+
+type Review {
+    id: ID!
+    score: Int!
+    comment: String
+}
+
+type Query {
+    books: [Book]
+    bookById(id: ID!): Book
+}
+
+type Mutation {
+    addBook(title: String!, genre: String!, authorId: ID!, publisherId: ID!): Book
+    addReview(bookId: ID!, score: Int!, comment: String): Review
+}
