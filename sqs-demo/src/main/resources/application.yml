@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: sqs-demo
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+      credentials:
+        access-key: TEST
+        secret-key: TEST
