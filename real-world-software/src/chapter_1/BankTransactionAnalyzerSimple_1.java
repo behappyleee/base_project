@@ -12,7 +12,7 @@ public class BankTransactionAnalyzerSimple_1 {
     private static final String RESOURCES = "src/chapter_1/";
 
     public static void main(String[] args) throws IOException {
-        final Path path = Paths.get(RESOURCES + "/transactions.csv");
+        final Path path = Paths.get(RESOURCES + "transactions.csv");
         final List<String> lines = Files.readAllLines(path);
         double total = 0d;
         for (final String line : lines) {
