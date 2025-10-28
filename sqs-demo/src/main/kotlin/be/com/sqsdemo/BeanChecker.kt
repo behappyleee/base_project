@@ -1,4 +1,4 @@
 package be.com.sqsdemo
 
-class SocketTest {
+class BeanChecker {
 }
