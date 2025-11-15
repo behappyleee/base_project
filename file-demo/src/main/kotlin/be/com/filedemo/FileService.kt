@@ -26,7 +26,7 @@ class FileService {
         logger.info("File Bytes Read UTF 8 : {} ", fileBytesUTF8)
 
         try {
-            val path = basePath.toFile()
+            val path = basePath.toAbsolutePath()
             logger.info("File Path : {}", path)
         } catch (e: Exception) {
 

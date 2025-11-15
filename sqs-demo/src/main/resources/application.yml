@@ -6,5 +6,12 @@ spring:
       region:
         static: ap-northeast-2
       credentials:
-        access-key: TEST
-        secret-key: TEST
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
+management:
+    endpoints:
+      web:
+        exposure:
+            include: beans
+server:
+  port: 8081
