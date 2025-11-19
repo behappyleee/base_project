@@ -14,7 +14,7 @@ public class BankStatementProcessor {
     public double calculateTotalAmount() {
         double total = 0d;
         for (final BankTransaction bankTransaction : bankTransactions) {
-            total += bankTransaction.getAmount();
+            total += bankTransaction.amount();
         }
         return total;
     }
@@ -22,7 +22,7 @@ public class BankStatementProcessor {
     public List<BankTransaction> selectInMonth(final Month month) {
         final List<BankTransaction> bankTransactionInMonth = new ArrayList<>();
         for (final BankTransaction bankTransaction : bankTransactions) {
-            if (bankTransaction.getLocalDate().getMonth() == month) {
+            if (bankTransaction.localDate().getMonth() == month) {
                 bankTransactionInMonth.add(bankTransaction);
             }
         }
@@ -33,8 +33,8 @@ public class BankStatementProcessor {
     public double calculateTotalInMonth(final Month month) {
         double total = 0d;
         for (final BankTransaction bankTransaction : bankTransactions) {
-            if (bankTransaction.getLocalDate().getMonth() == month) {
-                total += bankTransaction.getAmount();
+            if (bankTransaction.localDate().getMonth() == month) {
+                total += bankTransaction.amount();
             }
         }
         return total;
@@ -43,8 +43,8 @@ public class BankStatementProcessor {
     public double calculateTotalForCategory(final String category) {
         double total = 0d;
         for (final BankTransaction bankTransaction : bankTransactions) {
-            if (bankTransaction.getDescription().equals(category)) {
-                total += bankTransaction.getAmount();
+            if (bankTransaction.description().equals(category)) {
+                total += bankTransaction.amount();
             }
         }
         return total;

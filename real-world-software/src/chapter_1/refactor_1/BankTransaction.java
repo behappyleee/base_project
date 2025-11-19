@@ -1,30 +1,8 @@
 package chapter_1.refactor_1;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
-public class BankTransaction {
-    private final LocalDate localDate;
-    private final double amount;
-    private final String description;
-
-    public BankTransaction(LocalDate localDate, double amount, String description) {
-        this.localDate = localDate;
-        this.amount = amount;
-        this.description = description;
-    }
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+public record BankTransaction(LocalDate localDate, double amount, String description) {
 
     @Override
     public String toString() {
@@ -39,8 +17,4 @@ public class BankTransaction {
         return Double.compare(that.amount, amount) == 0 && localDate.equals(that.localDate) && description.equals(that.description);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(localDate, amount, description);
-    }
 }

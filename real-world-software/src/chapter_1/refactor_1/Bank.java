@@ -27,7 +27,7 @@ public class Bank {
     public static double calculateTotalAmount(final List<chapter_1.refactor_1.BankTransaction> bankTransactions) {
         double total = 0d;
         for (final chapter_1.refactor_1.BankTransaction bankTransaction : bankTransactions) {
-            total += bankTransaction.getAmount();
+            total += bankTransaction.amount();
         }
         return total;
     }
@@ -35,7 +35,7 @@ public class Bank {
     public static List<chapter_1.refactor_1.BankTransaction> selectInMonth(final List<chapter_1.refactor_1.BankTransaction> bankTransactions, final Month month) {
         final List<chapter_1.refactor_1.BankTransaction> bankTransactionInMonth = new ArrayList<>();
         for (final chapter_1.refactor_1.BankTransaction bankTransaction : bankTransactions) {
-            if (bankTransaction.getLocalDate().getMonth() == month) {
+            if (bankTransaction.localDate().getMonth() == month) {
                bankTransactionInMonth.add(bankTransaction);
             }
         }
